@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>一般工具 :: 資訊分享平台</title>
+    <link>http://localhost:1313/tools/index.html</link>
+    <description>工具介紹</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Mon, 26 May 2025 12:29:13 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>論文寫作工具：TeXstudio 安裝及使用指南</title>
+      <link>http://localhost:1313/tools/texstudio/index.html</link>
+      <pubDate>Mon, 26 May 2025 12:29:13 +0800</pubDate>
+      <guid>http://localhost:1313/tools/texstudio/index.html</guid>
+      <description>在學術寫作和論文編排領域，LaTeX 是許多研究者和學生的首選工具。而 TeXstudio 作為功能強大的 LaTeX 編輯器，提供了直觀的介面與豐富的功能，使論文寫作更加高效。本篇文章將介紹 TeXstudio 的安裝及使用 ，幫助你輕鬆上手，提升寫作效率。&#xA;1. 為何選擇 TeXstudio？ 使用 TeXstudio 的主要優勢包括：&#xA;自動補全 ：支援 LaTeX 代碼補全，提高輸入速度&#xA;即時預覽 ：可查看 PDF 生成結果，避免格式錯誤&#xA;整合檢查工具 ：內建拼寫檢查、語法高亮與錯誤提示&#xA;跨平台支持 ：可在 Windows、macOS 和 Linux 上運行&#xA;2. TeXstudio 安裝步驟 （1）下載並安裝 TeXstudio 前往 TeXstudio 官方網站 下載適用的版本：&#xA;進入下載頁面，選擇適合的作業系統（Windows、macOS 或 Linux）。 下載後，按照安裝提示進行安裝。 （2）安裝 LaTeX 發行版 TeXstudio 需要 LaTeX 發行版來編譯文件，你可以選擇以下其中之一：</description>
+    </item>
+  </channel>
+</rss>

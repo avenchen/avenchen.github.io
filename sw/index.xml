@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>軟體工程 :: 資訊分享平台</title>
+    <link>http://localhost:1313/sw/index.html</link>
+    <description>軟體工程.</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <atom:link href="http://localhost:1313/sw/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Artificial Intelligence (人工智慧)</title>
+      <link>http://localhost:1313/sw/ai/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sw/ai/index.html</guid>
+      <description>人工智慧（Artificial Intelligence, AI）可以定義為模仿人類與人類思維相關的認知功能的機器或計算機，如學習和解決問題。它是計算機科學的一個分支，能夠感知其環境並採取行動，最大限度地提高其成功機會。此外，人工智慧能夠從過去的經驗中學習，做出合理的決策，並快速回應。因此，人工智慧研究人員的科學目標是通過構建具有象徵意義的推理或推理的計算機程式來理解智慧。&#xA;以下是一些與人工智慧相關的關鍵詞：&#xA;機器學習（Machine Learning, ML）：機器學習是 AI 交響樂中的一個工具，它是從先前的數據學習進行運算以預測行為的能力。機器學習最主流的方法是向算法顯示情境的數據集，並透過訓練模型告訴它什麼是正確的決定。 深度學習（Deep Learning, DL）：深度學習是機器學習的一個分支，其中人工神經網絡通過組合多層人造神經元來找到原始數據中的模式。它在 Google DeepMind 的 AlphaGo AI 中得到了廣泛應用。 自然語言處理（Natural Language Processing, NLU）：NLU 是人工智能研究中的一個非常重要的優先事項和挑戰。它使 AI 能夠理解和回應人類的自然語言。 語義感知（Context Awareness）：AI 需要理解情境與上下文的關係，以更好地回應人類需求。</description>
+    </item>
+    <item>
+      <title>Computer Telephony Integration (電腦電話整合)</title>
+      <link>http://localhost:1313/sw/cti/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/sw/cti/index.html</guid>
+      <description>電腦電話整合（Computer Telephony Integration, CTI）技術是一項將電腦和電話結合在一起的新技術。它提供了一個強大的整合功能，讓使用者可以在單一介面上操作並享受整合性的功能。以下是電腦電話整合的一些功能：&#xA;來電者資訊視窗彈跳（Screen-Pop）：當有來電時，系統會自動彈出一個視窗，顯示來電者的相關資訊，例如姓名、公司、職位等。這有助於提高客戶服務效率，讓接聽者能更快地識別來電者。 與後端客戶資料庫整合：電腦電話整合可以直接透過電腦操作電話功能，例如查詢客戶資料、新增筆記、更新客戶狀態等。這有助於提高工作效率，不需要在電話和電腦之間來回切換。 傳真功能整合：一些整合工具可以將傳真功能直接整合至通訊平台，例如 Zoom Phone。這讓您可以透過同一個介面傳送和接收傳真，而不需要切換不同的應用程式。 合規機制整合：如果您在高度監管的行業工作，例如金融服務業，電腦電話整合工具可以將必要的封存和資料保護功能整合至語音通話、語音信箱和短信訊息中，以確保合規性並保障完整體驗。</description>
+    </item>
+  </channel>
+</rss>

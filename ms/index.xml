@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>管理工程 :: 資訊分享平台</title>
+    <link>http://localhost:1313/ms/index.html</link>
+    <description>管理分享</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <atom:link href="http://localhost:1313/ms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>專案管理</title>
+      <link>http://localhost:1313/ms/pmp/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ms/pmp/index.html</guid>
+      <description>專案管理（Project Management，PM） 是一門與產品的規劃、研發、設計、行銷和其他有關產品生產和分銷的學問。它更深入地考量產品研發的時程、成本和人力等各種資源運用調度。專案管理涉及各個部門、團隊、資訊、企業SOP和IT系統的運籌帷幄。&#xA;專案管理的目的是產生一個符合客戶目標的完整專案。在許多情景下，它也可以通過塑造或改變客戶的想法，更切實地實現客戶的目標。一旦明確了客戶的目標，專案管理確保目標指導參與專案的其他人員，例如專案經理、設計師、承包商和分包商等，做出的所有決策。&#xA;專案管理的重要性體現在以下幾個方面：&#xA;協調和統籌：由於專案可能涉及多個團隊和不同的技術領域，專業的專案管理確保各方順利協作，減少溝通障礙，提高工作效率。&#xA;可追蹤性和透明度：專案管理有助於確保專案的可追蹤性，讓團隊能夠清晰地了解專案的進度和狀態。</description>
+    </item>
+    <item>
+      <title>能力成熟度模型整合</title>
+      <link>http://localhost:1313/ms/cmmi/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ms/cmmi/index.html</guid>
+      <description>能力成熟度模型整合（CMMI）是一種改進過程的方法，旨在協助提升組織的績效。它可用於引導整個專案、部門甚至整個組織的過程改進。在軟體工程和組織發展領域中，CMMI提供了有效過程改進的基本元素。它由卡內基梅隆大學在美國專利和商標局註冊。&#xA;CMMI的主要目的包括：&#xA;協助整合傳統獨立的組織功能。&#xA;設定過程改進目標和優先級。&#xA;提供品質過程的指引。&#xA;為評價當前過程提供參考點.&#xA;CMMI涵蓋了三個感興趣的區域：&#xA;產品和服務開發（CMMI-DEV）：用於開發過程改進。&#xA;服務建立、管理和交付（CMMI-SVC）：用於服務過程改進。&#xA;產品和服務採購（CMMI-ACQ）：用於採購過程改進。&#xA;CMMI不再僅限於軟體工程，而是被廣泛應用於硬體產品開發、各種業務的交付以及產品和服務的採購。它提供了一個統一的框架，以改善組織的過程成熟度和績效。</description>
+    </item>
+  </channel>
+</rss>

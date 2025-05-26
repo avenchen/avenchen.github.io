@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>能力成熟度模型整合 :: 資訊分享平台</title>
+    <link>http://localhost:1313/ms/cmmi/index.html</link>
+    <description>能力成熟度模型整合（CMMI）是一種改進過程的方法，旨在協助提升組織的績效。它可用於引導整個專案、部門甚至整個組織的過程改進。在軟體工程和組織發展領域中，CMMI提供了有效過程改進的基本元素。它由卡內基梅隆大學在美國專利和商標局註冊。&#xA;CMMI的主要目的包括：&#xA;協助整合傳統獨立的組織功能。&#xA;設定過程改進目標和優先級。&#xA;提供品質過程的指引。&#xA;為評價當前過程提供參考點.&#xA;CMMI涵蓋了三個感興趣的區域：&#xA;產品和服務開發（CMMI-DEV）：用於開發過程改進。&#xA;服務建立、管理和交付（CMMI-SVC）：用於服務過程改進。&#xA;產品和服務採購（CMMI-ACQ）：用於採購過程改進。&#xA;CMMI不再僅限於軟體工程，而是被廣泛應用於硬體產品開發、各種業務的交付以及產品和服務的採購。它提供了一個統一的框架，以改善組織的過程成熟度和績效。</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <atom:link href="http://localhost:1313/ms/cmmi/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
