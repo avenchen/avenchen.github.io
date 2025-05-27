@@ -8,30 +8,39 @@
     <meta name="description" content="深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。
 在資訊科技飛速發展的今天，IT 專業人員與開發者肩負著日益繁重的任務。為了應對挑戰並提升生產力，Google 推出了劃時代的 AI 程式設計智能體——Jules。這款工具不僅僅是程式碼的自動生成器，更是一個能夠理解專案、規劃任務、並與開發者協同作業的非同步夥伴。本文將帶您深入了解 Google Jules 的強大功能，以及如何將其融入您的日常工作流程，開啟全新的「Vibe 開發」高效體驗。
 Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：
-非同步工作流程 (Asynchronous Workflow): 這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。
-雲端虛擬機執行環境 (Cloud VM Execution Environment): 每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。
-深度整合 GitHub (Deep GitHub Integration): Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。
-智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop): 在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。">
+非同步工作流程 (Asynchronous Workflow):
+這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。 雲端虛擬機執行環境 (Cloud VM Execution Environment):
+每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。 深度整合 GitHub (Deep GitHub Integration):
+Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。 智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop):
+在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。 多語言支援與多步驟任務處理 (Multi-language Support &amp; Multi-step Task Processing):
+Jules 支援包括 JavaScript/TypeScript、Python、Go、Java、Rust 在內的多種主流程式語言。它能夠理解複雜的指令，並將其拆解為多個步驟來執行，例如升級依賴版本、修復相容性問題、然後補全單元測試等。 Gemini 2.5 Pro 強力驅動:
+Jules 的強大理解與推理能力，源自 Google 最新的多模態 AI 模型 Gemini 2.5 Pro，使其能夠更好地理解大型程式碼庫的上下文和專案歷史。 如何開始使用 Google Jules：實作步驟 想要體驗 Jules 的強大功能，您可以按照以下步驟操作：">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命 | 資訊分享平台">
     <meta name="twitter:description" content="深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。
 在資訊科技飛速發展的今天，IT 專業人員與開發者肩負著日益繁重的任務。為了應對挑戰並提升生產力，Google 推出了劃時代的 AI 程式設計智能體——Jules。這款工具不僅僅是程式碼的自動生成器，更是一個能夠理解專案、規劃任務、並與開發者協同作業的非同步夥伴。本文將帶您深入了解 Google Jules 的強大功能，以及如何將其融入您的日常工作流程，開啟全新的「Vibe 開發」高效體驗。
 Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：
-非同步工作流程 (Asynchronous Workflow): 這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。
-雲端虛擬機執行環境 (Cloud VM Execution Environment): 每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。
-深度整合 GitHub (Deep GitHub Integration): Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。
-智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop): 在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。">
+非同步工作流程 (Asynchronous Workflow):
+這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。 雲端虛擬機執行環境 (Cloud VM Execution Environment):
+每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。 深度整合 GitHub (Deep GitHub Integration):
+Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。 智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop):
+在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。 多語言支援與多步驟任務處理 (Multi-language Support &amp; Multi-step Task Processing):
+Jules 支援包括 JavaScript/TypeScript、Python、Go、Java、Rust 在內的多種主流程式語言。它能夠理解複雜的指令，並將其拆解為多個步驟來執行，例如升級依賴版本、修復相容性問題、然後補全單元測試等。 Gemini 2.5 Pro 強力驅動:
+Jules 的強大理解與推理能力，源自 Google 最新的多模態 AI 模型 Gemini 2.5 Pro，使其能夠更好地理解大型程式碼庫的上下文和專案歷史。 如何開始使用 Google Jules：實作步驟 想要體驗 Jules 的強大功能，您可以按照以下步驟操作：">
     <meta property="og:url" content="http://localhost:1313/sw/ai/google_jules_20250527/index.html">
     <meta property="og:site_name" content="資訊分享平台">
     <meta property="og:title" content="Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命 | 資訊分享平台">
     <meta property="og:description" content="深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。
 在資訊科技飛速發展的今天，IT 專業人員與開發者肩負著日益繁重的任務。為了應對挑戰並提升生產力，Google 推出了劃時代的 AI 程式設計智能體——Jules。這款工具不僅僅是程式碼的自動生成器，更是一個能夠理解專案、規劃任務、並與開發者協同作業的非同步夥伴。本文將帶您深入了解 Google Jules 的強大功能，以及如何將其融入您的日常工作流程，開啟全新的「Vibe 開發」高效體驗。
 Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：
-非同步工作流程 (Asynchronous Workflow): 這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。
-雲端虛擬機執行環境 (Cloud VM Execution Environment): 每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。
-深度整合 GitHub (Deep GitHub Integration): Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。
-智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop): 在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。">
+非同步工作流程 (Asynchronous Workflow):
+這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。 雲端虛擬機執行環境 (Cloud VM Execution Environment):
+每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。 深度整合 GitHub (Deep GitHub Integration):
+Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。 智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop):
+在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。 多語言支援與多步驟任務處理 (Multi-language Support &amp; Multi-step Task Processing):
+Jules 支援包括 JavaScript/TypeScript、Python、Go、Java、Rust 在內的多種主流程式語言。它能夠理解複雜的指令，並將其拆解為多個步驟來執行，例如升級依賴版本、修復相容性問題、然後補全單元測試等。 Gemini 2.5 Pro 強力驅動:
+Jules 的強大理解與推理能力，源自 Google 最新的多模態 AI 模型 Gemini 2.5 Pro，使其能夠更好地理解大型程式碼庫的上下文和專案歷史。 如何開始使用 Google Jules：實作步驟 想要體驗 Jules 的強大功能，您可以按照以下步驟操作：">
     <meta property="og:locale" content="zh_TW">
     <meta property="og:type" content="article">
     <meta property="article:section" content="軟體工程">
@@ -41,27 +50,30 @@ Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和�
     <meta itemprop="description" content="深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。
 在資訊科技飛速發展的今天，IT 專業人員與開發者肩負著日益繁重的任務。為了應對挑戰並提升生產力，Google 推出了劃時代的 AI 程式設計智能體——Jules。這款工具不僅僅是程式碼的自動生成器，更是一個能夠理解專案、規劃任務、並與開發者協同作業的非同步夥伴。本文將帶您深入了解 Google Jules 的強大功能，以及如何將其融入您的日常工作流程，開啟全新的「Vibe 開發」高效體驗。
 Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：
-非同步工作流程 (Asynchronous Workflow): 這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。
-雲端虛擬機執行環境 (Cloud VM Execution Environment): 每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。
-深度整合 GitHub (Deep GitHub Integration): Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。
-智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop): 在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。">
+非同步工作流程 (Asynchronous Workflow):
+這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。 雲端虛擬機執行環境 (Cloud VM Execution Environment):
+每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。 深度整合 GitHub (Deep GitHub Integration):
+Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。 智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop):
+在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。 多語言支援與多步驟任務處理 (Multi-language Support &amp; Multi-step Task Processing):
+Jules 支援包括 JavaScript/TypeScript、Python、Go、Java、Rust 在內的多種主流程式語言。它能夠理解複雜的指令，並將其拆解為多個步驟來執行，例如升級依賴版本、修復相容性問題、然後補全單元測試等。 Gemini 2.5 Pro 強力驅動:
+Jules 的強大理解與推理能力，源自 Google 最新的多模態 AI 模型 Gemini 2.5 Pro，使其能夠更好地理解大型程式碼庫的上下文和專案歷史。 如何開始使用 Google Jules：實作步驟 想要體驗 Jules 的強大功能，您可以按照以下步驟操作：">
     <meta itemprop="datePublished" content="2025-05-27T11:24:26+08:00">
     <meta itemprop="dateModified" content="2025-05-27T11:24:26+08:00">
-    <meta itemprop="wordCount" content="189">
+    <meta itemprop="wordCount" content="271">
     <title>Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命 | 資訊分享平台</title>
-    <link href="/images/favicon.png?1748319401" rel="icon" type="image/png">
-    <link href="/images/favicon.ico?1748319401" rel="icon" type="image/x-icon" sizes="any">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748319401" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748319401" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748319401" rel="stylesheet">
-    <link href="/css/theme.css?1748319401" rel="stylesheet">
-    <link href="/css/format-html.css?1748319401" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1748319401" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1748319401" defer></script>
-    <script src="/js/lunr/lunr.min.js?1748319401" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1748319401" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1748319401" defer></script>
-    <script src="/js/lunr/lunr.zh.min.js?1748319401" defer></script>
-    <script src="/js/search.js?1748319401" defer></script>
+    <link href="/images/favicon.png?1748353015" rel="icon" type="image/png">
+    <link href="/images/favicon.ico?1748353015" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748353015" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748353015" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748353015" rel="stylesheet">
+    <link href="/css/theme.css?1748353015" rel="stylesheet">
+    <link href="/css/format-html.css?1748353015" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748353015" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748353015" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748353015" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748353015" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748353015" defer></script>
+    <script src="/js/lunr/lunr.zh.min.js?1748353015" defer></script>
+    <script src="/js/search.js?1748353015" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -71,7 +83,7 @@ Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和�
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['zh'];
-      window.relearn.index_js_url="/searchindex.en.js?1748319401";
+      window.relearn.index_js_url="/searchindex.en.js?1748353015";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -129,7 +141,16 @@ Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和�
             </div>
             <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
               <div class="topbar-content">
-                <div class="topbar-content-wrapper"> 
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#google-jules-核心功能揭秘"><strong>Google Jules 核心功能揭秘</strong></a></li>
+    <li><a href="#如何開始使用-google-jules實作步驟"><strong>如何開始使用 Google Jules：實作步驟</strong></a></li>
+    <li><a href="#google-jules-應用場景與vibe-開發潛力"><strong>Google Jules 應用場景與「Vibe 開發」潛力</strong></a></li>
+    <li><a href="#結論與展望"><strong>結論與展望</strong></a></li>
+    <li><a href="#prompt"><strong>Prompt</strong></a></li>
+  </ul>
+</nav>
                 </div>
               </div>
             </div>
@@ -165,45 +186,128 @@ Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和�
 
 <h1 id="google-jules-開發利器您的非同步-ai-程式設計夥伴引領-vibe-開發生產力革命">Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命</h1>
 
-<p>深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。</p>
+<p><strong>深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。</strong></p>
 <p>在資訊科技飛速發展的今天，IT 專業人員與開發者肩負著日益繁重的任務。為了應對挑戰並提升生產力，Google 推出了劃時代的 AI 程式設計智能體——Jules。這款工具不僅僅是程式碼的自動生成器，更是一個能夠理解專案、規劃任務、並與開發者協同作業的非同步夥伴。本文將帶您深入了解 Google Jules 的強大功能，以及如何將其融入您的日常工作流程，開啟全新的「Vibe 開發」高效體驗。</p>
-<p>Google Jules 核心功能揭秘
-Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：</p>
-<p>非同步工作流程 (Asynchronous Workflow):
-這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。</p>
-<p>雲端虛擬機執行環境 (Cloud VM Execution Environment):
-每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。</p>
-<p>深度整合 GitHub (Deep GitHub Integration):
-Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。</p>
-<p>智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop):
-在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。</p>
-<p>多語言支援與多步驟任務處理 (Multi-language Support &amp; Multi-step Task Processing):
-Jules 支援包括 JavaScript/TypeScript、Python、Go、Java、Rust 在內的多種主流程式語言。它能夠理解複雜的指令，並將其拆解為多個步驟來執行，例如升級依賴版本、修復相容性問題、然後補全單元測試等。</p>
-<p>Gemini 2.5 Pro 強力驅動:
-Jules 的強大理解與推理能力，源自 Google 最新的多模態 AI 模型 Gemini 2.5 Pro，使其能夠更好地理解大型程式碼庫的上下文和專案歷史。</p>
-<p>如何開始使用 Google Jules：實作步驟
-想要體驗 Jules 的強大功能，您可以按照以下步驟操作：</p>
-<p>訪問官網並登入： 前往 jules.google.com 並使用您的 Google 帳戶登入。</p>
-<p>連接 GitHub 帳戶： 按照指示同步您的 GitHub 帳戶，並授予 Jules 存取您儲存庫的權限。</p>
-<p>[連接 GitHub 帳戶的介面截圖示意]</p>
-<p>選擇儲存庫與分支： 選擇您希望 Jules 協助處理的特定儲存庫和分支。</p>
-<p>下達清晰的開發指令 (Prompt)： 以自然語言向 Jules 清晰描述您希望它完成的任務，例如：「請為 user_service.py 中的 get_user_profile 函數編寫單元測試，並確保涵蓋所有邊界情況。」</p>
-<p>[輸入指令的介面截圖示意]</p>
-<p>審查計畫並監控執行： Jules 會提供一份執行計畫供您審查。批准後，您可以追蹤其進度。</p>
-<p>[Jules 執行計畫展示介面截圖示意]</p>
-<p>審查並合併拉取請求： 任務完成後，Jules 會建立一個包含所有變更的拉取請求。您可以像審查團隊成員的程式碼一樣審查它，然後合併到您的專案中。</p>
-<p>Google Jules 應用場景與「Vibe 開發」潛力
-Jules 的應用潛力廣泛，尤其能協助 IT 人員提升工作效率：</p>
-<p>自動化重複性編碼任務： 例如生成樣板程式碼、更新依賴套件、格式化程式碼等。</p>
-<p>加速錯誤修復與功能迭代： 快速定位問題、根據描述生成修復方案或初步實現新功能。</p>
-<p>提升大型專案維護效率： 協助理解舊有程式碼、進行重構、添加註解或文件。</p>
-<p>輔助 IT 人員進行腳本編寫與自動化： 即使不是全職開發者，IT 維運、系統管理人員也能利用 Jules 快速生成實用的腳本，提升自動化水平。</p>
+<p><a href="#R-image-5808e79d2df45012f8e3f84f187d7090" class="lightbox-link"><img alt="alt text" class="lazy lightbox figure-image" loading="lazy" src="google-jules-logo.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-5808e79d2df45012f8e3f84f187d7090"><img alt="alt text" class="lazy lightbox lightbox-image" loading="lazy" src="google-jules-logo.png"></a></p>
+<h2 id="google-jules-核心功能揭秘"><strong>Google Jules 核心功能揭秘</strong></h2>
+<p>Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：</p>
+<ol>
+<li>非同步工作流程 (Asynchronous Workflow):<br>
+這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。</li>
+<li>雲端虛擬機執行環境 (Cloud VM Execution Environment):<br>
+每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。</li>
+<li>深度整合 GitHub (Deep GitHub Integration):<br>
+Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。</li>
+<li>智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop):<br>
+在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。</li>
+<li>多語言支援與多步驟任務處理 (Multi-language Support &amp; Multi-step Task Processing):<br>
+Jules 支援包括 JavaScript/TypeScript、Python、Go、Java、Rust 在內的多種主流程式語言。它能夠理解複雜的指令，並將其拆解為多個步驟來執行，例如升級依賴版本、修復相容性問題、然後補全單元測試等。</li>
+<li>Gemini 2.5 Pro 強力驅動:<br>
+Jules 的強大理解與推理能力，源自 Google 最新的多模態 AI 模型 Gemini 2.5 Pro，使其能夠更好地理解大型程式碼庫的上下文和專案歷史。</li>
+</ol>
+<h2 id="如何開始使用-google-jules實作步驟"><strong>如何開始使用 Google Jules：實作步驟</strong></h2>
+<p>想要體驗 Jules 的強大功能，您可以按照以下步驟操作：</p>
+<ol>
+<li><strong>訪問官網並登入：</strong> 前往 jules.google.com 並使用您的 Google 帳戶登入。</li>
+<li><strong>連接 GitHub 帳戶：</strong> 按照指示同步您的 GitHub 帳戶，並授予 Jules 存取您儲存庫的權限。
+<ul>
+<li>連接 GitHub 帳戶的介面</li>
+<li><a href="#R-image-229a40817778e42fa7f683b135deec3d" class="lightbox-link"><img alt="alt text" class="lazy lightbox figure-image" loading="lazy" src="google-jules-linkGithub" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-229a40817778e42fa7f683b135deec3d"><img alt="alt text" class="lazy lightbox lightbox-image" loading="lazy" src="google-jules-linkGithub"></a></li>
+</ul>
+</li>
+<li><strong>選擇儲存庫與分支：</strong> 選擇您希望 Jules 協助處理的特定儲存庫和分支。</li>
+<li><strong>下達清晰的開發指令 (Prompt)：</strong> 以自然語言向 Jules 清晰描述您希望它完成的任務，例如：「請為 user_service.py 中的 get_user_profile 函數編寫單元測試，並確保涵蓋所有邊界情況。」
+<ul>
+<li>參考下面 Prompt 範例</li>
+</ul>
+</li>
+<li><strong>審查計畫並監控執行：</strong> Jules 會提供一份執行計畫供您審查。批准後，您可以追蹤其進度。
+<ul>
+<li><a href="#R-image-56ee60da25c6bc60ee88f7c2fe91f6a8" class="lightbox-link"><img alt="alt text" class="lazy lightbox figure-image" loading="lazy" src="google-jules-Plan.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-56ee60da25c6bc60ee88f7c2fe91f6a8"><img alt="alt text" class="lazy lightbox lightbox-image" loading="lazy" src="google-jules-Plan.png"></a></li>
+</ul>
+</li>
+<li><strong>審查並合併拉取請求：</strong> 任務完成後，Jules 會建立一個包含所有變更的拉取請求。您可以像審查團隊成員的程式碼一樣審查它，然後合併到您的專案中。
+<a href="#R-image-50366c267f5eec134503d3ba5782bdee" class="lightbox-link"><img alt="alt text" class="lazy lightbox figure-image" loading="lazy" src="google-jules-Audit.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-50366c267f5eec134503d3ba5782bdee"><img alt="alt text" class="lazy lightbox lightbox-image" loading="lazy" src="google-jules-Audit.png"></a>
+<a href="#R-image-ec68bb2717747b4c7b2a302b0151c3f7" class="lightbox-link"><img alt="alt text" class="lazy lightbox figure-image" loading="lazy" src="google-jules-Final.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-ec68bb2717747b4c7b2a302b0151c3f7"><img alt="alt text" class="lazy lightbox lightbox-image" loading="lazy" src="google-jules-Final.png"></a></li>
+</ol>
+<h2 id="google-jules-應用場景與vibe-開發潛力"><strong>Google Jules 應用場景與「Vibe 開發」潛力</strong></h2>
+<p>Jules 的應用潛力廣泛，尤其能協助 IT 人員提升工作效率：</p>
+<ul>
+<li><strong>自動化重複性編碼任務：</strong> 例如生成樣板程式碼、更新依賴套件、格式化程式碼等。</li>
+<li><strong>加速錯誤修復與功能迭代：</strong> 快速定位問題、根據描述生成修復方案或初步實現新功能。</li>
+<li><strong>提升大型專案維護效率：</strong> 協助理解舊有程式碼、進行重構、添加註解或文件。</li>
+<li><strong>輔助 IT 人員進行腳本編寫與自動化：</strong> 即使不是全職開發者，IT 維運、系統管理人員也能利用 Jules 快速生成實用的腳本，提升自動化水平。</li>
+</ul>
 <p>所謂「Vibe 開發」，指的是一種更流暢、更直觀、更少阻礙的開發體驗。Jules 透過其非同步特性和智能協作，減少了開發過程中的等待與摩擦，讓開發者能更專注於創造性工作，從而營造出一種積極高效的開發氛圍，這正是 Jules 提升生產力的核心價值之一。</p>
-<p>結論與展望
-Google Jules 的推出，標誌著 AI 在軟體開發領域的應用邁入了新的階段。它不僅僅是一個工具，更像是一位智能的程式設計夥伴，能夠顯著提升開發團隊的生產力和專案品質。對於在電腦螢幕前辛勤工作的 IT 人員而言，Jules 有潛力成為簡化日常任務、應對複雜挑戰的得力助手。</p>
-<p>隨著 AI 技術的持續進步，我們可以期待 Jules 及類似工具將在未來軟體工程中扮演更核心的角色。</p>
-<p>想親自體驗 Google Jules 如何革新您的開發流程嗎？立即訪問 jules.google.com 開始探索！</p>
-<p>如果您對 AI 在程式設計及其他 IT領域的應用感興趣，歡迎追蹤我的後續分享，一同探索科技前沿。</p>
+<h2 id="結論與展望"><strong>結論與展望</strong></h2>
+<p>Google Jules 的推出，標誌著 AI 在軟體開發領域的應用邁入了新的階段。它不僅僅是一個工具，更像是一位智能的程式設計夥伴，能夠顯著提升開發團隊的生產力和專案品質。對於在電腦螢幕前辛勤工作的 IT 人員而言，Jules 有潛力成為簡化日常任務、應對複雜挑戰的得力助手。
+隨著 AI 技術的持續進步，我們可以期待 Jules 及類似工具將在未來軟體工程中扮演更核心的角色。</p>
+<h2 id="prompt"><strong>Prompt</strong></h2>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-prompt" data-lang="prompt">請針對此專案，從以下幾個面向進行全面性的分析：
+
+專案概述
+
+專案的主要功能與目標
+使用的程式語言與主要技術堆疊 (Tech Stack)
+授權許可類型 (License)
+專案活躍度評估（例如：貢獻者數量、近期更新頻率、Issue 回應狀況等）
+程式碼結構分析
+
+主要目錄結構及其用途
+關鍵原始碼檔案及其核心作用
+程式碼組織模式（例如：使用的設計模式、架構模式等）
+模組化程度評估
+功能地圖
+
+核心功能列表及其詳細描述
+各功能之間的關聯性與互動方式
+使用者流程圖（User Flow Diagram）（若適用）
+主要的 API 介面規格分析（若適用）
+依賴性分析 (Dependency Analysis)
+
+外部依賴套件 (External Libraries/Packages) 列表及其用途
+內部模組間的依賴關係圖
+依賴套件的更新頻率與維護狀況
+潛在的依賴風險評估（例如：版本衝突、安全性漏洞、棄用套件等）
+程式碼品質評估
+
+程式碼可讀性與風格一致性
+註解與技術文件的完整性及品質
+測試覆蓋率 (Test Coverage) 評估
+潛在的程式碼異味 (Code Smell) 與可改善空間建議
+關鍵演算法與資料結構
+
+專案中使用的主要演算法分析及其複雜度
+核心資料結構的選擇及其設計原理
+效能關鍵點 (Performance Hotspots) 分析
+函式/方法呼叫圖 (Call Graph)
+
+列出主要的函式/方法
+呈現函式/方法之間的呼叫關係（建議視覺化）
+高頻呼叫路徑分析
+遞迴呼叫與複雜呼叫鏈的識別與評估
+安全性分析
+
+潛在的安全性漏洞識別（例如：SQL Injection, XSS, 不安全的資料處理等）
+敏感資料的儲存與處理方式評估
+身份驗證 (Authentication) 與授權 (Authorization) 機制的健全性評估
+可擴展性 (Scalability) 與效能 (Performance)
+
+系統架構的可擴展性設計評估
+潛在的效能瓶頸識別與分析
+並行 (Concurrency) / 平行 (Parallelism) 處理機制分析（若適用）
+總結與建議
+
+專案整體品質的綜合評價
+主要的優勢、亮點與特色
+具體的潛在改進點與 actionable 的建議事項
+此專案的適用情境與未來發展潛力推薦
+請盡可能詳盡地分析，並在適當之處使用圖表或視覺化方式（例如：UML 圖、流程圖、關係圖等）來呈現複雜的關聯與結構。</code></pre></div>
 
   <footer class="footline">
               <i class='fa-fw fas fa-calendar'></i> May 27, 2025
@@ -283,8 +387,8 @@ Google Jules 的推出，標誌著 AI 在軟體開發領域的應用邁入了新
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1748319401" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748319401" defer></script>
-    <script src="/js/theme.js?1748319401" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1748353015" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748353015" defer></script>
+    <script src="/js/theme.js?1748353015" defer></script>
   </body>
 </html>
