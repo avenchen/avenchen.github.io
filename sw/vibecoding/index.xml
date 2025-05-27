@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vibe Coding (氛圍編程) | 資訊分享平台</title>
+    <link>http://localhost:1313/sw/vibecoding/index.html</link>
+    <description>Vibe Coding是一種全新的程式設計方式，開發者透過自然語言向AI描述需求，由AI自動生成程式碼，其核心理念是 「完全順應感覺（vibes）、擁抱AI帶來的進步，並忘記程式碼本身的存在」</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <atom:link href="http://localhost:1313/sw/vibecoding/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

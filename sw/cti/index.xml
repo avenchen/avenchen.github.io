@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Computer Telephony Integration (電腦電話整合) :: 資訊分享平台</title>
+    <title>Computer Telephony Integration (電腦電話整合) | 資訊分享平台</title>
     <link>http://localhost:1313/sw/cti/index.html</link>
     <description>電腦電話整合（Computer Telephony Integration, CTI）技術是一項將電腦和電話結合在一起的新技術。它提供了一個強大的整合功能，讓使用者可以在單一介面上操作並享受整合性的功能。以下是電腦電話整合的一些功能：&#xA;來電者資訊視窗彈跳（Screen-Pop）：當有來電時，系統會自動彈出一個視窗，顯示來電者的相關資訊，例如姓名、公司、職位等。這有助於提高客戶服務效率，讓接聽者能更快地識別來電者。 與後端客戶資料庫整合：電腦電話整合可以直接透過電腦操作電話功能，例如查詢客戶資料、新增筆記、更新客戶狀態等。這有助於提高工作效率，不需要在電話和電腦之間來回切換。 傳真功能整合：一些整合工具可以將傳真功能直接整合至通訊平台，例如 Zoom Phone。這讓您可以透過同一個介面傳送和接收傳真，而不需要切換不同的應用程式。 合規機制整合：如果您在高度監管的行業工作，例如金融服務業，電腦電話整合工具可以將必要的封存和資料保護功能整合至語音通話、語音信箱和短信訊息中，以確保合規性並保障完整體驗。</description>
     <generator>Hugo</generator>

@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Artificial Intelligence (人工智慧) :: 資訊分享平台</title>
+    <title>Artificial Intelligence (人工智慧) | 資訊分享平台</title>
     <link>http://localhost:1313/sw/ai/index.html</link>
     <description>人工智慧（Artificial Intelligence, AI）可以定義為模仿人類與人類思維相關的認知功能的機器或計算機，如學習和解決問題。它是計算機科學的一個分支，能夠感知其環境並採取行動，最大限度地提高其成功機會。此外，人工智慧能夠從過去的經驗中學習，做出合理的決策，並快速回應。因此，人工智慧研究人員的科學目標是通過構建具有象徵意義的推理或推理的計算機程式來理解智慧。&#xA;以下是一些與人工智慧相關的關鍵詞：&#xA;機器學習（Machine Learning, ML）：機器學習是 AI 交響樂中的一個工具，它是從先前的數據學習進行運算以預測行為的能力。機器學習最主流的方法是向算法顯示情境的數據集，並透過訓練模型告訴它什麼是正確的決定。 深度學習（Deep Learning, DL）：深度學習是機器學習的一個分支，其中人工神經網絡通過組合多層人造神經元來找到原始數據中的模式。它在 Google DeepMind 的 AlphaGo AI 中得到了廣泛應用。 自然語言處理（Natural Language Processing, NLU）：NLU 是人工智能研究中的一個非常重要的優先事項和挑戰。它使 AI 能夠理解和回應人類的自然語言。 語義感知（Context Awareness）：AI 需要理解情境與上下文的關係，以更好地回應人類需求。</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
+    <lastBuildDate>Tue, 27 May 2025 11:24:26 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/sw/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命</title>
+      <link>http://localhost:1313/sw/ai/google_jules_20250527/index.html</link>
+      <pubDate>Tue, 27 May 2025 11:24:26 +0800</pubDate>
+      <guid>http://localhost:1313/sw/ai/google_jules_20250527/index.html</guid>
+      <description>深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。&#xA;在資訊科技飛速發展的今天，IT 專業人員與開發者肩負著日益繁重的任務。為了應對挑戰並提升生產力，Google 推出了劃時代的 AI 程式設計智能體——Jules。這款工具不僅僅是程式碼的自動生成器，更是一個能夠理解專案、規劃任務、並與開發者協同作業的非同步夥伴。本文將帶您深入了解 Google Jules 的強大功能，以及如何將其融入您的日常工作流程，開啟全新的「Vibe 開發」高效體驗。&#xA;Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：&#xA;非同步工作流程 (Asynchronous Workflow): 這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。&#xA;雲端虛擬機執行環境 (Cloud VM Execution Environment): 每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。&#xA;深度整合 GitHub (Deep GitHub Integration): Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。&#xA;智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop): 在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。</description>
+    </item>
   </channel>
 </rss>

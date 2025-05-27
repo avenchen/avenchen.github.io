@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-TW" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.5">
+    <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
+    <meta name="description" content="深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。
+在資訊科技飛速發展的今天，IT 專業人員與開發者肩負著日益繁重的任務。為了應對挑戰並提升生產力，Google 推出了劃時代的 AI 程式設計智能體——Jules。這款工具不僅僅是程式碼的自動生成器，更是一個能夠理解專案、規劃任務、並與開發者協同作業的非同步夥伴。本文將帶您深入了解 Google Jules 的強大功能，以及如何將其融入您的日常工作流程，開啟全新的「Vibe 開發」高效體驗。
+Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：
+非同步工作流程 (Asynchronous Workflow): 這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。
+雲端虛擬機執行環境 (Cloud VM Execution Environment): 每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。
+深度整合 GitHub (Deep GitHub Integration): Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。
+智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop): 在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命 | 資訊分享平台">
+    <meta name="twitter:description" content="深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。
+在資訊科技飛速發展的今天，IT 專業人員與開發者肩負著日益繁重的任務。為了應對挑戰並提升生產力，Google 推出了劃時代的 AI 程式設計智能體——Jules。這款工具不僅僅是程式碼的自動生成器，更是一個能夠理解專案、規劃任務、並與開發者協同作業的非同步夥伴。本文將帶您深入了解 Google Jules 的強大功能，以及如何將其融入您的日常工作流程，開啟全新的「Vibe 開發」高效體驗。
+Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：
+非同步工作流程 (Asynchronous Workflow): 這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。
+雲端虛擬機執行環境 (Cloud VM Execution Environment): 每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。
+深度整合 GitHub (Deep GitHub Integration): Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。
+智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop): 在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。">
+    <meta property="og:url" content="http://localhost:1313/sw/ai/google_jules_20250527/index.html">
+    <meta property="og:site_name" content="資訊分享平台">
+    <meta property="og:title" content="Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命 | 資訊分享平台">
+    <meta property="og:description" content="深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。
+在資訊科技飛速發展的今天，IT 專業人員與開發者肩負著日益繁重的任務。為了應對挑戰並提升生產力，Google 推出了劃時代的 AI 程式設計智能體——Jules。這款工具不僅僅是程式碼的自動生成器，更是一個能夠理解專案、規劃任務、並與開發者協同作業的非同步夥伴。本文將帶您深入了解 Google Jules 的強大功能，以及如何將其融入您的日常工作流程，開啟全新的「Vibe 開發」高效體驗。
+Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：
+非同步工作流程 (Asynchronous Workflow): 這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。
+雲端虛擬機執行環境 (Cloud VM Execution Environment): 每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。
+深度整合 GitHub (Deep GitHub Integration): Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。
+智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop): 在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="軟體工程">
+    <meta property="article:published_time" content="2025-05-27T11:24:26+08:00">
+    <meta property="article:modified_time" content="2025-05-27T11:24:26+08:00">
+    <meta itemprop="name" content="Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命 | 資訊分享平台">
+    <meta itemprop="description" content="深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。
+在資訊科技飛速發展的今天，IT 專業人員與開發者肩負著日益繁重的任務。為了應對挑戰並提升生產力，Google 推出了劃時代的 AI 程式設計智能體——Jules。這款工具不僅僅是程式碼的自動生成器，更是一個能夠理解專案、規劃任務、並與開發者協同作業的非同步夥伴。本文將帶您深入了解 Google Jules 的強大功能，以及如何將其融入您的日常工作流程，開啟全新的「Vibe 開發」高效體驗。
+Google Jules 核心功能揭秘 Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：
+非同步工作流程 (Asynchronous Workflow): 這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。
+雲端虛擬機執行環境 (Cloud VM Execution Environment): 每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。
+深度整合 GitHub (Deep GitHub Integration): Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。
+智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop): 在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。">
+    <meta itemprop="datePublished" content="2025-05-27T11:24:26+08:00">
+    <meta itemprop="dateModified" content="2025-05-27T11:24:26+08:00">
+    <meta itemprop="wordCount" content="189">
+    <title>Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命 | 資訊分享平台</title>
+    <link href="/images/favicon.png?1748319401" rel="icon" type="image/png">
+    <link href="/images/favicon.ico?1748319401" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748319401" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1748319401" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1748319401" rel="stylesheet">
+    <link href="/css/theme.css?1748319401" rel="stylesheet">
+    <link href="/css/format-html.css?1748319401" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1748319401" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1748319401" defer></script>
+    <script src="/js/lunr/lunr.min.js?1748319401" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1748319401" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1748319401" defer></script>
+    <script src="/js/lunr/lunr.zh.min.js?1748319401" defer></script>
+    <script src="/js/search.js?1748319401" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/sw\/ai\/google_jules_20250527\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['zh'];
+      window.relearn.index_js_url="/searchindex.en.js?1748319401";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/sw/ai/google_jules_20250527/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class="a11y-only"><a itemprop="item" href="/index.html"><span itemprop="name">首頁</span></a><meta itemprop="position" content="1">&nbsp;/&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/sw/index.html"><span itemprop="name">軟體工程</span></a><meta itemprop="position" content="2">&nbsp;/&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/sw/ai/index.html"><span itemprop="name">Artificial Intelligence (人工智慧)</span></a><meta itemprop="position" content="3">&nbsp;/&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/sw/ai/index.html" title="Artificial Intelligence (人工智慧) (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/sw/cti/index.html" title="Computer Telephony Integration (電腦電話整合) (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable sw" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="google-jules-開發利器您的非同步-ai-程式設計夥伴引領-vibe-開發生產力革命">Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命</h1>
+
+<p>深入解析 Google 最新 AI 程式設計智能體 Jules 的核心功能、實作步驟與應用潛力，助您提升開發效率與專案品質。</p>
+<p>在資訊科技飛速發展的今天，IT 專業人員與開發者肩負著日益繁重的任務。為了應對挑戰並提升生產力，Google 推出了劃時代的 AI 程式設計智能體——Jules。這款工具不僅僅是程式碼的自動生成器，更是一個能夠理解專案、規劃任務、並與開發者協同作業的非同步夥伴。本文將帶您深入了解 Google Jules 的強大功能，以及如何將其融入您的日常工作流程，開啟全新的「Vibe 開發」高效體驗。</p>
+<p>Google Jules 核心功能揭秘
+Google Jules 憑藉其獨特的設計理念和先進技術，為開發者帶來前所未有的便利：</p>
+<p>非同步工作流程 (Asynchronous Workflow):
+這是 Jules 最顯著的特點。您可以將任務指派給 Jules，然後專注於其他工作。Jules 會在背景的雲端虛擬機中獨立執行，完成後通知您。這種模式極大地釋放了開發者的時間，無需等待 AI 完成每一步操作。</p>
+<p>雲端虛擬機執行環境 (Cloud VM Execution Environment):
+每個任務都在 Google Cloud 上一個安全的、隔離的虛擬機中執行。Jules 會複製您的 GitHub 儲存庫、安裝依賴、建置專案、執行測試並修改檔案，確保了專案的安全性與操作的完整性。</p>
+<p>深度整合 GitHub (Deep GitHub Integration):
+Jules 與 GitHub 無縫整合。開發者只需連接 GitHub 帳戶，Jules 就能直接操作儲存庫，包括建立分支、提交拉取請求 (Pull Request)、展示程式碼差異 (diff)，甚至產生語音變更記錄 (Audio Changelog)，讓您無需離開熟悉的 GitHub 工作流程。</p>
+<p>智能規劃與人機協作 (Intelligent Planning &amp; Human-in-the-Loop):
+在執行任何任務前，Jules 會生成一份詳細的「計畫書」，說明其預計的操作步驟、修改的檔案及其理由。開發者可以在此階段審查並修改指令，甚至在執行過程中進行調整，確保了開發者對專案的最終控制權。</p>
+<p>多語言支援與多步驟任務處理 (Multi-language Support &amp; Multi-step Task Processing):
+Jules 支援包括 JavaScript/TypeScript、Python、Go、Java、Rust 在內的多種主流程式語言。它能夠理解複雜的指令，並將其拆解為多個步驟來執行，例如升級依賴版本、修復相容性問題、然後補全單元測試等。</p>
+<p>Gemini 2.5 Pro 強力驅動:
+Jules 的強大理解與推理能力，源自 Google 最新的多模態 AI 模型 Gemini 2.5 Pro，使其能夠更好地理解大型程式碼庫的上下文和專案歷史。</p>
+<p>如何開始使用 Google Jules：實作步驟
+想要體驗 Jules 的強大功能，您可以按照以下步驟操作：</p>
+<p>訪問官網並登入： 前往 jules.google.com 並使用您的 Google 帳戶登入。</p>
+<p>連接 GitHub 帳戶： 按照指示同步您的 GitHub 帳戶，並授予 Jules 存取您儲存庫的權限。</p>
+<p>[連接 GitHub 帳戶的介面截圖示意]</p>
+<p>選擇儲存庫與分支： 選擇您希望 Jules 協助處理的特定儲存庫和分支。</p>
+<p>下達清晰的開發指令 (Prompt)： 以自然語言向 Jules 清晰描述您希望它完成的任務，例如：「請為 user_service.py 中的 get_user_profile 函數編寫單元測試，並確保涵蓋所有邊界情況。」</p>
+<p>[輸入指令的介面截圖示意]</p>
+<p>審查計畫並監控執行： Jules 會提供一份執行計畫供您審查。批准後，您可以追蹤其進度。</p>
+<p>[Jules 執行計畫展示介面截圖示意]</p>
+<p>審查並合併拉取請求： 任務完成後，Jules 會建立一個包含所有變更的拉取請求。您可以像審查團隊成員的程式碼一樣審查它，然後合併到您的專案中。</p>
+<p>Google Jules 應用場景與「Vibe 開發」潛力
+Jules 的應用潛力廣泛，尤其能協助 IT 人員提升工作效率：</p>
+<p>自動化重複性編碼任務： 例如生成樣板程式碼、更新依賴套件、格式化程式碼等。</p>
+<p>加速錯誤修復與功能迭代： 快速定位問題、根據描述生成修復方案或初步實現新功能。</p>
+<p>提升大型專案維護效率： 協助理解舊有程式碼、進行重構、添加註解或文件。</p>
+<p>輔助 IT 人員進行腳本編寫與自動化： 即使不是全職開發者，IT 維運、系統管理人員也能利用 Jules 快速生成實用的腳本，提升自動化水平。</p>
+<p>所謂「Vibe 開發」，指的是一種更流暢、更直觀、更少阻礙的開發體驗。Jules 透過其非同步特性和智能協作，減少了開發過程中的等待與摩擦，讓開發者能更專注於創造性工作，從而營造出一種積極高效的開發氛圍，這正是 Jules 提升生產力的核心價值之一。</p>
+<p>結論與展望
+Google Jules 的推出，標誌著 AI 在軟體開發領域的應用邁入了新的階段。它不僅僅是一個工具，更像是一位智能的程式設計夥伴，能夠顯著提升開發團隊的生產力和專案品質。對於在電腦螢幕前辛勤工作的 IT 人員而言，Jules 有潛力成為簡化日常任務、應對複雜挑戰的得力助手。</p>
+<p>隨著 AI 技術的持續進步，我們可以期待 Jules 及類似工具將在未來軟體工程中扮演更核心的角色。</p>
+<p>想親自體驗 Google Jules 如何革新您的開發流程嗎？立即訪問 jules.google.com 開始探索！</p>
+<p>如果您對 AI 在程式設計及其他 IT領域的應用感興趣，歡迎追蹤我的後續分享，一同探索科技前沿。</p>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-calendar'></i> May 27, 2025
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">資訊分享平台</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/sw/index.html"><input type="checkbox" id="R-section-3de8459f0aeb640a5553250679589de1" aria-controls="R-subsections-3de8459f0aeb640a5553250679589de1" checked><label for="R-section-3de8459f0aeb640a5553250679589de1"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 軟體工程</span></label><a class="padding" href="/sw/index.html">軟體工程</a><ul id="R-subsections-3de8459f0aeb640a5553250679589de1" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/sw/ai/index.html"><input type="checkbox" id="R-section-3ebf6839c081466a6bee6561c9c63cd8" aria-controls="R-subsections-3ebf6839c081466a6bee6561c9c63cd8" checked><label for="R-section-3ebf6839c081466a6bee6561c9c63cd8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Artificial Intelligence (人工智慧)</span></label><a class="padding" href="/sw/ai/index.html">Artificial Intelligence (人工智慧)</a><ul id="R-subsections-3ebf6839c081466a6bee6561c9c63cd8" class="collapsible-menu">
+            <li class="active " data-nav-id="/sw/ai/google_jules_20250527/index.html"><a class="padding" href="/sw/ai/google_jules_20250527/index.html">Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命</a></li></ul></li>
+            <li class="" data-nav-id="/sw/cti/index.html"><a class="padding" href="/sw/cti/index.html">Computer Telephony Integration (電腦電話整合)</a></li>
+            <li class="" data-nav-id="/sw/vibecoding/index.html"><a class="padding" href="/sw/vibecoding/index.html">Vibe Coding (氛圍編程)</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/ms/index.html"><input type="checkbox" id="R-section-479528d2c81de091efbe9fa96aef1a8d" aria-controls="R-subsections-479528d2c81de091efbe9fa96aef1a8d" checked><label for="R-section-479528d2c81de091efbe9fa96aef1a8d"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 管理工程</span></label><a class="padding" href="/ms/index.html">管理工程</a><ul id="R-subsections-479528d2c81de091efbe9fa96aef1a8d" class="collapsible-menu">
+            <li class="" data-nav-id="/ms/pmp/index.html"><a class="padding" href="/ms/pmp/index.html">專案管理</a></li>
+            <li class="" data-nav-id="/ms/cmmi/index.html"><a class="padding" href="/ms/cmmi/index.html">能力成熟度模型整合</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/cs/index.html"><input type="checkbox" id="R-section-7caae75ca51ba76834b82083f4ccfab8" aria-controls="R-subsections-7caae75ca51ba76834b82083f4ccfab8" checked><label for="R-section-7caae75ca51ba76834b82083f4ccfab8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 資安工程</span></label><a class="padding" href="/cs/index.html">資安工程</a><ul id="R-subsections-7caae75ca51ba76834b82083f4ccfab8" class="collapsible-menu">
+            <li class="" data-nav-id="/cs/cti/index.html"><a class="padding" href="/cs/cti/index.html">Cyber Threat Intelligence (網路威脅情資)</a></li>
+            <li class="" data-nav-id="/cs/iso_nist/index.html"><a class="padding" href="/cs/iso_nist/index.html">ISO＆NIST</a></li></ul></li>
+            <li class="" data-nav-id="/me/index.html"><a class="padding" href="/me/index.html">關於我</a></li>
+            <li class="alwaysopen " data-nav-id="/tools/index.html"><input type="checkbox" id="R-section-bf1399820dde3dd110e03ace4147ff86" aria-controls="R-subsections-bf1399820dde3dd110e03ace4147ff86" checked><label for="R-section-bf1399820dde3dd110e03ace4147ff86"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 一般工具</span></label><a class="padding" href="/tools/index.html">一般工具</a><ul id="R-subsections-bf1399820dde3dd110e03ace4147ff86" class="collapsible-menu">
+            <li class="" data-nav-id="/tools/texstudio/index.html"><a class="padding" href="/tools/texstudio/index.html">論文寫作工具：TeXstudio 安裝及使用指南</a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1748319401" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1748319401" defer></script>
+    <script src="/js/theme.js?1748319401" defer></script>
+  </body>
+</html>

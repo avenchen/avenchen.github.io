@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>專案管理 :: 資訊分享平台</title>
+    <title>專案管理 | 資訊分享平台</title>
     <link>http://localhost:1313/ms/pmp/index.html</link>
     <description>專案管理（Project Management，PM） 是一門與產品的規劃、研發、設計、行銷和其他有關產品生產和分銷的學問。它更深入地考量產品研發的時程、成本和人力等各種資源運用調度。專案管理涉及各個部門、團隊、資訊、企業SOP和IT系統的運籌帷幄。&#xA;專案管理的目的是產生一個符合客戶目標的完整專案。在許多情景下，它也可以通過塑造或改變客戶的想法，更切實地實現客戶的目標。一旦明確了客戶的目標，專案管理確保目標指導參與專案的其他人員，例如專案經理、設計師、承包商和分包商等，做出的所有決策。&#xA;專案管理的重要性體現在以下幾個方面：&#xA;協調和統籌：由於專案可能涉及多個團隊和不同的技術領域，專業的專案管理確保各方順利協作，減少溝通障礙，提高工作效率。&#xA;可追蹤性和透明度：專案管理有助於確保專案的可追蹤性，讓團隊能夠清晰地了解專案的進度和狀態。</description>
     <generator>Hugo</generator>
