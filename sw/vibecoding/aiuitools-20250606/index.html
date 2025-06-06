@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="zh-TW" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.5">
+    <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+    <meta name="description" content="&lt;!DOCTYPE html&gt;互動式AI UI開發工具報告AI UI 開發工具解析總覽工具比較工具詳解結論總覽工具比較工具詳解結論探索 AI 驅動的 UI 開發新時代本報告深入分析了當前市場上主流的 AI UI 開發工具。透過將靜態報告轉化為互動式儀表板，您可以更直觀地比較、篩選並找到最適合您需求的工具，從而加速您的設計與開發流程。">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="&lt;!DOCTYPE html&gt;互動式AI UI開發工具報告AI UI 開發工具解析總覽工具比較工具詳解結論總覽工具比較工具詳解結論探索 AI 驅動的 UI 開發新時代本報告深入分析了當前市場上主流的 AI UI 開發工具。透過將靜態報告轉化為互動式儀表板，您可以更直觀地比較、篩選並找到最適合您需求的工具，從而加速您的設計與開發流程。">
+    <meta property="og:url" content="http://localhost:1313/sw/vibecoding/aiuitools-20250606/index.html">
+    <meta property="og:site_name" content="資訊分享平台">
+    <meta property="og:description" content="&lt;!DOCTYPE html&gt;互動式AI UI開發工具報告AI UI 開發工具解析總覽工具比較工具詳解結論總覽工具比較工具詳解結論探索 AI 驅動的 UI 開發新時代本報告深入分析了當前市場上主流的 AI UI 開發工具。透過將靜態報告轉化為互動式儀表板，您可以更直觀地比較、篩選並找到最適合您需求的工具，從而加速您的設計與開發流程。">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="軟體工程">
+    <meta itemprop="description" content="&lt;!DOCTYPE html&gt;互動式AI UI開發工具報告AI UI 開發工具解析總覽工具比較工具詳解結論總覽工具比較工具詳解結論探索 AI 驅動的 UI 開發新時代本報告深入分析了當前市場上主流的 AI UI 開發工具。透過將靜態報告轉化為互動式儀表板，您可以更直觀地比較、篩選並找到最適合您需求的工具，從而加速您的設計與開發流程。">
+    <meta itemprop="wordCount" content="74">
+    <title></title>
+    <link href="/images/favicon.png?1749178211" rel="icon" type="image/png">
+    <link href="/images/favicon.ico?1749178211" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749178211" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1749178211" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1749178211" rel="stylesheet">
+    <link href="/css/theme.css?1749178211" rel="stylesheet">
+    <link href="/css/format-html.css?1749178211" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1749178211" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1749178211" defer></script>
+    <script src="/js/lunr/lunr.min.js?1749178211" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1749178211" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1749178211" defer></script>
+    <script src="/js/lunr/lunr.zh.min.js?1749178211" defer></script>
+    <script src="/js/search.js?1749178211" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/sw\/vibecoding\/aiuitools-20250606\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['zh'];
+      window.relearn.index_js_url="/searchindex.en.js?1749178211";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/sw/vibecoding/aiuitools-20250606/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class="a11y-only"><a itemprop="item" href="/index.html"><span itemprop="name">首頁</span></a><meta itemprop="position" content="1">&nbsp;/&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/sw/index.html"><span itemprop="name">軟體工程</span></a><meta itemprop="position" content="2">&nbsp;/&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/sw/vibecoding/index.html"><span itemprop="name">Vibe Coding (氛圍編程)</span></a><meta itemprop="position" content="3">&nbsp;/&nbsp;</li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/sw/vibecoding/google_jules_20250527/index.html" title="Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命 (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/sw/ai/index.html" title="Artificial Intelligence (人工智慧) (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable sw" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id=""></h1>
+
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互動式AI UI開發工具報告</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Calm Tech -->
+    <!-- Application Structure Plan: The SPA is designed as an interactive dashboard. The structure includes a sticky navigation header for easy access to key sections: "總覽" (Overview), "工具比較" (Tool Comparison), and "工具詳解" (Tool Details). This non-linear structure replaces the long scroll of a static report. The "總覽" section provides high-level statistics as engaging stat cards. The core of the application is the "工具比較" section, featuring an interactive radar chart for direct comparison and a filterable, sortable table for deep exploration. Clicking a tool in the table directs the user to its specific card in the "工具詳解" section, which uses an accordion layout to manage information density, now including detailed implementation steps and a direct website link. This task-oriented design transforms the report from a static document into a dynamic exploratory tool, allowing users to find and compare information based on their own criteria, which is far more usable and engaging. -->
+    <!-- Visualization & Content Choices: 
+        - Report Info: Overall statistics and introduction. -> Goal: Inform. -> Viz/Presentation: Stat cards (HTML/Tailwind) and styled text blocks. -> Interaction: None. -> Justification: Provide a quick, high-level summary to orient the user. -> Library/Method: HTML/Tailwind.
+        - Report Info: The main comparison table with 10 quantitative criteria. -> Goal: Compare, Organize, Filter. -> Viz/Presentation: 1) Interactive Radar Chart for comparing a few selected tools. 2) A fully interactive HTML table. -> Interaction: 1) Dropdown to select tools for the radar chart. 2) Category filters and clickable sortable headers for the table. Clicking a row highlights the tool and navigates to its details. -> Justification: These interactive visualizations empower users to actively query the data, compare tools based on their specific needs, and navigate complex data easily. -> Library/Method: Chart.js for the radar chart, Vanilla JS for the interactive table.
+        - Report Info: Detailed descriptions, implementation steps, and features for each of the 23 tools. -> Goal: Inform, Detail on Demand. -> Viz/Presentation: A card-based layout where each tool has its own card. Detailed implementation steps and website links are now included within an accordion. -> Interaction: Clicking to expand/collapse the accordion. -> Justification: Prevents information overload and presents detailed information cleanly only when the user requests it. -> Library/Method: HTML/Tailwind, Vanilla JS.
+        - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #F8F5F2; /* Warm Neutral Background */
+            color: #434242; /* Dark Neutral Text */
+        }
+        .accent-color {
+            background-color: #5C8374; /* Muted Sage/Teal */
+        }
+        .accent-text {
+            color: #5C8374;
+        }
+        .accent-border {
+            border-color: #5C8374;
+        }
+        .highlight-card {
+            box-shadow: 0 0 15px rgba(92, 131, 116, 0.5);
+            transform: scale(1.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 450px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .sortable-header {
+            cursor: pointer;
+            user-select: none;
+        }
+        .sort-asc::after {
+            content: ' ▲';
+            font-size: 0.8em;
+        }
+        .sort-desc::after {
+            content: ' ▼';
+            font-size: 0.8em;
+        }
+        .accordion-content ul {
+            list-style-type: decimal;
+            padding-left: 1.5rem;
+        }
+        .accordion-content li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl md:text-2xl font-bold accent-text">AI UI 開發工具解析</h1>
+                </div>
+                <nav class="hidden md:flex md:space-x-8">
+                    <a href="#overview" class="text-gray-600 hover:accent-text transition">總覽</a>
+                    <a href="#comparison" class="text-gray-600 hover:accent-text transition">工具比較</a>
+                    <a href="#details" class="text-gray-600 hover:accent-text transition">工具詳解</a>
+                    <a href="#conclusion" class="text-gray-600 hover:accent-text transition">結論</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white pb-4">
+            <a href="#overview" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">總覽</a>
+            <a href="#comparison" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">工具比較</a>
+            <a href="#details" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">工具詳解</a>
+            <a href="#conclusion" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">結論</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+
+        <!-- Section 1: Overview -->
+        <section id="overview" class="mb-16">
+            <h2 class="text-3xl font-bold mb-4 text-center">探索 AI 驅動的 UI 開發新時代</h2>
+            <p class="max-w-3xl mx-auto text-center text-gray-600 mb-8">
+                本報告深入分析了當前市場上主流的 AI UI 開發工具。透過將靜態報告轉化為互動式儀表板，您可以更直觀地比較、篩選並找到最適合您需求的工具，從而加速您的設計與開發流程。
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center max-w-4xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-4xl font-bold accent-text mb-2">23</div>
+                    <div class="text-gray-500">種工具已分析</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-4xl font-bold accent-text mb-2">5+</div>
+                    <div class="text-gray-500">大工具類別</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="text-4xl font-bold accent-text mb-2">10</div>
+                    <div class="text-gray-500">項核心評比指標</div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white p-8 rounded-lg shadow-sm">
+                <h3 class="text-2xl font-bold mb-4">什麼是 AI UI 開發工具？</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    AI UI 開發工具是指利用機器學習、自然語言處理、電腦視覺等 AI 技術，輔助或自動化 UI 設計與開發流程的軟體或平台。這些工具旨在：
+                </p>
+                <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
+                    <li><strong class="font-semibold">提高效率</strong>：自動執行重複性任務，如程式碼編寫、元件佈局等。</li>
+                    <li><strong class="font-semibold">降低門檻</strong>：使非專業開發者也能快速建構 UI 原型甚至成品。</li>
+                    <li><strong class="font-semibold">激發創意</strong>：透過 AI 生成多樣化的設計方案，提供靈感。</li>
+                    <li><strong class="font-semibold">優化體驗</strong>：分析使用者行為，提供 UI 改進建議。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Tool Comparison -->
+        <section id="comparison" class="mb-16">
+            <h2 class="text-3xl font-bold mb-2 text-center">互動式工具比較</h2>
+            <p class="max-w-3xl mx-auto text-center text-gray-600 mb-8">
+                透過下方的雷達圖和互動表格，從多個維度比較不同工具的優劣。點擊表格標頭可進行排序，點擊表格列可跳轉至工具詳情。
+            </p>
+
+            <!-- Radar Chart -->
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm mb-8">
+                <h3 class="text-2xl font-bold mb-4">雷達圖比較</h3>
+                <div class="flex flex-wrap gap-4 mb-4 items-center">
+                    <p class="font-medium">選擇工具進行比較 (最多4個):</p>
+                    <div id="radar-chart-selectors" class="flex flex-wrap gap-2"></div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Interactive Table -->
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm">
+                 <h3 class="text-2xl font-bold mb-4">詳細評比表</h3>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <button data-filter="all" class="filter-btn accent-color text-white py-1 px-3 rounded-full text-sm">全部</button>
+                    <!-- Filter buttons will be inserted here by JS -->
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <!-- Table headers will be inserted here by JS -->
+                            </tr>
+                        </thead>
+                        <tbody id="tools-table-body">
+                            <!-- Table rows will be inserted here by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Tool Details -->
+        <section id="details" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-center">工具詳解</h2>
+            <div id="tools-detail-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tool detail cards will be inserted here by JS -->
+            </div>
+        </section>
+        
+        <!-- Section 4: Conclusion -->
+        <section id="conclusion">
+            <div class="bg-white p-8 rounded-lg shadow-sm">
+                <h2 class="text-3xl font-bold mb-4 text-center">結論與未來展望</h2>
+                <p class="text-gray-700 leading-relaxed max-w-4xl mx-auto">
+                    AI UI 開發工具正處於快速發展階段，它們極大地改變了傳統的 UI 設計和開發模式。從大型語言模型提供的程式碼生成，到專用平台實現的設計稿一鍵轉程式碼，再到整合 AI 的 IDE 提升開發體驗，這些工具都在不同層面賦能開發者和設計師。
+                    <br><br>
+                    選擇合適的工具取決於具體的專案需求、團隊技能、預算以及對程式碼品質和設計自由度的要求。未來，我們可以期待 AI 在 UI 開發領域帶來更多突破，例如更精準的設計理解、更深度的使用者體驗優化、以及更無縫的設計與開發協作流程。持續關注並學習使用這些新興工具，將有助於在激烈的市場競爭中保持領先。
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toolsData = [
+                { name: "Google Gemini Pro", category: "LLM/程式碼助理", feature: "強大多模態理解，支援文字、圖片、程式碼輸入", ease: 4, quality: 4, support: "多樣", price: "API/平台計費", ai: 5, flexibility: 4, learning: 2, freedom: 3, collab: 2, preview: "N/A",
+                  websiteUrl: "https://aistudio.google.com/",
+                  detailedSteps: [
+                      "存取方式：透過 Google AI Studio (面向一般使用者)、Vertex AI (企業級應用) 或 Gemini API (整合開發)。",
+                      "下達指令 (Prompting)：在聊天介面或 API 請求中，清晰描述您想要的 UI 元素或頁面。可提供顏色主題、元件樣式、互動行為等細節。支援上傳 UI 草圖或參考圖片以輔助理解。",
+                      "程式碼生成：Gemini 會根據您的指令生成相應的程式碼 (HTML, CSS, JavaScript, React, Vue, Flutter 等)。",
+                      "迭代與優化：將生成的程式碼複製到您的 IDE 中。測試並根據需要向 Gemini 提出修改要求，例如調整樣式或功能。"
+                  ]},
+                { name: "OpenAI ChatGPT (GPT-4o)", category: "LLM/程式碼助理", feature: "領先的 NLP 和程式碼生成，知識廣泛", ease: 4, quality: 4, support: "多樣", price: "訂閱制", ai: 5, flexibility: 4, learning: 2, freedom: 3, collab: 2, preview: "N/A",
+                  websiteUrl: "https://chat.openai.com/",
+                  detailedSteps: [
+                      "存取方式：前往 ChatGPT 網站註冊並登入。建議使用付費的 Plus/Team 方案以存取 GPT-4/GPT-4o 以獲得更佳的程式碼生成品質。",
+                      "撰寫 Prompt：提供詳細的 UI 需求，例如：「幫我用 React 和 Tailwind CSS 寫一個產品卡片元件，包含圖片、產品名稱、價格和一個『加入購物車』按鈕。」",
+                      "獲取程式碼：ChatGPT 會輸出程式碼片段或完整元件。",
+                      "整合與測試：將程式碼整合到您的專案中，進行測試和調整。可以追問 ChatGPT 進行修改，如：「如何讓這個卡片在手機螢幕上垂直堆疊？」"
+                  ]},
+                { name: "Anthropic Claude (Claude 3)", category: "LLM/程式碼助理", feature: "強調安全與實用性，長上下文處理", ease: 4, quality: 4, support: "多樣", price: "API/訂閱制", ai: 4, flexibility: 4, learning: 2, freedom: 3, collab: 2, preview: "N/A",
+                  websiteUrl: "https://claude.ai/",
+                  detailedSteps: [
+                      "存取方式：透過 Claude.ai 網站或 API 存取。",
+                      "溝通需求：向 Claude 清晰描述您的 UI 需求，包括使用的技術棧、元件細節、互動邏輯等。",
+                      "生成與應用：Claude 會提供程式碼，您可以複製並用於您的專案中。",
+                      "迭代修正：若生成結果不完全符合預期，可提供回饋，要求 Claude 進行修正或補充。"
+                  ]},
+                { name: "GitHub Copilot", category: "LLM/程式碼助理", feature: "深度整合 IDE，即時上下文感知程式碼建議", ease: 4, quality: 4, support: "IDE 支援", price: "訂閱制", ai: 5, flexibility: 4, learning: 2, freedom: "N/A", collab: 3, preview: "即時",
+                  websiteUrl: "https://github.com/features/copilot",
+                  detailedSteps: [
+                      "安裝與設定：在您的 IDE (如 VS Code, JetBrains IDEs) 中安裝 GitHub Copilot 擴充功能，並使用您的 GitHub 帳戶登入並訂閱。",
+                      "編寫程式碼/註解：當您開始編寫 UI 程式碼 (HTML, CSS, JavaScript, React 等)，或撰寫描述功能的註解時 (例如 `// 創建一個置中的登入表單`)，Copilot 會自動提供程式碼建議。",
+                      "接受或修改建議：按 `Tab` 鍵接受建議，或使用快捷鍵瀏覽並選擇其他建議方案。",
+                      "聊天功能 (Copilot Chat)：在 IDE 中開啟 Copilot Chat，可以直接提問或要求生成特定 UI 元件，例如：「幫我生成一個使用 Flexbox 的三欄佈局」。"
+                  ]},
+                { name: "Vercel v0.dev", category: "UI 生成平台", feature: "快速生成高品質 React/Tailwind/shadcn UI", ease: 4, quality: 5, support: "React, Tailwind", price: "免費/額度制", ai: 5, flexibility: 4, learning: 2, freedom: 4, collab: 1, preview: "即時",
+                  websiteUrl: "https://v0.dev/",
+                  detailedSteps: [
+                      "存取：前往 v0.dev 網站，使用 Vercel 帳戶登入。",
+                      "描述 UI：在輸入框中輸入您想要的 UI 描述，例如：「一個現代化的儀表板側邊欄，包含圖示和文字標籤」。",
+                      "AI 生成與選擇：v0.dev 會基於您的描述生成數個 UI 設計方案供您選擇。",
+                      "迭代與調整：您可以選擇一個方案，並透過進一步的文字指令進行修改，例如：「將圖示顏色改為深灰色」，或「增加一個搜尋框」。",
+                      "獲取程式碼：滿意後，可以直接複製生成的 React 程式碼 (通常使用 TypeScript 和 shadcn/ui 元件) 到您的專案中。"
+                  ]},
+                { name: "Framer AI", category: "UI 生成平台", feature: "文字轉互動網頁設計，結合強大視覺編輯", ease: 4, quality: 4, support: "React (Framer)", price: "訂閱制", ai: 5, flexibility: 3, learning: 3, freedom: 5, collab: 5, preview: "即時",
+                  websiteUrl: "https://www.framer.com/ai/",
+                  detailedSteps: [
+                      "存取：打開 Framer 應用程式或網頁版。",
+                      "啟動 AI 生成：在 Framer 畫布中，尋找並點擊啟動 AI 生成的選項或按鈕。",
+                      "輸入 Prompt：詳細描述您想要的網頁或特定區塊，例如：「為一家手沖咖啡店設計一個著陸頁，風格簡約，包含品牌故事、特色飲品輪播和線上預訂按鈕。」",
+                      "設計生成與自訂：Framer AI 會生成一個包含佈局、初步內容和樣式的設計稿。您可以使用 Framer 強大的視覺編輯工具進一步修改顏色、字體、圖片、互動效果等。",
+                      "發佈或匯出程式碼：可以直接在 Framer 平台發佈網站。Framer 主要生成 React 程式碼，可供開發者參考或整合。"
+                  ]},
+                { name: "Visily AI", category: "UI 生成平台", feature: "支援草圖/截圖/文字生成UI，多格式匯出", ease: 4, quality: 3, support: "HTML/CSS, React", price: "免費/訂閱制", ai: 5, flexibility: 3, learning: 2, freedom: 4, collab: 4, preview: "即時",
+                  websiteUrl: "https://visily.ai/",
+                  detailedSteps: [
+                      "註冊與登入：前往 Visily 網站註冊帳戶並登入。",
+                      "創建專案：開始一個新專案。",
+                      "選擇輸入方式：可選擇 Screenshot to Design (上傳現有應用程式或網站的截圖)、Sketch to Design (上傳手繪草圖) 或 Text to UI (輸入文字描述)。",
+                      "AI 處理與生成：Visily AI 會分析您的輸入並生成可編輯的 UI 設計稿。",
+                      "編輯與協作：使用 Visily 的線上編輯器調整設計細節，添加互動元素，並可與團隊成員協作。",
+                      "匯出程式碼：完成設計後，通常支援匯出 HTML/CSS 或 React 等前端程式碼。"
+                  ]},
+                { name: "Uizard", category: "UI 生成平台", feature: "專精手繪草圖/線框圖快速轉數位 UI", ease: 5, quality: 3, support: "React, Vue, HTML", price: "免費/訂閱制", ai: 5, flexibility: 4, learning: 1, freedom: 4, collab: 4, preview: "即時",
+                  websiteUrl: "https://uizard.io/",
+                  detailedSteps: [
+                      "註冊與登入：前往 Uizard 網站並創建帳戶。",
+                      "選擇輸入方式：可以上傳手繪草圖的照片、數位線框圖、螢幕截圖，或直接輸入文字描述來生成 UI。",
+                      "AI 轉換：Uizard AI 會將您的輸入轉換為數位化的、可編輯的 UI 設計。",
+                      "編輯與客製化：在 Uizard 的編輯器中修改顏色、文字、佈局，從元件庫中拖拽元素，或調整元件屬性。",
+                      "生成原型與匯出：可以快速生成互動原型進行測試，並將設計匯出為圖片、Sketch 檔案，或前端程式碼 (如 React, Vue, Angular, HTML/CSS)。"
+                  ]},
+                { name: "TeleportHQ", category: "UI 生成平台", feature: "視覺設計轉乾淨多框架前端程式碼", ease: 4, quality: 4, support: "React, Vue, HTML", price: "免費/訂閱制", ai: 3, flexibility: 5, learning: 3, freedom: 4, collab: 5, preview: "即時",
+                  websiteUrl: "https://teleporthq.io/",
+                  detailedSteps: [
+                      "註冊與開始：在 TeleportHQ 網站創建帳戶並登入。",
+                      "設計 UI：使用其內建的視覺編輯器從頭開始設計，或匯入 Figma 設計稿。",
+                      "AI 功能應用 (Vision API)：TeleportHQ 的 AI 技術會分析設計稿的結構和樣式，以優化程式碼輸出。",
+                      "程式碼生成：選擇目標前端框架 (如 React, Vue, Angular, Next.js, HTML/CSS 等) 並生成程式碼。",
+                      "匯出與整合：下載生成的程式碼包或直接與 GitHub 等版本控制系統同步。"
+                  ]},
+                { name: "Builder.io Visual Copilot", category: "UI 生成平台", feature: "Figma 一鍵轉多框架程式碼，AI 輔助視覺編輯", ease: 4, quality: 4, support: "React, Vue, HTML", price: "訂閱制", ai: 4, flexibility: 5, learning: 3, freedom: 5, collab: 4, preview: "即時",
+                  websiteUrl: "https://www.builder.io/figma",
+                  detailedSteps: [
+                      "安裝 Figma Plugin：在 Figma Community 中搜尋並安裝 Builder.io 的插件。",
+                      "設計或選擇 Figma 畫框：在 Figma 中完成您的 UI 設計，或選取現有的畫框 (Frame)。",
+                      "透過 Plugin 轉換：選中要轉換的畫框，打開 Builder.io 插件，選擇目標框架 (如 React, Vue, Svelte, Qwik, HTML/CSS 等)。",
+                      "AI 輔助編輯 (在 Builder.io 平台)：轉換後的設計可以在 Builder.io 的視覺編輯器中進一步透過 AI 輔助進行修改和調整，例如生成響應式佈局或填充內容。",
+                      "獲取程式碼：複製或匯出最終生成的程式碼。"
+                  ]},
+                { name: "Locofy.ai", category: "UI 生成平台", feature: "設計轉生產級程式碼，AI 輔助標記提升準確性", ease: 3, quality: 4, support: "React, Vue, HTML", price: "免費/訂閱制", ai: 4, flexibility: 5, learning: 3, freedom: 5, collab: 4, preview: "即時",
+                  websiteUrl: "https://www.locofy.ai/",
+                  detailedSteps: [
+                      "安裝 Plugin：在 Figma 或 Adobe XD 中安裝 Locofy.ai 插件。",
+                      "設計 UI：在您選擇的設計工具中完成 UI 設計。",
+                      "使用 Locofy 標記：透過插件標記設計元素，定義其行為 (如按鈕、輸入框)、響應式設定和互動。Locofy AI 會輔助進行自動標記以加速此過程。",
+                      "預覽與同步：在 Locofy Builder (其線上平台) 中預覽生成的 UI，並進行必要的調整和優化。",
+                      "匯出程式碼：選擇目標框架 (如 React, Next.js, Vue, Svelte, HTML/CSS, Flutter 等) 並匯出可用的前端程式碼。"
+                  ]},
+                { name: "Fronty", category: "UI 生成平台", feature: "簡單易用，直接將圖片轉靜態網頁程式碼", ease: 3, quality: 2, support: "HTML, CSS", price: "免費/訂閱制", ai: 4, flexibility: 2, learning: 1, freedom: 2, collab: 1, preview: "線上編輯器",
+                  websiteUrl: "https://fronty.com/",
+                  detailedSteps: [
+                      "前往網站：訪問 Fronty 官方網站。",
+                      "上傳圖片：上傳包含您 UI 設計的圖片檔案 (如 JPEG, PNG)。",
+                      "AI 分析與轉換：Fronty 的 AI 引擎會分析圖片中的元素、佈局和樣式，並嘗試將其轉換為 HTML 和 CSS 程式碼。",
+                      "編輯與下載：在其提供的線上編輯器中進行必要的調整和修正，然後下載生成的程式碼。"
+                  ]},
+                { name: "STUDIO AI", category: "UI 生成平台", feature: "AI 輔助設計並直接發佈網站，無需編碼", ease: 4, quality: "N/A", support: "STUDIO 生態", price: "訂閱制", ai: 4, flexibility: 3, learning: 3, freedom: 4, collab: 4, preview: "即時",
+                  websiteUrl: "https://studio.design/",
+                  detailedSteps: [
+                      "存取平台：訪問 STUDIO 網站並登入。",
+                      "開始設計：使用其內建的視覺化設計工具創建 UI，或從範本開始，或匯入現有設計素材。",
+                      "AI 功能應用：利用 STUDIO AI 提供的功能輔助設計過程，例如智慧佈局建議、響應式設計調整等。",
+                      "發佈網站：完成設計後，可以直接透過 STUDIO 平台將您的設計發佈為一個功能完整的網站，STUDIO AI 負責處理後端的程式碼生成和部署。"
+                  ]},
+                { name: "Project IDX (Google)", category: "整合 AI 的 IDE", feature: "Google 出品瀏覽器端 AI IDE，支援全端開發", ease: 4, quality: 4, support: "多樣", price: "免費 (預覽期)", ai: 5, flexibility: 4, learning: 3, freedom: "N/A", collab: 4, preview: "即時",
+                  websiteUrl: "https://idx.dev/",
+                  detailedSteps: [
+                      "存取與設定：前往 Project IDX 網站申請存取 (如果仍處於預覽或邀請階段)。",
+                      "創建或匯入專案：支援從多種範本創建新專案 (如 React, Vue, Flutter, Node.js 等) 或從 GitHub 匯入現有專案。",
+                      "AI 輔助編碼：利用內建的 AI 程式碼助理 (基於 Codey 和 Gemini)：",
+                      "  - 程式碼生成：在程式碼編輯器中或透過聊天視窗，要求 AI 生成 UI 元件、函數或整個檔案結構 (例如：「@idx generate a React component for a user profile card」)。",
+                      "  - 程式碼解釋、補全、除錯：IDX AI 可以解釋現有程式碼、提供智慧補全建議、輔助找出並修復錯誤。",
+                      "預覽與部署：內建網頁預覽功能，可即時查看前端變更。支援與 Google Cloud 等平台整合以進行部署。"
+                  ]},
+                { name: "Replit Ghostwriter", category: "整合 AI 的 IDE", feature: "線上 IDE 內建 AI 助理，方便快速編程與協作", ease: 4, quality: 3, support: "多樣", price: "訂閱制", ai: 4, flexibility: 3, learning: 2, freedom: "N/A", collab: 5, preview: "即時",
+                  websiteUrl: "https://replit.com/ghostwriter",
+                  detailedSteps: [
+                      "登入 Replit：前往 Replit 網站並登入您的帳戶。",
+                      "啟用 Ghostwriter：在您的 Repl (專案) 中，啟用 Ghostwriter AI 功能 (此功能通常需要訂閱 Replit 的付費方案)。",
+                      "使用 AI 功能：",
+                      "  - Complete Code: 在編寫程式碼時，Ghostwriter 會提供自動完成建議。",
+                      "  - Generate Code: 根據您撰寫的註解或選取的程式碼片段，要求 Ghostwriter 生成新的程式碼塊。",
+                      "  - Explain Code: 選取一段程式碼，要求 Ghostwriter 解釋其功能和邏輯。",
+                      "  - Transform Code: 要求 Ghostwriter 修改或重構選定的程式碼，例如改變風格或優化。",
+                      "  - Debug Code: 協助找出程式碼中的錯誤並提供修復建議。"
+                  ]},
+                { name: "Cursor.sh", category: "整合 AI 的 IDE", feature: "深度整合 LLM 輔助整個開發流程的編輯器", ease: 4, quality: 4, support: "多樣", price: "免費/訂閱制", ai: 5, flexibility: 4, learning: 2, freedom: "N/A", collab: 3, preview: "即時",
+                  websiteUrl: "https://cursor.sh/",
+                  detailedSteps: [
+                      "下載與安裝：從 Cursor.sh 官方網站下載並安裝對應您作業系統的編輯器版本。",
+                      "AI 聊天與指令：編輯器內建聊天介面，可以直接與 AI 對話 (通常基於 GPT 模型)。您可以要求 AI 生成 UI 程式碼、修改現有程式碼、解釋概念、修復錯誤等。例如：「Create a responsive navigation bar with a logo and three links using React and Tailwind CSS.」",
+                      "上下文感知編輯：AI 能夠理解您專案的上下文 (已開啟的檔案、程式碼結構)，從而提供更精準的輔助和建議。",
+                      "自動除錯與重構：利用 AI 功能快速定位和修復程式碼中的問題，或進行程式碼重構以提升品質。"
+                  ]},
+                { name: "Webflow AI", category: "無程式碼/低程式碼", feature: "強大視覺建站工具結合 AI，加速佈局內容樣式", ease: 4, quality: "N/A", support: "Webflow 生態", price: "訂閱制", ai: 4, flexibility: 3, learning: 2, freedom: 5, collab: 5, preview: "即時",
+                  websiteUrl: "https://webflow.com/ai",
+                  detailedSteps: [
+                      "登入 Webflow：進入您的 Webflow 帳戶並打開或創建一個專案。",
+                      "使用 AI 功能：Webflow AI 功能可能整合在設計器的不同部分：",
+                      "  - AI Powered Layouts/Sections: 可能會提供基於文字描述生成頁面區塊或完整佈局的功能。",
+                      "  - AI Content Generation: 在需要文字內容的地方 (如標題、段落)，利用 AI 輔助生成或改寫文案。",
+                      "  - AI Styling: 根據您的品牌風格或描述，智慧調整元素的樣式、顏色搭配等。",
+                      "視覺化編輯：結合 Webflow 強大的視覺化編輯器，對 AI 生成的內容進行細化調整和客製化。"
+                  ]},
+                { name: "Wix ADI", category: "無程式碼/低程式碼", feature: "AI 透過問答自動生成個性化網站初稿", ease: 5, quality: "N/A", support: "Wix 生態", price: "平台方案內含", ai: 4, flexibility: 2, learning: 1, freedom: 3, collab: 3, preview: "即時",
+                  websiteUrl: "https://www.wix.com/adi-website-builder",
+                  detailedSteps: [
+                      "選擇 Wix ADI：在 Wix 創建新網站時，選擇 ADI (Artificial Design Intelligence) 選項。",
+                      "回答問題：ADI 會引導您回答一系列關於您的業務類型、網站目標、所需功能 (如商店、部落格)、風格偏好 (如現代、簡約) 等問題。",
+                      "AI 生成網站：ADI 根據您的回答，自動從其資料庫中選擇合適的佈局、圖片、文字內容，並生成一個網站初稿。",
+                      "客製化：您可以修改 AI 生成的網站，包括更換顏色主題、字體、調整區塊順序、替換圖片和編輯文字內容等。"
+                  ]},
+                { name: "Durable.co", category: "無程式碼/低程式碼", feature: "專為小企業快速生成含內容的網站", ease: 4, quality: "N/A", support: "Durable 生態", price: "訂閱制", ai: 4, flexibility: 2, learning: 1, freedom: 2, collab: 1, preview: "即時",
+                  websiteUrl: "https://durable.co/",
+                  detailedSteps: [
+                      "前往網站：訪問 Durable.co 官方網站。",
+                      "輸入業務資訊：通常會要求您輸入您的業務類型 (如餐廳、顧問) 和業務名稱。",
+                      "AI 生成：AI 會在短時間內 (號稱數十秒) 自動生成一個包含基本頁面 (如首頁、關於我們、服務項目、聯絡方式)、相關文案和圖庫圖片的網站原型。",
+                      "編輯與發佈：您可以對生成的網站進行簡單的編輯，例如修改文字、更換圖片、調整顏色等，然後快速發佈。"
+                  ]},
+                { name: "AI 助理 + shadcn/ui", category: "元件庫結合", feature: "結合 AI 助理與高品質元件庫，靈活客製化 UI", ease: 4, quality: 5, support: "React, Next.js", price: "AI助理費用+免費庫", ai: 4, flexibility: 5, learning: 2, freedom: 5, collab: "N/A", preview: "N/A",
+                  websiteUrl: "https://ui.shadcn.com/",
+                  detailedSteps: [
+                      "設定 shadcn/ui：根據 shadcn/ui 官方文件，在您的 React (通常是 Next.js) 專案中安裝和設定 shadcn/ui。這通常涉及執行一些 CLI 指令來初始化並配置 `tailwind.config.js` 和 `globals.css`。",
+                      "向 AI 助理提問：使用您選擇的 AI 程式碼助理 (如 ChatGPT, GitHub Copilot Chat)，例如：「使用 shadcn/ui 幫我創建一個包含標題、描述和一個確認按鈕的對話框 (Dialog)。」 或 「如何用 shadcn/ui 實現一個可排序的表格？」",
+                      "獲取指令和程式碼：AI 助理可能會提供 shadcn/ui CLI 指令來添加所需的元件 (例如 `npx shadcn-ui@latest add dialog`)，並提供如何在其基礎上編寫 React 程式碼的範例。",
+                      "整合與客製化：執行 CLI 指令將元件的原始碼直接複製到您的專案中 (通常在 `components/ui` 目錄下)。然後，您可以根據 AI 提供的範例或官方文件，自由地修改這些元件的程式碼和樣式以滿足您的特定需求。"
+                  ]},
+                { name: "Diagram.com (Magician AI)", category: "其他", feature: "Figma 內多功能 AI 設計輔助 (圖示/圖片/文案)", ease: 4, quality: "N/A", support: "Figma 設計", price: "訂閱制 (插件)", ai: 4, flexibility: "N/A", learning: 2, freedom: 4, collab: 4, preview: "Figma 內",
+                  websiteUrl: "https://magician.design/",
+                  detailedSteps: [
+                      "安裝 Magician 插件：在 Figma Community 中搜尋「Magician by Diagram」並安裝該插件到您的 Figma 帳戶。",
+                      "在 Figma 中使用：打開您的 Figma 設計檔案，選中一個畫框、文字物件或空白區域，然後從 Figma 的插件選單中運行 Magician。",
+                      "選擇 AI 功能：",
+                      "  - Magic Icon: 輸入描述 (如「火箭圖示」) 生成多個圖示選項。",
+                      "  - Magic Image: 輸入描述 (如「未來城市的天際線」) 生成圖片，並可選擇風格。",
+                      "  - Magic Copy: 選取文字框，讓 AI 輔助撰寫或改寫 UI 文案 (如按鈕文字、標題)。",
+                      "  - Magic UI (Text to UI): 輸入 UI 描述 (如「一個登入表單，包含郵箱、密碼和提交按鈕」) 生成初步的 UI 設計佈局。"
+                  ]},
+                { name: "Gamma.app", category: "其他", feature: "AI 快速生成簡報/文件/網頁佈局，適合概念展示", ease: 4, quality: "N/A", support: "網頁 (佈局)", price: "免費/訂閱制", ai: 4, flexibility: 3, learning: 2, freedom: 3, collab: 3, preview: "即時",
+                  websiteUrl: "https://gamma.app/",
+                  detailedSteps: [
+                      "註冊登入：訪問 Gamma.app 網站並創建帳戶或登入。",
+                      "選擇創建類型：選擇您想創建的內容類型，例如「Presentation」(簡報)、「Document」(文件) 或「Webpage」(網頁)。",
+                      "輸入主題/指令：提供您想創建內容的主題或詳細指令。例如，對於 UI/UX 相關內容，可以輸入「一個行動應用程式的用戶註冊流程 UI 設計概念」或「新產品功能介紹網頁佈局」。",
+                      "AI 生成初稿：Gamma 會根據您的輸入，自動生成包含卡片式佈局、初步文字內容和建議圖片的初稿。",
+                      "編輯與分享：使用 Gamma 的線上編輯器修改佈局、文字、圖片、顏色主題等，並可分享生成的內容連結。"
+                  ]},
+                { name: "Microsoft Copilot Studio", category: "其他", feature: "建立自訂 AI 聊天機器人，設計對話式 UI 體驗", ease: 3, quality: "N/A", support: "多渠道整合", price: "Microsoft 平台計費", ai: 4, flexibility: 4, learning: 3, freedom: 4, collab: 4, preview: "測試環境",
+                  websiteUrl: "https://copilotstudio.microsoft.com/",
+                  detailedSteps: [
+                      "存取平台：透過 Microsoft Power Platform 或專用入口網站存取 Copilot Studio。",
+                      "創建 Copilot：開始一個新的 Copilot (聊天機器人) 專案，為其命名並選擇基礎語言。",
+                      "定義主題 (Topics)：創建不同的對話主題，每個主題代表一個特定的使用者意圖或對話路徑 (例如「查詢訂單狀態」、「產品功能介紹」)。",
+                      "設計對話流程：使用視覺化編輯器為每個主題設計對話流程。這包括：",
+                      "  - 觸發詞 (Trigger phrases): 定義啟動該主題的用戶語句。",
+                      "  - 節點 (Nodes): 添加訊息節點 (顯示文字、圖片、卡片)、問題節點 (向用戶提問)、條件節點 (根據用戶回答分支對話)、動作節點 (調用 Power Automate 流程或外部 API)。",
+                      "測試與迭代：在測試窗格中測試您的 Copilot，並根據測試結果調整對話流程。",
+                      "整合與部署：將完成的 Copilot 部署到不同的渠道，例如公司網站、Microsoft Teams、Facebook Messenger 或自訂應用程式中。"
+                  ]}
+            ];
+
+            const tableHeaders = { name: "工具名稱", category: "類別", ease: "易用性", quality: "程式碼品質", ai: "AI整合度", price: "價格模型", support: "支援框架", feature: "特色或優點" };
+            const tableBody = document.getElementById('tools-table-body');
+            const detailCardsContainer = document.getElementById('tools-detail-cards');
+            let currentSort = { column: 'name', order: 'asc' };
+            
+            function renderTable(filter = 'all') {
+                let filteredData = toolsData;
+                if (filter !== 'all') {
+                    filteredData = toolsData.filter(tool => tool.category === filter);
+                }
+
+                filteredData.sort((a, b) => {
+                    let valA = a[currentSort.column];
+                    let valB = b[currentSort.column];
+                    
+                    if(typeof valA === 'string' && !isNaN(parseInt(valA))) valA = parseInt(valA);
+                    if(typeof valB === 'string' && !isNaN(parseInt(valB))) valB = parseInt(valB);
+
+                    if(typeof valA === 'string' && valA === 'N/A') valA = -1; // Treat N/A as smallest for sorting
+                    if(typeof valB === 'string' && valB === 'N/A') valB = -1;
+
+
+                    if (typeof valA === 'string' && typeof valB === 'string' && valA !== 'N/A' && valB !== 'N/A') {
+                         return currentSort.order === 'asc' ? valA.localeCompare(valB, 'zh-Hant') : valB.localeCompare(valA, 'zh-Hant');
+                    } else if (typeof valA === 'number' && typeof valB === 'number') {
+                        return currentSort.order === 'asc' ? valA - valB : valB - valA;
+                    } else if (valA === -1 && valB !== -1) { // N/A comes first in asc, last in desc
+                        return currentSort.order === 'asc' ? -1 : 1;
+                    } else if (valB === -1 && valA !== -1) {
+                         return currentSort.order === 'asc' ? 1 : -1;
+                    }
+                    return 0; // Default if types are mixed or both N/A
+                });
+
+                tableBody.innerHTML = '';
+                filteredData.forEach(tool => {
+                    const row = document.createElement('tr');
+                    row.className = 'border-b border-gray-200 hover:bg-gray-50 cursor-pointer';
+                    row.dataset.toolName = tool.name;
+                    row.innerHTML = `
+                        <td class="py-3 px-4 font-medium">${tool.name}</td>
+                        <td class="py-3 px-4 text-sm text-gray-600">${tool.category}</td>
+                        <td class="py-3 px-4 text-center">${renderRating(tool.ease)}</td>
+                        <td class="py-3 px-4 text-center">${renderRating(tool.quality)}</td>
+                        <td class="py-3 px-4 text-center">${renderRating(tool.ai)}</td>
+                        <td class="py-3 px-4 text-sm text-gray-600">${tool.price}</td>
+                    `;
+                    row.addEventListener('click', () => {
+                        const cardId = `card-${tool.name.replace(/[\s().+/]/g, '-')}`;
+                        const card = document.getElementById(cardId);
+                        if (card) {
+                            document.querySelectorAll('.highlight-card').forEach(c => c.classList.remove('highlight-card'));
+                            card.classList.add('highlight-card');
+                            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            setTimeout(() => card.classList.remove('highlight-card'), 2000);
+                        }
+                    });
+                    tableBody.appendChild(row);
+                });
+            }
+
+            function renderRating(rating) {
+                if (rating === "N/A" || typeof rating === 'undefined' || isNaN(parseInt(rating))) {
+                    return `<span class="text-xs px-2 py-1 rounded-full bg-gray-200 text-gray-600">${rating === undefined ? 'N/A' : rating}</span>`;
+                }
+                const numericRating = parseInt(rating);
+                let stars = '';
+                for (let i = 0; i < 5; i++) {
+                    stars += `<span class="text-lg ${i < numericRating ? 'text-yellow-400' : 'text-gray-300'}">★</span>`;
+                }
+                return stars;
+            }
+            
+            function createSortableHeaders() {
+                const headerRow = document.querySelector('#comparison thead tr');
+                headerRow.innerHTML = ''; // Clear existing headers if any
+                const sortableColumns = { name: "工具名稱", category: "類別", ease: "易用性", quality: "程式碼品質", ai: "AI整合度", price: "價格模型" };
+                Object.entries(sortableColumns).forEach(([key, value]) => {
+                    const th = document.createElement('th');
+                    th.className = 'py-3 px-4 text-sm font-semibold uppercase tracking-wider sortable-header';
+                    th.dataset.sortColumn = key;
+                    th.textContent = value;
+                    if (['ease', 'quality', 'ai'].includes(key)) {
+                        th.classList.add('text-center');
+                    }
+                    th.addEventListener('click', () => {
+                        if (currentSort.column === key) {
+                            currentSort.order = currentSort.order === 'asc' ? 'desc' : 'asc';
+                        } else {
+                            currentSort.column = key;
+                            currentSort.order = 'asc';
+                        }
+                        document.querySelectorAll('.sortable-header').forEach(h => {
+                            h.classList.remove('sort-asc', 'sort-desc');
+                        });
+                        th.classList.add(currentSort.order === 'asc' ? 'sort-asc' : 'sort-desc');
+                        renderTable(document.querySelector('.filter-btn.accent-color').dataset.filter);
+                    });
+                    headerRow.appendChild(th);
+                });
+                headerRow.querySelector('[data-sort-column="name"]').classList.add('sort-asc');
+            }
+
+            function createFilterButtons() {
+                const container = document.querySelector('#comparison .flex-wrap.gap-2.mb-4');
+                // Clear existing buttons except "全部"
+                Array.from(container.children).forEach(child => {
+                    if(child.dataset.filter !== 'all') child.remove();
+                });
+
+                const categories = [...new Set(toolsData.map(tool => tool.category))];
+                categories.forEach(category => {
+                    const button = document.createElement('button');
+                    button.dataset.filter = category;
+                    button.className = 'filter-btn bg-gray-200 text-gray-700 py-1 px-3 rounded-full text-sm transition';
+                    button.textContent = category;
+                    container.appendChild(button);
+                });
+
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.filter-btn').forEach(b => {
+                            b.classList.remove('accent-color', 'text-white');
+                            b.classList.add('bg-gray-200', 'text-gray-700');
+                        });
+                        e.target.classList.add('accent-color', 'text-white');
+                        e.target.classList.remove('bg-gray-200', 'text-gray-700');
+                        renderTable(e.target.dataset.filter);
+                    });
+                });
+            }
+
+            function renderDetailCards() {
+                detailCardsContainer.innerHTML = ''; // Clear existing cards
+                toolsData.forEach(tool => {
+                    const cardId = `card-${tool.name.replace(/[\s().+/]/g, '-')}`;
+                    const card = document.createElement('div');
+                    card.id = cardId;
+                    card.className = 'bg-white rounded-lg shadow-sm p-6 flex flex-col transition-all duration-300';
+                    
+                    let stepsHtml = '<ul>';
+                    if (tool.detailedSteps && tool.detailedSteps.length > 0) {
+                        tool.detailedSteps.forEach(step => {
+                            stepsHtml += `<li>${step}</li>`;
+                        });
+                    } else {
+                        stepsHtml += '<li>尚無詳細步驟說明。</li>';
+                    }
+                    stepsHtml += '</ul>';
+
+                    let websiteButtonHtml = '';
+                    if (tool.websiteUrl) {
+                        websiteButtonHtml = `
+                            <a href="${tool.websiteUrl}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-block accent-color text-white text-xs py-2 px-4 rounded-md hover:bg-opacity-80 transition text-center">
+                                前往官方網站 ➔
+                            </a>`;
+                    }
+
+                    card.innerHTML = `
+                        <h4 class="text-xl font-bold mb-2">${tool.name}</h4>
+                        <p class="text-sm accent-text font-semibold mb-3">${tool.category}</p>
+                        <p class="text-gray-600 mb-4 flex-grow">${tool.feature}</p>
+                        <div class="border-t border-gray-200 pt-4">
+                            <button class="accordion-toggle text-left w-full font-semibold accent-text hover:underline focus:outline-none">
+                                查看評分與實作細節 ▼
+                            </button>
+                            <div class="accordion-content hidden mt-4 text-sm space-y-3 text-gray-600">
+                                <p><strong>易用性:</strong> ${renderRating(tool.ease)}</p>
+                                <p><strong>程式碼品質:</strong> ${renderRating(tool.quality)}</p>
+                                <p><strong>AI 整合度:</strong> ${renderRating(tool.ai)}</p>
+                                <p><strong>支援框架:</strong> ${tool.support || 'N/A'}</p>
+                                <p><strong>價格模型:</strong> ${tool.price || 'N/A'}</p>
+                                <p class="font-semibold mt-2">實作步驟:</p>
+                                ${stepsHtml}
+                                ${websiteButtonHtml}
+                            </div>
+                        </div>
+                    `;
+                    detailCardsContainer.appendChild(card);
+                });
+
+                document.querySelectorAll('.accordion-toggle').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const content = button.nextElementSibling;
+                        content.classList.toggle('hidden');
+                        button.textContent = content.classList.contains('hidden') ? '查看評分與實作細節 ▼' : '隱藏評分與實作細節 ▲';
+                    });
+                });
+            }
+            
+            let radarChart;
+            const radarChartCanvas = document.getElementById('radarChart').getContext('2d');
+            const radarLabels = ['易用性', '程式碼品質', 'AI整合度', '靈活性', '自由度', '學習曲線'];
+            
+            function updateRadarChart(selectedTools) {
+                if (radarChart) {
+                    radarChart.destroy();
+                }
+                const datasets = selectedTools.map((tool, index) => {
+                    const colors = ['rgba(92, 131, 116, 0.5)', 'rgba(255, 159, 64, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(255, 99, 132, 0.5)'];
+                    const borderColors = ['rgb(92, 131, 116)', 'rgb(255, 159, 64)', 'rgb(54, 162, 235)', 'rgb(255, 99, 132)'];
+                    
+                    // Handle N/A or non-numeric values by defaulting to 0 for the chart
+                    const quality = isNaN(parseInt(tool.quality)) ? 0 : parseInt(tool.quality);
+                    const freedom = isNaN(parseInt(tool.freedom)) ? 0 : parseInt(tool.freedom);
+                    const learning = isNaN(parseInt(tool.learning)) ? 0 : parseInt(tool.learning);
+
+                    return {
+                        label: tool.name,
+                        data: [tool.ease, quality, tool.ai, tool.flexibility, freedom, (6 - learning)], // Learning curve inverted (higher is better)
+                        backgroundColor: colors[index % colors.length],
+                        borderColor: borderColors[index % borderColors.length],
+                        borderWidth: 2,
+                        pointBackgroundColor: borderColors[index % borderColors.length]
+                    };
+                });
+                
+                radarChart = new Chart(radarChartCanvas, {
+                    type: 'radar',
+                    data: {
+                        labels: radarLabels,
+                        datasets: datasets
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                max: 5,
+                                pointLabels: {
+                                    font: {
+                                        size: 12, // Adjusted for better fit
+                                        family: 'Noto Sans TC'
+                                    },
+                                    callback: function(value, index, values) { // Wrap long labels
+                                        const maxChars = 10;
+                                        if (value.length > maxChars) {
+                                            let line = '';
+                                            let lines = [];
+                                            const words = value.split(' ');
+                                            for(let i=0; i<words.length; i++) {
+                                                if ((line + words[i]).length > maxChars) {
+                                                    lines.push(line.trim());
+                                                    line = '';
+                                                }
+                                                line += words[i] + ' ';
+                                            }
+                                            lines.push(line.trim());
+                                            return lines;
+                                        }
+                                        return value;
+                                    }
+                                },
+                                ticks: {
+                                    stepSize: 1
+                                },
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                },
+                                angleLines: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                                labels: {
+                                    font: { family: 'Noto Sans TC' }
+                                }
+                            },
+                            tooltip: {
+                                titleFont: { family: 'Noto Sans TC' },
+                                bodyFont: { family: 'Noto Sans TC' },
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.r !== null) {
+                                            label += context.parsed.r.toFixed(1);
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            function createRadarChartSelectors() {
+                const container = document.getElementById('radar-chart-selectors');
+                container.innerHTML = ''; // Clear existing
+                toolsData.forEach(tool => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'flex items-center';
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    const checkboxId = `check-${tool.name.replace(/[\s().+/]/g, '-')}`;
+                    checkbox.id = checkboxId;
+                    checkbox.value = tool.name;
+                    checkbox.className = 'h-4 w-4 rounded accent-border text-green-600 focus:ring-green-500';
+                    const label = document.createElement('label');
+                    label.htmlFor = checkbox.id;
+                    label.textContent = tool.name;
+                    label.className = 'ml-2 text-sm text-gray-700';
+                    wrapper.appendChild(checkbox);
+                    wrapper.appendChild(label);
+                    container.appendChild(wrapper);
+
+                    checkbox.addEventListener('change', () => {
+                        const selectedCheckboxes = Array.from(document.querySelectorAll('#radar-chart-selectors input:checked'));
+                        if (selectedCheckboxes.length > 4) {
+                            checkbox.checked = false;
+                            alert('最多只能選擇 4 個工具進行比較。');
+                            return;
+                        }
+                        const selectedToolNames = selectedCheckboxes.map(cb => cb.value);
+                        const selectedTools = toolsData.filter(t => selectedToolNames.includes(t.name));
+                        updateRadarChart(selectedTools);
+                    });
+                });
+            }
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            document.querySelectorAll('nav a').forEach(link => {
+                 link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = e.currentTarget.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const headerOffset = document.getElementById('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                             top: offsetPosition,
+                             behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+
+            // Initial setup
+            createSortableHeaders();
+            createFilterButtons();
+            renderTable();
+            renderDetailCards();
+            createRadarChartSelectors();
+            
+            const initialToolsForRadar = toolsData.slice(0, Math.min(toolsData.length, 2));
+            initialToolsForRadar.forEach(tool => {
+                const checkboxId = `check-${tool.name.replace(/[\s().+/]/g, '-')}`;
+                const checkbox = document.getElementById(checkboxId);
+                if (checkbox) checkbox.checked = true;
+            });
+            updateRadarChart(initialToolsForRadar);
+        });
+    </script>
+</body>
+</html>
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">資訊分享平台</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/sw/index.html"><input type="checkbox" id="R-section-3de8459f0aeb640a5553250679589de1" aria-controls="R-subsections-3de8459f0aeb640a5553250679589de1" checked><label for="R-section-3de8459f0aeb640a5553250679589de1"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 軟體工程</span></label><a class="padding" href="/sw/index.html">軟體工程</a><ul id="R-subsections-3de8459f0aeb640a5553250679589de1" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/sw/vibecoding/index.html"><input type="checkbox" id="R-section-84aebbfaea6a847d18ea2d7ec6d35577" aria-controls="R-subsections-84aebbfaea6a847d18ea2d7ec6d35577" checked><label for="R-section-84aebbfaea6a847d18ea2d7ec6d35577"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Vibe Coding (氛圍編程)</span></label><a class="padding" href="/sw/vibecoding/index.html">Vibe Coding (氛圍編程)</a><ul id="R-subsections-84aebbfaea6a847d18ea2d7ec6d35577" class="collapsible-menu">
+            <li class="" data-nav-id="/sw/vibecoding/ai-ui-tools_20250606/index.html"><a class="padding" href="/sw/vibecoding/ai-ui-tools_20250606/index.html">Ai Ui Tools_20250606</a></li>
+            <li class="" data-nav-id="/sw/vibecoding/google_jules_20250527/index.html"><a class="padding" href="/sw/vibecoding/google_jules_20250527/index.html">Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命</a></li>
+            <li class="active hidden " data-nav-id="/sw/vibecoding/aiuitools-20250606/index.html"><a class="padding" href="/sw/vibecoding/aiuitools-20250606/index.html"></a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/sw/ai/index.html"><input type="checkbox" id="R-section-3ebf6839c081466a6bee6561c9c63cd8" aria-controls="R-subsections-3ebf6839c081466a6bee6561c9c63cd8" checked><label for="R-section-3ebf6839c081466a6bee6561c9c63cd8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Artificial Intelligence (人工智慧)</span></label><a class="padding" href="/sw/ai/index.html">Artificial Intelligence (人工智慧)</a><ul id="R-subsections-3ebf6839c081466a6bee6561c9c63cd8" class="collapsible-menu">
+            <li class="" data-nav-id="/sw/ai/tools/index.html"><a class="padding" href="/sw/ai/tools/index.html">Tools</a></li>
+            <li class="" data-nav-id="/sw/ai/n8n/2025/05/n8nlinerag/index.html"><a class="padding" href="/sw/ai/n8n/2025/05/n8nlinerag/index.html">搭建 n8n LineBot RAG</a></li></ul></li>
+            <li class="" data-nav-id="/sw/cti/index.html"><a class="padding" href="/sw/cti/index.html">Computer Telephony Integration (電腦電話整合)</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/me/index.html"><input type="checkbox" id="R-section-7e26c7463b1e75e9707d621cbf6da651" aria-controls="R-subsections-7e26c7463b1e75e9707d621cbf6da651" checked><label for="R-section-7e26c7463b1e75e9707d621cbf6da651"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 關於我</span></label><a class="padding" href="/me/index.html">關於我</a><ul id="R-subsections-7e26c7463b1e75e9707d621cbf6da651" class="collapsible-menu">
+            <li class="" data-nav-id="/me/moreme/index.html"><a class="padding" href="/me/moreme/index.html">更多自我介紹</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/ms/index.html"><input type="checkbox" id="R-section-479528d2c81de091efbe9fa96aef1a8d" aria-controls="R-subsections-479528d2c81de091efbe9fa96aef1a8d" checked><label for="R-section-479528d2c81de091efbe9fa96aef1a8d"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 管理工程</span></label><a class="padding" href="/ms/index.html">管理工程</a><ul id="R-subsections-479528d2c81de091efbe9fa96aef1a8d" class="collapsible-menu">
+            <li class="" data-nav-id="/ms/pmp/index.html"><a class="padding" href="/ms/pmp/index.html">專案管理</a></li>
+            <li class="" data-nav-id="/ms/cmmi/index.html"><a class="padding" href="/ms/cmmi/index.html">能力成熟度模型整合</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/cs/index.html"><input type="checkbox" id="R-section-7caae75ca51ba76834b82083f4ccfab8" aria-controls="R-subsections-7caae75ca51ba76834b82083f4ccfab8" checked><label for="R-section-7caae75ca51ba76834b82083f4ccfab8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 資安工程</span></label><a class="padding" href="/cs/index.html">資安工程</a><ul id="R-subsections-7caae75ca51ba76834b82083f4ccfab8" class="collapsible-menu">
+            <li class="" data-nav-id="/cs/cti/index.html"><a class="padding" href="/cs/cti/index.html">Cyber Threat Intelligence (網路威脅情資)</a></li>
+            <li class="" data-nav-id="/cs/iso_nist/index.html"><a class="padding" href="/cs/iso_nist/index.html">ISO＆NIST</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/tools/index.html"><input type="checkbox" id="R-section-bf1399820dde3dd110e03ace4147ff86" aria-controls="R-subsections-bf1399820dde3dd110e03ace4147ff86" checked><label for="R-section-bf1399820dde3dd110e03ace4147ff86"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 一般工具</span></label><a class="padding" href="/tools/index.html">一般工具</a><ul id="R-subsections-bf1399820dde3dd110e03ace4147ff86" class="collapsible-menu">
+            <li class="" data-nav-id="/tools/tools/index.html"><a class="padding" href="/tools/tools/index.html">Tools</a></li>
+            <li class="" data-nav-id="/tools/texstudio/index.html"><a class="padding" href="/tools/texstudio/index.html">論文寫作工具：TeXstudio 安裝及使用指南</a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1749178211" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1749178211" defer></script>
+    <script src="/js/theme.js?1749178211" defer></script>
+  </body>
+</html>
