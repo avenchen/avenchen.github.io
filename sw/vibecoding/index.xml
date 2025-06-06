@@ -6,8 +6,15 @@
     <description>Vibe Coding是一種全新的程式設計方式，開發者透過自然語言向AI描述需求，由AI自動生成程式碼，其核心理念是 「完全順應感覺（vibes）、擁抱AI帶來的進步，並忘記程式碼本身的存在」</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 06 Jun 2025 09:52:23 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 06 Jun 2025 11:24:26 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/sw/vibecoding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>互動式AI UI開發工具報告</title>
+      <link>http://localhost:1313/sw/vibecoding/aiuitools-20250606/index.html</link>
+      <pubDate>Fri, 06 Jun 2025 11:24:26 +0800</pubDate>
+      <guid>http://localhost:1313/sw/vibecoding/aiuitools-20250606/index.html</guid>
+      <description>&lt;!DOCTYPE html&gt;&#xD;互動式AI UI開發工具報告&#xD;AI UI 開發工具解析&#xD;總覽&#xD;工具比較&#xD;工具詳解&#xD;結論&#xD;總覽&#xD;工具比較&#xD;工具詳解&#xD;結論&#xD;探索 AI 驅動的 UI 開發新時代&#xD;本報告深入分析了當前市場上主流的 AI UI 開發工具。透過將靜態報告轉化為互動式儀表板，您可以更直觀地比較、篩選並找到最適合您需求的工具，從而加速您的設計與開發流程。</description>
+    </item>
     <item>
       <title>Ai Ui Tools_20250606</title>
       <link>http://localhost:1313/sw/vibecoding/ai-ui-tools_20250606/index.html</link>

@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/sw/vibecoding/index.html</loc>
-    <lastmod>2025-06-06T09:52:23+08:00</lastmod>
+    <lastmod>2025-06-06T11:24:26+08:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/sw/index.html</loc>
-    <lastmod>2025-06-06T09:52:23+08:00</lastmod>
+    <lastmod>2025-06-06T11:24:26+08:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/sw/ai/index.html</loc>
@@ -41,11 +41,15 @@
     <loc>http://localhost:1313/cs/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/sw/vibecoding/ai-ui-tools_20250606/index.html</loc>
-    <lastmod>2025-06-06T09:52:23+08:00</lastmod>
+    <loc>http://localhost:1313/sw/vibecoding/aiuitools-20250606/index.html</loc>
+    <lastmod>2025-06-06T11:24:26+08:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/index.html</loc>
+    <lastmod>2025-06-06T11:24:26+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/sw/vibecoding/ai-ui-tools_20250606/index.html</loc>
     <lastmod>2025-06-06T09:52:23+08:00</lastmod>
   </url>
   <url>
