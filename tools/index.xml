@@ -6,8 +6,15 @@
     <description>工具介紹</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 30 May 2025 09:53:20 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jun 2025 11:19:51 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI生成可編寫的流程圖與架構圖</title>
+      <link>http://localhost:1313/tools/ai-flow-draw/index.html</link>
+      <pubDate>Mon, 09 Jun 2025 11:19:51 +0800</pubDate>
+      <guid>http://localhost:1313/tools/ai-flow-draw/index.html</guid>
+      <description>AI生成可編寫的流程圖與架構圖 流程圖 - Mermaid 將現有流程圖貼至 ChatGpt 打開 ChatGPT，先貼上圖片，再輸入prompt&#xA;將圖片轉成 mermaid&#xD;範例如此圖: chatGPT 生成此mermaid語法&#xA;sequenceDiagram actor 教務用戶 participant 教務主界面 participant 學生資訊 participant 管理學生資訊 participant 資料庫 教務用戶 -&gt;&gt; 教務主界面: 進入主頁 教務主界面 --&gt;&gt; 教務用戶: 成功進入… 教務用戶 -&gt;&gt; 學生資訊: 請求查看學生信息 學生資訊 -&gt;&gt; 資料庫: 請求信息 資料庫 --&gt;&gt; 教務用戶: 返回學生信息 教務用戶 -&gt;&gt; 管理學生資訊: 管理學生資訊 管理學生資訊 -&gt;&gt; 資料庫: 更新信息 資料庫 --&gt;&gt; 教務用戶: 學生資訊更改成功&#xD;可將此mermaid語法貼到網頁上，查看圖形 https://www.mermaidchart.com/ 可分享，或保存為圖檔 如此連結：https://www.mermaidchart.com/play?utm_source=mermaid_live_editor&amp;utm_medium=toggle#pako:eNqrVkrOT0lVslIqTi0sTc1LTnXJTEwvSsyNyVMAgsTkkvwihWdTZz7tnvl8yopnHdsg4gWJRSWZyZkFiXklUNknO3Y_n9rzcu4iTAVP1-54PmX-i83tL1Z0Yco-X7fw-YQ2_GqA4s-mzXy6a3VMHkQS2UUKunZ26I6wUnjZsOlp61KgwMsFjch64EoUdBH6IAZZKTzrmPC0az5E66OGZThtQ3atlcKL1d3PNjY9m7_0-ZxuiMyT_QufNa6HaEZWC9YM9wxMJ7JquCQ2573YP-Xp7HmoVuBwIWaoWuEMaUxxdHc-m73l2bQNRLsT2SiQ1ik7IQEbk6dUCwDwwFj3</description>
+    </item>
     <item>
       <title>Tools</title>
       <link>http://localhost:1313/tools/tools/index.html</link>
