@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="zh-TW" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.5">
+    <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
+    <meta name="description" content="&lt;!DOCTYPE html&gt;企業員工使用 LLM 安全指南 v2.6 (完整互動版)企業員工使用 LLM 安全指南如何在享受 AI 便利的同時，保護公司機敏資訊">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="企業員工使用 LLM 安全指南 | 資訊分享平台">
+    <meta name="twitter:description" content="&lt;!DOCTYPE html&gt;企業員工使用 LLM 安全指南 v2.6 (完整互動版)企業員工使用 LLM 安全指南如何在享受 AI 便利的同時，保護公司機敏資訊">
+    <meta property="og:url" content="http://localhost:1313/sw/ai/tools/security-llm-20250625/index.html">
+    <meta property="og:site_name" content="資訊分享平台">
+    <meta property="og:title" content="企業員工使用 LLM 安全指南 | 資訊分享平台">
+    <meta property="og:description" content="&lt;!DOCTYPE html&gt;企業員工使用 LLM 安全指南 v2.6 (完整互動版)企業員工使用 LLM 安全指南如何在享受 AI 便利的同時，保護公司機敏資訊">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="軟體工程">
+    <meta property="article:published_time" content="2025-06-25T11:24:26+08:00">
+    <meta property="article:modified_time" content="2025-06-25T11:24:26+08:00">
+    <meta itemprop="name" content="企業員工使用 LLM 安全指南 | 資訊分享平台">
+    <meta itemprop="description" content="&lt;!DOCTYPE html&gt;企業員工使用 LLM 安全指南 v2.6 (完整互動版)企業員工使用 LLM 安全指南如何在享受 AI 便利的同時，保護公司機敏資訊">
+    <meta itemprop="datePublished" content="2025-06-25T11:24:26+08:00">
+    <meta itemprop="dateModified" content="2025-06-25T11:24:26+08:00">
+    <meta itemprop="wordCount" content="254">
+    <title>企業員工使用 LLM 安全指南 | 資訊分享平台</title>
+    <link href="/images/favicon.png?1750831860" rel="icon" type="image/png">
+    <link href="/images/favicon.ico?1750831860" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750831860" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1750831860" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1750831860" rel="stylesheet">
+    <link href="/css/theme.css?1750831860" rel="stylesheet">
+    <link href="/css/format-html.css?1750831860" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1750831860" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1750831860" defer></script>
+    <script src="/js/lunr/lunr.min.js?1750831860" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1750831860" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1750831860" defer></script>
+    <script src="/js/lunr/lunr.zh.min.js?1750831860" defer></script>
+    <script src="/js/search.js?1750831860" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/sw\/ai\/tools\/security-llm-20250625\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['zh'];
+      window.relearn.index_js_url="/searchindex.en.js?1750831860";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/sw/ai/tools/security-llm-20250625/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class="a11y-only"><a itemprop="item" href="/index.html"><span itemprop="name">首頁</span></a><meta itemprop="position" content="1">&nbsp;/&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/sw/index.html"><span itemprop="name">軟體工程</span></a><meta itemprop="position" content="2">&nbsp;/&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/sw/ai/index.html"><span itemprop="name">Artificial Intelligence (人工智慧)</span></a><meta itemprop="position" content="3">&nbsp;/&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/sw/ai/tools/index.html"><span itemprop="name">Tools</span></a><meta itemprop="position" content="4">&nbsp;/&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">企業員工使用 LLM 安全指南</span><meta itemprop="position" content="5"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/sw/ai/tools/index.html" title="Tools (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/sw/ai/n8n/2025/05/n8nlinerag/index.html" title="搭建 n8n LineBot RAG (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable sw" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="企業員工使用-llm-安全指南">企業員工使用 LLM 安全指南</h1>
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業員工使用 LLM 安全指南 v2.6 (完整互動版)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+        }
+        .case-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: 1px solid #374151; /* gray-700 */
+        }
+        .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.3), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+            border-color: #4b5563; /* gray-600 */
+        }
+        /* Custom scrollbar for better dark mode aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937; /* gray-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563; /* gray-600 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* gray-500 */
+        }
+        .param-input, .param-key-input {
+             background-color: #374151; /* bg-gray-700 */
+             border: 1px solid #4b5563; /* border-gray-600 */
+             color: #e5e7eb; /* text-gray-200 */
+        }
+        .param-input:focus, .param-key-input:focus {
+            --tw-ring-color: #3b82f6; /* ring-blue-500 */
+            border-color: #3b82f6; /* border-blue-500 */
+            outline: none;
+        }
+        .action-button {
+            background-color: #3b82f6; /* bg-blue-600 */
+            color: white;
+            transition: background-color 0.2s;
+        }
+        .action-button:hover {
+            background-color: #2563eb; /* bg-blue-700 */
+        }
+        .danger-button {
+            background-color: #ef4444; /* bg-red-500 */
+            color: white;
+            transition: background-color 0.2s;
+        }
+        .danger-button:hover {
+            background-color: #dc2626; /* bg-red-600 */
+        }
+        .prompt-block {
+            position: relative;
+        }
+        .copy-prompt-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: #4b5563;
+            color: #e5e7eb;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            border-radius: 9999px;
+            transition: background-color 0.2s;
+        }
+        .copy-prompt-btn:hover {
+            background-color: #6b7280;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Header -->
+    <header class="bg-gray-800/80 backdrop-blur-sm shadow-lg sticky top-0 z-20">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold leading-tight text-white">
+                企業員工使用 LLM 安全指南
+            </h1>
+            <p class="mt-2 text-gray-400">如何在享受 AI 便利的同時，保護公司機敏資訊</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Introduction and Key Takeaways -->
+        <div class="px-4 py-6 sm:px-0">
+            <div class="bg-blue-900/30 border-l-4 border-blue-400 text-blue-200 p-6 rounded-r-lg shadow-md mb-8">
+                <h2 class="text-xl font-bold text-white mb-4">核心原則：抽象化與樣板化</h2>
+                <p class="mb-4">
+                    在使用任何公開的 LLM 時，請務必將所有機敏資訊替換為通用的、不具識別性的佔位符。您提供給 LLM 的是「問題的結構」，而不是「問題的內容」。LLM 將根據結構提供一個通用的「解決方案樣板」，您再於本機端將真實資訊填入。
+                </p>
+            </div>
+
+            <!-- Cases Grid -->
+            <div class="grid grid-cols-1 gap-8">
+                
+                <!-- Case 1: Marketing -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden case-card" data-case-id="1">
+                    <div class="p-6">
+                        <div class="flex items-baseline">
+                            <span class="inline-block bg-teal-400/20 text-teal-300 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">案例 1</span>
+                            <div class="ml-2 text-gray-400 text-sm uppercase font-semibold tracking-wide">行銷部門</div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-white">撰寫產品促銷郵件</h3>
+                        
+                        <div class="mt-6 space-y-4">
+                            <h4 class="font-semibold text-gray-300">1. 動態調整參數</h4>
+                            <div id="param-container-1" class="space-y-2"></div>
+                            <button id="add-param-btn-1" class="text-sm font-semibold py-2 px-4 rounded-md bg-gray-600 hover:bg-gray-500 text-gray-200">+ 新增參數</button>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-300">2. 複製此安全 Prompt 至 LLM</h4>
+                            <div class="prompt-block mt-2">
+                                <pre id="prompt-template-1" class="bg-gray-900 p-3 pl-4 rounded-md text-sm text-gray-300 overflow-x-auto"></pre>
+                                <button id="copy-prompt-btn-1" class="copy-prompt-btn">複製</button>
+                            </div>
+                        </div>
+
+                        <div class="mt-6">
+                            <label for="template-input-1" class="block text-sm font-semibold text-gray-300">3. 在此貼上 LLM 生成的樣板</label>
+                            <textarea id="template-input-1" rows="10" class="mt-1 block w-full bg-gray-900 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                         <div class="mt-6 text-center">
+                            <button id="update-preview-btn-1" class="w-full sm:w-auto action-button font-bold py-2 px-6 rounded-lg shadow-md">&#x21AF; 4. 更新預覽</button>
+                        </div>
+                        <div class="mt-6">
+                            <label for="preview-output-1" class="block text-sm font-semibold text-gray-300">最終結果 (可直接編輯)</label>
+                            <textarea id="preview-output-1" rows="10" class="mt-1 block w-full bg-gray-900/50 border-l-4 border-gray-600 rounded-r-md p-3 text-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" style="white-space: pre-wrap; word-break: break-word;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All other cases follow the same structure -->
+                <!-- Case 2: HR -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden case-card" data-case-id="2">
+                   <div class="p-6">
+                        <div class="flex items-baseline">
+                            <span class="inline-block bg-pink-400/20 text-pink-300 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">案例 2</span>
+                            <div class="ml-2 text-gray-400 text-sm uppercase font-semibold tracking-wide">人資部門</div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-white">撰寫機密專案職位描述</h3>
+                        <div class="mt-6 space-y-4">
+                            <h4 class="font-semibold text-gray-300">1. 動態調整參數</h4>
+                            <div id="param-container-2" class="space-y-2"></div>
+                            <button id="add-param-btn-2" class="text-sm font-semibold py-2 px-4 rounded-md bg-gray-600 hover:bg-gray-500 text-gray-200">+ 新增參數</button>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-300">2. 複製此安全 Prompt 至 LLM</h4>
+                             <div class="prompt-block mt-2">
+                                <pre id="prompt-template-2" class="bg-gray-900 p-3 pl-4 rounded-md text-sm text-gray-300 overflow-x-auto"></pre>
+                                <button id="copy-prompt-btn-2" class="copy-prompt-btn">複製</button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="template-input-2" class="block text-sm font-semibold text-gray-300">3. 在此貼上 LLM 生成的樣板</label>
+                            <textarea id="template-input-2" rows="10" class="mt-1 block w-full bg-gray-900 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                         <div class="mt-6 text-center">
+                            <button id="update-preview-btn-2" class="w-full sm:w-auto action-button font-bold py-2 px-6 rounded-lg shadow-md">&#x21AF; 4. 更新預覽</button>
+                        </div>
+                        <div class="mt-6">
+                            <label for="preview-output-2" class="block text-sm font-semibold text-gray-300">最終結果 (可直接編輯)</label>
+                            <textarea id="preview-output-2" rows="10" class="mt-1 block w-full bg-gray-900/50 border-l-4 border-gray-600 rounded-r-md p-3 text-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" style="white-space: pre-wrap; word-break: break-word;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 3: Sales -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden case-card" data-case-id="3">
+                   <div class="p-6">
+                        <div class="flex items-baseline">
+                            <span class="inline-block bg-purple-400/20 text-purple-300 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">案例 3</span>
+                            <div class="ml-2 text-gray-400 text-sm uppercase font-semibold tracking-wide">銷售部門</div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-white">撰寫會議後追蹤郵件</h3>
+                        <div class="mt-6 space-y-4">
+                            <h4 class="font-semibold text-gray-300">1. 動態調整參數</h4>
+                            <div id="param-container-3" class="space-y-2"></div>
+                            <button id="add-param-btn-3" class="text-sm font-semibold py-2 px-4 rounded-md bg-gray-600 hover:bg-gray-500 text-gray-200">+ 新增參數</button>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-300">2. 複製此安全 Prompt 至 LLM</h4>
+                             <div class="prompt-block mt-2">
+                                <pre id="prompt-template-3" class="bg-gray-900 p-3 pl-4 rounded-md text-sm text-gray-300 overflow-x-auto"></pre>
+                                <button id="copy-prompt-btn-3" class="copy-prompt-btn">複製</button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="template-input-3" class="block text-sm font-semibold text-gray-300">3. 在此貼上 LLM 生成的樣板</label>
+                            <textarea id="template-input-3" rows="10" class="mt-1 block w-full bg-gray-900 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                         <div class="mt-6 text-center">
+                            <button id="update-preview-btn-3" class="w-full sm:w-auto action-button font-bold py-2 px-6 rounded-lg shadow-md">&#x21AF; 4. 更新預覽</button>
+                        </div>
+                        <div class="mt-6">
+                            <label for="preview-output-3" class="block text-sm font-semibold text-gray-300">最終結果 (可直接編輯)</label>
+                            <textarea id="preview-output-3" rows="10" class="mt-1 block w-full bg-gray-900/50 border-l-4 border-gray-600 rounded-r-md p-3 text-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" style="white-space: pre-wrap; word-break: break-word;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Case 4: Legal -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden case-card" data-case-id="4">
+                   <div class="p-6">
+                        <div class="flex items-baseline">
+                            <span class="inline-block bg-gray-400/20 text-gray-300 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">案例 4</span>
+                            <div class="ml-2 text-gray-400 text-sm uppercase font-semibold tracking-wide">法務部門</div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-white">分析合約條款風險</h3>
+                        <div class="mt-6 space-y-4">
+                            <h4 class="font-semibold text-gray-300">1. 動態調整參數</h4>
+                            <div id="param-container-4" class="space-y-2"></div>
+                            <button id="add-param-btn-4" class="text-sm font-semibold py-2 px-4 rounded-md bg-gray-600 hover:bg-gray-500 text-gray-200">+ 新增參數</button>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-300">2. 複製此安全 Prompt 至 LLM</h4>
+                             <div class="prompt-block mt-2">
+                                <pre id="prompt-template-4" class="bg-gray-900 p-3 pl-4 rounded-md text-sm text-gray-300 overflow-x-auto"></pre>
+                                <button id="copy-prompt-btn-4" class="copy-prompt-btn">複製</button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="template-input-4" class="block text-sm font-semibold text-gray-300">3. 在此貼上 LLM 生成的樣板</label>
+                            <textarea id="template-input-4" rows="10" class="mt-1 block w-full bg-gray-900 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                         <div class="mt-6 text-center">
+                            <button id="update-preview-btn-4" class="w-full sm:w-auto action-button font-bold py-2 px-6 rounded-lg shadow-md">&#x21AF; 4. 更新預覽</button>
+                        </div>
+                        <div class="mt-6">
+                            <label for="preview-output-4" class="block text-sm font-semibold text-gray-300">最終結果 (可直接編輯)</label>
+                            <textarea id="preview-output-4" rows="10" class="mt-1 block w-full bg-gray-900/50 border-l-4 border-gray-600 rounded-r-md p-3 text-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" style="white-space: pre-wrap; word-break: break-word;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 5: Engineering -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden case-card" data-case-id="5">
+                   <div class="p-6">
+                        <div class="flex items-baseline">
+                            <span class="inline-block bg-yellow-400/20 text-yellow-300 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">案例 5</span>
+                            <div class="ml-2 text-gray-400 text-sm uppercase font-semibold tracking-wide">工程部門</div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-white">解釋程式碼邏輯</h3>
+                        <div class="mt-6 space-y-4">
+                            <h4 class="font-semibold text-gray-300">1. 動態調整參數</h4>
+                            <div id="param-container-5" class="space-y-2"></div>
+                            <button id="add-param-btn-5" class="text-sm font-semibold py-2 px-4 rounded-md bg-gray-600 hover:bg-gray-500 text-gray-200">+ 新增參數</button>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-300">2. 複製此安全 Prompt 至 LLM</h4>
+                             <div class="prompt-block mt-2">
+                                <pre id="prompt-template-5" class="bg-gray-900 p-3 pl-4 rounded-md text-sm text-gray-300 overflow-x-auto"></pre>
+                                <button id="copy-prompt-btn-5" class="copy-prompt-btn">複製</button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="template-input-5" class="block text-sm font-semibold text-gray-300">3. 在此貼上 LLM 生成的樣板</label>
+                            <textarea id="template-input-5" rows="10" class="mt-1 block w-full bg-gray-900 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                         <div class="mt-6 text-center">
+                            <button id="update-preview-btn-5" class="w-full sm:w-auto action-button font-bold py-2 px-6 rounded-lg shadow-md">&#x21AF; 4. 更新預覽</button>
+                        </div>
+                        <div class="mt-6">
+                            <label for="preview-output-5" class="block text-sm font-semibold text-gray-300">最終結果 (可直接編輯)</label>
+                            <textarea id="preview-output-5" rows="10" class="mt-1 block w-full bg-gray-900/50 border-l-4 border-gray-600 rounded-r-md p-3 text-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" style="white-space: pre-wrap; word-break: break-word;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 6: Finance -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden case-card" data-case-id="6">
+                   <div class="p-6">
+                        <div class="flex items-baseline">
+                            <span class="inline-block bg-green-400/20 text-green-300 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">案例 6</span>
+                            <div class="ml-2 text-gray-400 text-sm uppercase font-semibold tracking-wide">財務部門</div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-white">製作財務摘要報告</h3>
+                        <div class="mt-6 space-y-4">
+                            <h4 class="font-semibold text-gray-300">1. 動態調整參數</h4>
+                            <div id="param-container-6" class="space-y-2"></div>
+                            <button id="add-param-btn-6" class="text-sm font-semibold py-2 px-4 rounded-md bg-gray-600 hover:bg-gray-500 text-gray-200">+ 新增參數</button>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-300">2. 複製此安全 Prompt 至 LLM</h4>
+                             <div class="prompt-block mt-2">
+                                <pre id="prompt-template-6" class="bg-gray-900 p-3 pl-4 rounded-md text-sm text-gray-300 overflow-x-auto"></pre>
+                                <button id="copy-prompt-btn-6" class="copy-prompt-btn">複製</button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="template-input-6" class="block text-sm font-semibold text-gray-300">3. 在此貼上 LLM 生成的樣板</label>
+                            <textarea id="template-input-6" rows="10" class="mt-1 block w-full bg-gray-900 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                         <div class="mt-6 text-center">
+                            <button id="update-preview-btn-6" class="w-full sm:w-auto action-button font-bold py-2 px-6 rounded-lg shadow-md">&#x21AF; 4. 更新預覽</button>
+                        </div>
+                        <div class="mt-6">
+                            <label for="preview-output-6" class="block text-sm font-semibold text-gray-300">最終結果 (可直接編輯)</label>
+                            <textarea id="preview-output-6" rows="10" class="mt-1 block w-full bg-gray-900/50 border-l-4 border-gray-600 rounded-r-md p-3 text-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" style="white-space: pre-wrap; word-break: break-word;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 7: Customer Service -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden case-card" data-case-id="7">
+                   <div class="p-6">
+                        <div class="flex items-baseline">
+                            <span class="inline-block bg-orange-400/20 text-orange-300 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">案例 7</span>
+                            <div class="ml-2 text-gray-400 text-sm uppercase font-semibold tracking-wide">客服部門</div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-white">擬定客服標準回覆</h3>
+                        <div class="mt-6 space-y-4">
+                            <h4 class="font-semibold text-gray-300">1. 動態調整參數</h4>
+                            <div id="param-container-7" class="space-y-2"></div>
+                            <button id="add-param-btn-7" class="text-sm font-semibold py-2 px-4 rounded-md bg-gray-600 hover:bg-gray-500 text-gray-200">+ 新增參數</button>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-300">2. 複製此安全 Prompt 至 LLM</h4>
+                             <div class="prompt-block mt-2">
+                                <pre id="prompt-template-7" class="bg-gray-900 p-3 pl-4 rounded-md text-sm text-gray-300 overflow-x-auto"></pre>
+                                <button id="copy-prompt-btn-7" class="copy-prompt-btn">複製</button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="template-input-7" class="block text-sm font-semibold text-gray-300">3. 在此貼上 LLM 生成的樣板</label>
+                            <textarea id="template-input-7" rows="10" class="mt-1 block w-full bg-gray-900 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                         <div class="mt-6 text-center">
+                            <button id="update-preview-btn-7" class="w-full sm:w-auto action-button font-bold py-2 px-6 rounded-lg shadow-md">&#x21AF; 4. 更新預覽</button>
+                        </div>
+                        <div class="mt-6">
+                            <label for="preview-output-7" class="block text-sm font-semibold text-gray-300">最終結果 (可直接編輯)</label>
+                            <textarea id="preview-output-7" rows="10" class="mt-1 block w-full bg-gray-900/50 border-l-4 border-gray-600 rounded-r-md p-3 text-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" style="white-space: pre-wrap; word-break: break-word;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 8: Product Management -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden case-card" data-case-id="8">
+                   <div class="p-6">
+                        <div class="flex items-baseline">
+                            <span class="inline-block bg-indigo-400/20 text-indigo-300 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">案例 8</span>
+                            <div class="ml-2 text-gray-400 text-sm uppercase font-semibold tracking-wide">產品管理部門</div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-white">撰寫用戶故事</h3>
+                        <div class="mt-6 space-y-4">
+                            <h4 class="font-semibold text-gray-300">1. 動態調整參數</h4>
+                            <div id="param-container-8" class="space-y-2"></div>
+                            <button id="add-param-btn-8" class="text-sm font-semibold py-2 px-4 rounded-md bg-gray-600 hover:bg-gray-500 text-gray-200">+ 新增參數</button>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-300">2. 複製此安全 Prompt 至 LLM</h4>
+                             <div class="prompt-block mt-2">
+                                <pre id="prompt-template-8" class="bg-gray-900 p-3 pl-4 rounded-md text-sm text-gray-300 overflow-x-auto"></pre>
+                                <button id="copy-prompt-btn-8" class="copy-prompt-btn">複製</button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="template-input-8" class="block text-sm font-semibold text-gray-300">3. 在此貼上 LLM 生成的樣板</label>
+                            <textarea id="template-input-8" rows="10" class="mt-1 block w-full bg-gray-900 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                         <div class="mt-6 text-center">
+                            <button id="update-preview-btn-8" class="w-full sm:w-auto action-button font-bold py-2 px-6 rounded-lg shadow-md">&#x21AF; 4. 更新預覽</button>
+                        </div>
+                        <div class="mt-6">
+                            <label for="preview-output-8" class="block text-sm font-semibold text-gray-300">最終結果 (可直接編輯)</label>
+                            <textarea id="preview-output-8" rows="10" class="mt-1 block w-full bg-gray-900/50 border-l-4 border-gray-600 rounded-r-md p-3 text-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" style="white-space: pre-wrap; word-break: break-word;"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case 9: Operations -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden case-card" data-case-id="9">
+                   <div class="p-6">
+                        <div class="flex items-baseline">
+                            <span class="inline-block bg-red-400/20 text-red-300 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">案例 9</span>
+                            <div class="ml-2 text-gray-400 text-sm uppercase font-semibold tracking-wide">營運部門</div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-white">優化供應鏈路線</h3>
+                        <div class="mt-6 space-y-4">
+                            <h4 class="font-semibold text-gray-300">1. 動態調整參數</h4>
+                            <div id="param-container-9" class="space-y-2"></div>
+                            <button id="add-param-btn-9" class="text-sm font-semibold py-2 px-4 rounded-md bg-gray-600 hover:bg-gray-500 text-gray-200">+ 新增參數</button>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-300">2. 複製此安全 Prompt 至 LLM</h4>
+                             <div class="prompt-block mt-2">
+                                <pre id="prompt-template-9" class="bg-gray-900 p-3 pl-4 rounded-md text-sm text-gray-300 overflow-x-auto"></pre>
+                                <button id="copy-prompt-btn-9" class="copy-prompt-btn">複製</button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="template-input-9" class="block text-sm font-semibold text-gray-300">3. 在此貼上 LLM 生成的樣板</label>
+                            <textarea id="template-input-9" rows="10" class="mt-1 block w-full bg-gray-900 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                         <div class="mt-6 text-center">
+                            <button id="update-preview-btn-9" class="w-full sm:w-auto action-button font-bold py-2 px-6 rounded-lg shadow-md">&#x21AF; 4. 更新預覽</button>
+                        </div>
+                        <div class="mt-6">
+                            <label for="preview-output-9" class="block text-sm font-semibold text-gray-300">最終結果 (可直接編輯)</label>
+                            <textarea id="preview-output-9" rows="10" class="mt-1 block w-full bg-gray-900/50 border-l-4 border-gray-600 rounded-r-md p-3 text-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" style="white-space: pre-wrap; word-break: break-word;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 10: Executive -->
+                <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden case-card" data-case-id="10">
+                   <div class="p-6">
+                        <div class="flex items-baseline">
+                            <span class="inline-block bg-blue-400/20 text-blue-300 text-xs px-2 rounded-full uppercase font-semibold tracking-wide">案例 10</span>
+                            <div class="ml-2 text-gray-400 text-sm uppercase font-semibold tracking-wide">高階主管</div>
+                        </div>
+                        <h3 class="mt-2 text-xl font-semibold text-white">草擬組織重組公告</h3>
+                        <div class="mt-6 space-y-4">
+                            <h4 class="font-semibold text-gray-300">1. 動態調整參數</h4>
+                            <div id="param-container-10" class="space-y-2"></div>
+                            <button id="add-param-btn-10" class="text-sm font-semibold py-2 px-4 rounded-md bg-gray-600 hover:bg-gray-500 text-gray-200">+ 新增參數</button>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="font-semibold text-gray-300">2. 複製此安全 Prompt 至 LLM</h4>
+                             <div class="prompt-block mt-2">
+                                <pre id="prompt-template-10" class="bg-gray-900 p-3 pl-4 rounded-md text-sm text-gray-300 overflow-x-auto"></pre>
+                                <button id="copy-prompt-btn-10" class="copy-prompt-btn">複製</button>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="template-input-10" class="block text-sm font-semibold text-gray-300">3. 在此貼上 LLM 生成的樣板</label>
+                            <textarea id="template-input-10" rows="10" class="mt-1 block w-full bg-gray-900 border border-gray-600 rounded-md shadow-sm py-2 px-3 text-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"></textarea>
+                        </div>
+                         <div class="mt-6 text-center">
+                            <button id="update-preview-btn-10" class="w-full sm:w-auto action-button font-bold py-2 px-6 rounded-lg shadow-md">&#x21AF; 4. 更新預覽</button>
+                        </div>
+                        <div class="mt-6">
+                            <label for="preview-output-10" class="block text-sm font-semibold text-gray-300">最終結果 (可直接編輯)</label>
+                            <textarea id="preview-output-10" rows="10" class="mt-1 block w-full bg-gray-900/50 border-l-4 border-gray-600 rounded-r-md p-3 text-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" style="white-space: pre-wrap; word-break: break-word;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 mt-8">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 企業資安部門. 僅供內部教學使用.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const initialParamsData = {
+            '1': { '舊款產品': 'DataSafe Pro', '新產品名稱': 'CyberGuard X', '目標客群描述': '過去曾購買過我們舊款資料備份軟體的客戶', '優點1': 'AI 驅動的威脅偵測', '折扣碼': 'CYBERX15OFF', '截止日期': '2025年7月31日', '產品頁面連結': 'https://example.com/cyberguard-x' },
+            '2': { '職位名稱': '資深數據科學家', '機密專案性質': '預測性市場分析', '所需年資': '5', '關鍵技術1': 'Python、R', '關鍵技術2': 'GCP 或 AWS 上的數據服務', '相關產業經驗': '電子商務或金融科技' },
+            '3': { '我方公司業務': 'SaaS 軟體供應商', '潛在客戶公司': '創新科技公司', '客戶聯絡人': '李經理', '客戶痛點A': '舊系統資料整合不易', '客戶痛點B': '人工報表耗時且易出錯', '預估合約金額': '200 萬台幣', '下一步驟': '安排一次產品技術展示' },
+            '4': { '協議類型': '雙方保密協議 (NDA)', '違約方': '甲方 (我方)', '違約行為': '違反保密義務', '損失範圍': '所有直接與間接損失', '賠償上限': '無上限', '適用法律': '台灣法律' },
+            '5': { '程式語言': 'Python', 'API端點環境變數': 'DUMMY_API_ENDPOINT_URL', 'API金鑰環境變數': 'DUMMY_API_KEY', '函數名稱': 'get_user_profile' },
+            '6': { '總營收季增率': 'X%', '總營收年增率': 'Y%', '本季毛利率': 'A%', '上季毛利率': 'B%', '成本優化原因': '供應鏈成本優化', '營業利潤數字': 'Z 百萬', '超出預期百分比': 'C%', '主要成長產品線': '某雲端服務產品線' },
+            '7': { '軟體名稱': 'SuperOffice Suite', '版本號': 'v3.5.2', '問題功能名稱': '匯出 PDF 報告', '臨時解決方法': '建議先匯出為 CSV 格式，再手動轉成 PDF', '案件編號': 'TICKET-12345' },
+            '8': { '新功能概述': '讓使用者可以自訂儀表板 (Dashboard)', '人物誌1': '資料分析師', '人物誌2': '專案經理', '人物誌3': 'C級高階主管' },
+            '9': { '起始地': '越南的某個工業區', '目的地': '台灣高雄的倉庫', '供應商代號': '供應商 V-Alpha', '目前運輸總耗時': '12 天' },
+            '10': { '外部市場趨勢': 'AI 時代的挑戰與機遇', '公司核心戰略': '加速數位轉型與AI賦能', '調整目標': '提高跨部門協作效率與創新速度', '溝通時間範圍': '接下來的幾週內' }
+        };
+
+        const initialPrompts = {
+            '1': `請根據上方提供的參數，幫我草擬一封專業且具吸引力的 B2B 行銷電子郵件。\n\n郵件目標：向我們的現有客戶推廣一款新的資安解決方案。\n目標客群：[目標客群描述]。\n新產品名稱：[新產品名稱]。\n需要強調的優點：\n1. [優點1]。\n2. 與現有雲端架構無縫整合。\n3. 自動化的安全報告。\n\n行動呼籲：提供一個 [折扣碼]，鼓勵他們在 [截止日期] 前回覆以獲取早鳥優惠，並附上產品介紹頁面的連結 [產品頁面連結]。`,
+            '2': `請幫我撰寫一份「[職位名稱]」的職位描述。\n\n這個職位隸屬於一個新成立的、專注於 [機密專案性質] 的內部新創團隊。我們正在尋找一位對數據充滿熱情、能夠將複雜數據轉化為商業洞察的專家。\n\n職責：\n- 開發與實施機器學習模型。\n- 處理與分析大規模結構化與非結構化數據。\n- 與產品和工程團隊合作，推動數據驅動的決策。\n\n需求條件：\n- 擁有 [所需年資] 年以上的相關工作經驗。\n- 精通 [關鍵技術1] 語言以及相關數據科學函式庫。\n- 熟悉 [關鍵技術2]。\n- 具備 [相關產業經驗] 領域的經驗者優先。`,
+            '3': `請幫我草擬一封會議後的專業感謝與追蹤郵件範本。\n\n背景：我方是一家 [我方公司業務]。\n對象：[潛在客戶公司] 的 [客戶聯絡人]。\n\n會議摘要：\n1. 感謝對方撥冗參與會議。\n2. 重申我們討論到貴司面臨的 [客戶痛點A] 與 [客戶痛點B]。\n3. 強調我們的解決方案如何解決這些痛點。\n4. 提及我們初步討論的合作方案，預算約為 [預估合約金額]。\n\n下一步：提議 [下一步驟] 給他們的團隊。`,
+            '4': `請從 [適用法律] 的角度，分析以下在一份 [協議類型] 中的條款概念：\n\n"若 [違約方] 發生 [違約行為]，導致另一方遭受損失，需對其 [損失範圍] 進行全額賠償，且賠償金額為 [賠償上限]。"\n\n請分析：\n1. 在法律實務上，「間接損失」的範圍通常如何界定？\n2. 「賠償無上限」這樣的約定，在法院審理時，其效力與風險為何？\n3. 如果要修改此條款以降低我方風險，有哪些常見的修改建議？`,
+            '5': `# 請幫我解釋以下這段 [程式語言] 程式碼的邏輯，並建議是否有更安全的寫法。\n# 我已將所有機敏資訊替換為佔位符。\n\n\`\`\`[程式語言]\nimport requests\nimport os\n\ndef [函數名稱](user_id):\n    API_ENDPOINT = os.environ.get("[API端點環境變數]") \n    API_KEY = os.environ.get("[API金鑰環境變數]")\n    \n    headers = {\n        "Authorization": f"Bearer {API_KEY}",\n        "Content-Type": "application/json"\n    }\n    \n    try:\n        response = requests.get(f"{API_ENDPOINT}/{user_id}", headers=headers, timeout=5)\n        response.raise_for_status() \n        return response.json()\n    except requests.exceptions.RequestException as e:\n        print(f"API 請求失敗: {e}")\n        return None\n\`\`\``,
+            '6': `請幫我撰寫一段第三季度財務表現的摘要文字，用於公司內部報告。請使用專業、客觀的語氣。\n\n數據重點如下：\n- 總營收：與上一季相比，成長了 [總營收季增率]。與去年同期相比，成長了 [總營收年增率]。\n- 毛利率：為 [本季毛利率]，較上一季的 [上季毛利率] 略有提升，主要原因是 [成本優化原因]。\n- 營業利潤：達到 [營業利潤數字]，超出預期目標 [超出預期百分比]。\n- 主要成長動能：來自 [主要成長產品線] 的強勁表現。`,
+            '7': `請幫我為客服團隊撰寫一個標準回覆範本。\n\n問題情境：客戶反映我們的 [軟體名稱] 在更新至 [版本號] 後，[問題功能名稱] 的反應速度變慢。\n\n回覆需包含以下要點：\n1. 對客戶遇到的不便表示歉意。\n2. 確認我們已經意識到這個問題，並將其列為高優先級。\n3. 告知我們的工程團隊正在積極調查問題根源。\n4. 暫時性的解決建議（如果有的話）：[臨時解決方法]。\n5. 承諾一旦有解決方案或更新，會立即通知客戶。\n6. 提供一個問題追蹤編號的佔位符 [案件編號]。`,
+            '8': `請幫我依照標準的用戶故事格式 (As a [type of user], I want [an action], so that [a benefit])，為一個關於「[新功能概述]」的新軟體功能，撰寫三個用戶故事。\n\n請分別為以下三種不同的使用者角色，撰寫他們的需求：\n1. [人物誌1]\n2. [人物誌2]\n3. [人物誌3]`,
+            '9': `請提供一個物流路線優化的分析框架。\n\n情境：我們需要將貨物從 [起始地] 的 [供應商代號] 工廠，運輸到位於 [目的地] 的公司倉庫。目前的總耗時約為 [目前運輸總耗時]。\n\n請提供幾種可能的替代方案（例如：空運、海空聯運、更換港口等），並分析其優缺點，考量因素應包含：\n- 運輸成本\n- 運輸時間\n- 清關複雜度\n- 貨物損壞風險`,
+            '10': `請幫我草擬一封給全體員工的內部公告信。\n\n主題：關於公司未來發展的組織結構優化。\n\n信件主旨：為了更好地應對 [外部市場趨勢]，並加速我們的 [公司核心戰略]，公司將進行一次組織結構的調整。\n\n需要傳達的重點：\n1. 這次變革的目標是為了 [調整目標]。\n2. 我們將更專注於幾個關鍵業務領域，以求更靈活地應對市場。\n3. 這是一個持續的過程，我們會在 [溝通時間範圍] 與各團隊進行更詳細的溝通。\n4. 強調公司對所有員工的承諾，並將提供必要的支持。\n\n請使用穩定軍心、具前瞻性且透明的語氣。`
+        };
+
+        const initialTemplates = {
+            '1': `主旨：迎接下一代資安防護 — 專屬優惠體驗全新 [新產品名稱]\n\n親愛的客戶 您好，\n感謝您長期信任使用 [舊款產品] 作為企業資料備份的核心方案。我們非常榮幸能與您攜手守護關鍵資訊。\n\n今天，我們誠摯推薦您搶先體驗我們的最新力作 —— [新產品名稱]。本產品專為現代企業打造，不僅保留您熟悉的穩定性，更結合前瞻性的資安防禦機制，包括：\n\n- [優點1]：即時辨識潛在攻擊與異常行為。\n- 與現有雲端架構無縫整合：快速部署，彈性擴充。\n- 自動化安全報告：協助合規與高層決策，即時又直觀。\n\n作為 [舊款產品] 用戶的專屬禮遇，即日起至 [截止日期] 前，只要回覆此信件，即可使用優惠碼 [折扣碼]，享有限時早鳥優惠。\n\n👉 點此查看 [新產品名稱] 產品詳情：[產品頁面連結]\n\n若您希望安排產品顧問進一步解說或現場展示，也歡迎直接與我們聯繫。讓 [新產品名稱] 成為您邁向主動防禦的新起點。\n\n敬祝 商祺，\n\n[您的姓名]\n[您的職稱]\n[公司名稱]\n[聯絡電話]｜[電子郵件]`,
+            '2': `職位描述：[職位名稱]\n\n關於我們：\n我們是一個新成立的內部新創團隊，專注於 [機密專案性質] 領域。我們正在尋找一位對數據充滿熱情、能夠將複雜數據轉化為商業洞察的專家，與我們共同打造下一代數據驅動的產品。\n\n您的職責：\n- 開發與實施最先進的機器學習模型，解決具體的商業問題。\n- 處理與分析來自多源頭的大規模結構化與非結構化數據。\n- 與產品、工程和設計團隊緊密合作，推動數據驅動的決策文化。\n\n我們在尋找這樣的您：\n- 擁有 [所需年資] 年以上的數據科學或相關領域工作經驗。\n- 精通 [關鍵技術1] 語言以及相關數據科學函式庫（如 Scikit-learn, Pandas, TensorFlow/PyTorch）。\n- 擁有在 [關鍵技術2] 等雲端平台上處理大數據的實務經驗。\n- 具備出色的問題解決能力和溝通技巧。\n- 曾在 [相關產業經驗] 領域工作者將被優先考慮。`,
+            '3': `主旨：關於 [潛在客戶公司] 會議追蹤 - [我方公司業務] 解決方案\n\n尊敬的 [客戶聯絡人]，\n\n非常感謝您昨天撥冗與我們團隊會面。能夠深入了解 [潛在客戶公司] 目前的運營狀況，我們獲益良多。\n\n會議中，我們特別關注到您提到的 [客戶痛點A] 以及 [客戶痛點B] 的挑戰。我們相信，這正是我們的解決方案可以發揮最大價值的地方。\n\n我們的平台能有效解決這些問題，並提供您一個整合、自動化的數據儀表板。根據我們初步的討論，一套預算約為 [預估合約金額] 的方案，將能滿足您當前的核心需求。\n\n為了讓您的技術團隊能更深入地了解我們的產品，我們希望能 [安排一次產品技術展示]。不知您下週是否有方便的時間？\n\n期待能與 [潛在客戶公司] 進一步合作。\n\n誠摯地，\n[您的姓名]\n銷售經理`,
+            '4': `分析報告：\n\n基於 [適用法律]，針對 [協議類型] 中所述條款，分析如下：\n\n1.  **「間接損失」的界定**：在法律實務上，「間接損失」通常指因違約行為而衍生出的、非直接財產上的損失，例如商譽損失、預期可得利益的損失等。其範圍認定較易產生爭議，需視具體個案情節而定。\n\n2.  **「賠償無上限」的效力與風險**：此條款對 [違約方] 風險極高。雖然契約自由原則上允許此類約定，但法院在審理時可能會根據公平原則、誠信原則或具體損失情況，酌情減輕賠償金額。然而，這不代表條款無效，[違約方] 仍面臨難以預估的鉅額賠償風險。\n\n3.  **風險降低建議**：\n    * **設定賠償上限**：將「無上限」改為具體的金額，或與合約總金額、年費等掛鉤。\n    * **明確排除間接損失**：在條款中明確約定，賠償範圍不包含間接損失、所失利益等。\n    * **限縮違約責任**：將違約責任限定於因故意或重大過失所造成的損害。`,
+            '5': `程式碼分析：\n\n這段 [程式語言] 程式碼定義了一個名為 [函數名稱] 的函式，其主要功能是透過 HTTP GET 請求，從一個 API 端點獲取特定用戶的個人資料。\n\n**邏輯流程**：\n1.  從環境變數中讀取 API 的 URL ([API端點環境變數]) 和認證金鑰 ([API金鑰環境變數])。\n2.  設定 HTTP 請求的標頭 (Headers)，包含使用 Bearer Token 的授權方式。\n3.  發送請求至指定用戶的 API 端點。\n4.  使用 \`try...except\` 區塊進行錯誤處理。如果請求成功 (HTTP 狀態碼為 2xx)，則返回 JSON 格式的回應。如果發生網路錯誤或伺服器錯誤，則會捕捉例外並印出錯誤訊息。\n\n**安全建議**：\n- **金鑰管理**：從環境變數讀取金鑰是正確的做法，避免了將敏感資訊硬編碼在程式碼中。\n- **錯誤處理**：目前的錯誤處理僅印出訊息，在正式系統中，應考慮使用更完善的日誌（Logging）系統來記錄錯誤。\n- **輸入驗證**：未對傳入的 \`user_id\` 進行驗證，可能存在被注入惡意字串的風險。建議增加對 \`user_id\` 格式的檢查。\n- **超時設定**：設定了5秒的超時（timeout），是良好的實踐，可以防止請求卡住過久。`,
+            '6': `第三季度財務表現摘要：\n\n本季度公司整體表現穩健，展現強勁的成長動能。\n\n- **總營收**：總營收較上一季成長 [總營收季增率]，與去年同期相比，大幅成長了 [總營收年增率]，顯示市場擴張策略奏效。\n- **毛利率**：本季毛利率為 [本季毛利率]，較上一季的 [上季毛利率] 略有提升。這主要歸功於成功的 [成本優化原因]，有效控制了營運成本。\n- **營業利潤**：營業利潤達到 [營業利潤數字]，超出內部財測目標達 [超出預期百分比]。\n- **成長動能**：主要的成長貢獻來自 [主要成長產品線]，其市場需求持續強勁。\n\n總體而言，公司正沿著正確的軌道前進，我們對下一季的表現保持樂觀。`,
+            '7': `主旨：關於 [軟體名稱] ([版本號]) 的問題回覆 (案件編號: [案件編號])\n\n親愛的客戶您好，\n\n感謝您的來信。關於您反映我們的軟體 [軟體名稱] 在更新至 [版本號] 後，[問題功能名稱] 功能反應速度變慢的問題，我們對造成您的不便深感抱歉。\n\n我們已經確認並記錄了此問題 (案件編號: [案件編號])，並已將其列為高優先級處理項目。我們的工程團隊正在積極調查問題的根本原因。\n\n在我們的工程師尋找永久解決方案的同時，您可以暫時嘗試 [臨時解決方法] 作為替代方案。\n\n我們承諾，一旦有任何進度、修補程式或更新釋出，我們將會第一時間通知您。\n\n再次感謝您的耐心與理解。\n\n客服團隊 敬上`,
+            '8': `以下是針對「[新功能概述]」此一功能的用戶故事：\n\n1.  **身為一名 [人物誌1]**，我想要能夠在儀表板上自由添加、移除和重新排列各種數據圖表，**以便**我可以快速組合出我需要的分析視圖，並深入探究數據細節。\n\n2.  **身為一名 [人物誌2]**，我想要能夠將特定配置的儀表板儲存為範本，並分享給我的團隊成員，**以便**我們團隊能有一致的數據監控視角，提升溝通效率。\n\n3.  **身為一名 [人物誌3]**，我想要能夠在我的手機或平板上，快速查看幾個我最關心的核心指標儀表板，**以便**我能隨時隨地掌握公司最重要的營運狀況。`,
+            '9': `物流路線優化分析框架\n\n針對從 [起始地] ([供應商代號]) 至 [目的地] 倉庫的運輸路線，在 [目前運輸總耗時] 的基礎上，提出以下優化分析框架：\n\n**方案一：維持海運，優化港口與船公司**\n* **優點**：成本最低。\n* **缺點**：時間最長。\n* **分析要點**：\n    * 研究鄰近港口是否有更頻繁或更快的船期。\n    * 評估不同船運公司的平均準點率與運輸時間。\n    * 計算更換港口後，內陸運輸成本與時間的變化。\n\n**方案二：海空聯運**\n* **優點**：時間與成本的平衡選項。\n* **缺點**：操作較複雜，需多方協調。\n* **分析要點**：\n    * 確定主要轉運機場（如香港、新加坡、杜拜）。\n    * 計算「海運段」與「空運段」的成本與時間。\n    * 評估轉運過程中的清關複雜度與貨物延遲風險。\n\n**方案三：全程空運**\n* **優點**：時間最快，可大幅縮短運輸週期。\n* **缺點**：成本最高，且易受航班艙位影響。\n* **分析要點**：\n    * 比較不同航空公司的報價與運能。\n    * 計算空運對單位產品成本的影響。\n    * 評估貨物尺寸與重量是否符合空運限制。`,
+            '10': `主旨：關於公司未來發展的組織結構優化\n\n親愛的團隊成員們，\n\n為了更好地應對 [外部市場趨勢]，並加速實現我們的 [公司核心戰raktig] 核心戰略，公司決定將進行一次組織結構的調整與優化。\n\n這次變革並非單純的部門合併或重組，其核心目標是為了 [調整目標]，讓我們能更敏捷、更專注地應對市場的挑戰，抓住新的成長機遇。\n\n我們將更專注於幾個關鍵的業務領域，打破部門壁壘，鼓勵創新思維。這是一個持續的過程，我們會在 [溝通時間範圍] 與各團隊的主管進行更詳細的溝通，說明這對您的團隊和個人的意義。\n\n我們深知，任何變革都會帶來不確定性。但請相信，公司對所有員工的承諾不變，我們將盡最大的努力，提供必要的支持，確保過渡的順利。\n\n讓我們一同迎接挑戰，共創未來。\n\n執行長 [您的姓名]`
+        };
+
+        const setupCase = (caseId) => {
+            const paramContainer = document.getElementById(`param-container-${caseId}`);
+            const addParamBtn = document.getElementById(`add-param-btn-${caseId}`);
+            const updatePreviewBtn = document.getElementById(`update-preview-btn-${caseId}`);
+            const templateTextarea = document.getElementById(`template-input-${caseId}`);
+            const previewOutput = document.getElementById(`preview-output-${caseId}`);
+            const promptTemplatePre = document.getElementById(`prompt-template-${caseId}`);
+            const copyPromptBtn = document.getElementById(`copy-prompt-btn-${caseId}`);
+
+            if (!paramContainer) return;
+
+            const addParameterRow = (key = '', value = '') => {
+                const row = document.createElement('div');
+                row.className = 'flex items-center space-x-2 param-row';
+                row.innerHTML = `
+                    <input type="text" placeholder="參數 (例如：新產品名稱)" class="param-key-input flex-1 rounded-md shadow-sm py-2 px-3 sm:text-sm" value="${key}">
+                    <span class="text-gray-400">:</span>
+                    <input type="text" placeholder="參數值" class="param-input flex-1 rounded-md shadow-sm py-2 px-3 sm:text-sm" value="${value}">
+                    <button type="button" class="remove-param-btn danger-button text-sm font-semibold py-1 px-3 rounded-md">&times;</button>
+                `;
+                paramContainer.appendChild(row);
+
+                row.querySelector('.remove-param-btn').addEventListener('click', () => {
+                    row.remove();
+                });
+            };
+
+            const updatePreview = () => {
+                let template = templateTextarea.value;
+                const paramRows = paramContainer.querySelectorAll('.param-row');
+                
+                paramRows.forEach(row => {
+                    const keyInput = row.querySelector('.param-key-input');
+                    const valueInput = row.querySelector('.param-input');
+                    const key = keyInput.value.trim();
+                    const value = valueInput.value;
+
+                    if (key) {
+                        const regex = new RegExp('\\[' + key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\]', 'g');
+                        template = template.replace(regex, value);
+                    }
+                });
+
+                previewOutput.value = template;
+            };
+            
+            if (copyPromptBtn) {
+                copyPromptBtn.addEventListener('click', () => {
+                    navigator.clipboard.writeText(promptTemplatePre.innerText).then(() => {
+                        copyPromptBtn.innerText = '已複製!';
+                        setTimeout(() => { copyPromptBtn.innerText = '複製'; }, 2000);
+                    }).catch(err => {
+                        console.error('無法複製 Prompt: ', err);
+                        copyPromptBtn.innerText = '失敗';
+                        setTimeout(() => { copyPromptBtn.innerText = '複製'; }, 2000);
+                    });
+                });
+            }
+
+            addParamBtn.addEventListener('click', () => addParameterRow());
+            updatePreviewBtn.addEventListener('click', updatePreview);
+            
+            // Initialization
+            const initialData = initialParamsData[caseId] || {};
+            for (const [key, value] of Object.entries(initialData)) {
+                addParameterRow(key, value);
+            }
+            
+            if (initialPrompts[caseId] && promptTemplatePre) {
+                promptTemplatePre.innerText = initialPrompts[caseId];
+            }
+
+            if (initialTemplates[caseId]) {
+                templateTextarea.value = initialTemplates[caseId];
+            }
+            
+            updatePreview();
+        };
+
+        document.querySelectorAll('[data-case-id]').forEach(card => {
+            setupCase(card.dataset.caseId);
+        });
+    });
+    </script>
+
+</body>
+</ht
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-calendar'></i> Jun 25, 2025
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">資訊分享平台</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/sw/index.html"><input type="checkbox" id="R-section-3de8459f0aeb640a5553250679589de1" aria-controls="R-subsections-3de8459f0aeb640a5553250679589de1" checked><label for="R-section-3de8459f0aeb640a5553250679589de1"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 軟體工程</span></label><a class="padding" href="/sw/index.html">軟體工程</a><ul id="R-subsections-3de8459f0aeb640a5553250679589de1" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/sw/ai/index.html"><input type="checkbox" id="R-section-3ebf6839c081466a6bee6561c9c63cd8" aria-controls="R-subsections-3ebf6839c081466a6bee6561c9c63cd8" checked><label for="R-section-3ebf6839c081466a6bee6561c9c63cd8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Artificial Intelligence (人工智慧)</span></label><a class="padding" href="/sw/ai/index.html">Artificial Intelligence (人工智慧)</a><ul id="R-subsections-3ebf6839c081466a6bee6561c9c63cd8" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/sw/ai/tools/index.html"><input type="checkbox" id="R-section-d3b285dfbd8542858e7b6be3de1823e4" aria-controls="R-subsections-d3b285dfbd8542858e7b6be3de1823e4" checked><label for="R-section-d3b285dfbd8542858e7b6be3de1823e4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Tools</span></label><a class="padding" href="/sw/ai/tools/index.html">Tools</a><ul id="R-subsections-d3b285dfbd8542858e7b6be3de1823e4" class="collapsible-menu">
+            <li class="active " data-nav-id="/sw/ai/tools/security-llm-20250625/index.html"><a class="padding" href="/sw/ai/tools/security-llm-20250625/index.html">企業員工使用 LLM 安全指南</a></li></ul></li>
+            <li class="" data-nav-id="/sw/ai/n8n/2025/05/n8nlinerag/index.html"><a class="padding" href="/sw/ai/n8n/2025/05/n8nlinerag/index.html">搭建 n8n LineBot RAG</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/sw/vibecoding/index.html"><input type="checkbox" id="R-section-84aebbfaea6a847d18ea2d7ec6d35577" aria-controls="R-subsections-84aebbfaea6a847d18ea2d7ec6d35577" checked><label for="R-section-84aebbfaea6a847d18ea2d7ec6d35577"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Vibe Coding (氛圍編程)</span></label><a class="padding" href="/sw/vibecoding/index.html">Vibe Coding (氛圍編程)</a><ul id="R-subsections-84aebbfaea6a847d18ea2d7ec6d35577" class="collapsible-menu">
+            <li class="" data-nav-id="/sw/vibecoding/aiuitools-20250606/index.html"><a class="padding" href="/sw/vibecoding/aiuitools-20250606/index.html">互動式AI UI開發工具報告</a></li>
+            <li class="" data-nav-id="/sw/vibecoding/ai-ui-tools_20250606/index.html"><a class="padding" href="/sw/vibecoding/ai-ui-tools_20250606/index.html">Ai Ui Tools_20250606</a></li>
+            <li class="" data-nav-id="/sw/vibecoding/google_jules_20250527/index.html"><a class="padding" href="/sw/vibecoding/google_jules_20250527/index.html">Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命</a></li></ul></li>
+            <li class="" data-nav-id="/sw/cti/index.html"><a class="padding" href="/sw/cti/index.html">Computer Telephony Integration (電腦電話整合)</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/me/index.html"><input type="checkbox" id="R-section-7e26c7463b1e75e9707d621cbf6da651" aria-controls="R-subsections-7e26c7463b1e75e9707d621cbf6da651" checked><label for="R-section-7e26c7463b1e75e9707d621cbf6da651"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 關於我</span></label><a class="padding" href="/me/index.html">關於我</a><ul id="R-subsections-7e26c7463b1e75e9707d621cbf6da651" class="collapsible-menu">
+            <li class="" data-nav-id="/me/moreme/index.html"><a class="padding" href="/me/moreme/index.html">更多自我介紹</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/ms/index.html"><input type="checkbox" id="R-section-479528d2c81de091efbe9fa96aef1a8d" aria-controls="R-subsections-479528d2c81de091efbe9fa96aef1a8d" checked><label for="R-section-479528d2c81de091efbe9fa96aef1a8d"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 管理工程</span></label><a class="padding" href="/ms/index.html">管理工程</a><ul id="R-subsections-479528d2c81de091efbe9fa96aef1a8d" class="collapsible-menu">
+            <li class="" data-nav-id="/ms/pmp/index.html"><a class="padding" href="/ms/pmp/index.html">專案管理</a></li>
+            <li class="" data-nav-id="/ms/cmmi/index.html"><a class="padding" href="/ms/cmmi/index.html">能力成熟度模型整合</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/cs/index.html"><input type="checkbox" id="R-section-7caae75ca51ba76834b82083f4ccfab8" aria-controls="R-subsections-7caae75ca51ba76834b82083f4ccfab8" checked><label for="R-section-7caae75ca51ba76834b82083f4ccfab8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 資安工程</span></label><a class="padding" href="/cs/index.html">資安工程</a><ul id="R-subsections-7caae75ca51ba76834b82083f4ccfab8" class="collapsible-menu">
+            <li class="" data-nav-id="/cs/cti/index.html"><a class="padding" href="/cs/cti/index.html">Cyber Threat Intelligence (網路威脅情資)</a></li>
+            <li class="" data-nav-id="/cs/iso_nist/index.html"><a class="padding" href="/cs/iso_nist/index.html">ISO＆NIST</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/tools/index.html"><input type="checkbox" id="R-section-bf1399820dde3dd110e03ace4147ff86" aria-controls="R-subsections-bf1399820dde3dd110e03ace4147ff86" checked><label for="R-section-bf1399820dde3dd110e03ace4147ff86"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 一般工具</span></label><a class="padding" href="/tools/index.html">一般工具</a><ul id="R-subsections-bf1399820dde3dd110e03ace4147ff86" class="collapsible-menu">
+            <li class="" data-nav-id="/tools/google-gemini-website/index.html"><a class="padding" href="/tools/google-gemini-website/index.html">Google Gemini with Canvas</a></li>
+            <li class="" data-nav-id="/tools/ai-flow-draw/index.html"><a class="padding" href="/tools/ai-flow-draw/index.html">AI生成可編寫的流程圖與架構圖</a></li>
+            <li class="" data-nav-id="/tools/tools/index.html"><a class="padding" href="/tools/tools/index.html">Tools</a></li>
+            <li class="" data-nav-id="/tools/texstudio/index.html"><a class="padding" href="/tools/texstudio/index.html">論文寫作工具：TeXstudio 安裝及使用指南</a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1750831860" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1750831860" defer></script>
+    <script src="/js/theme.js?1750831860" defer></script>
+  </body>
+</html>

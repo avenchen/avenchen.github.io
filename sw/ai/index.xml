@@ -6,12 +6,12 @@
     <description>人工智慧（Artificial Intelligence, AI）可以定義為模仿人類與人類思維相關的認知功能的機器或計算機，如學習和解決問題。它是計算機科學的一個分支，能夠感知其環境並採取行動，最大限度地提高其成功機會。此外，人工智慧能夠從過去的經驗中學習，做出合理的決策，並快速回應。因此，人工智慧研究人員的科學目標是通過構建具有象徵意義的推理或推理的計算機程式來理解智慧。&#xA;以下是一些與人工智慧相關的關鍵詞：&#xA;機器學習（Machine Learning, ML）：機器學習是 AI 交響樂中的一個工具，它是從先前的數據學習進行運算以預測行為的能力。機器學習最主流的方法是向算法顯示情境的數據集，並透過訓練模型告訴它什麼是正確的決定。 深度學習（Deep Learning, DL）：深度學習是機器學習的一個分支，其中人工神經網絡通過組合多層人造神經元來找到原始數據中的模式。它在 Google DeepMind 的 AlphaGo AI 中得到了廣泛應用。 自然語言處理（Natural Language Processing, NLU）：NLU 是人工智能研究中的一個非常重要的優先事項和挑戰。它使 AI 能夠理解和回應人類的自然語言。 語義感知（Context Awareness）：AI 需要理解情境與上下文的關係，以更好地回應人類需求。</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Fri, 30 May 2025 09:39:53 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Jun 2025 11:24:26 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/sw/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tools</title>
       <link>http://localhost:1313/sw/ai/tools/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 25 Jun 2025 11:24:26 +0800</pubDate>
       <guid>http://localhost:1313/sw/ai/tools/index.html</guid>
       <description>This is a new chapter.</description>
     </item>
