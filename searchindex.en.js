@@ -1,5 +1,29 @@
 var relearn_searchindex = [
   {
+    "breadcrumb": "資安工程",
+    "content": "網路威脅情資 威脅情資 (Cyber Threat Intelligence, CTI)，也稱為網路威脅情資或資安情資，是指與網路攻擊相關的資訊，經由專業團隊收集、轉換、分析、解釋等處理過程，提供資安決策所需的基礎。在現今的網路戰爭中，威脅情資對企業的資安防禦布局至關重要。透過威脅情資，企業能夠有效規劃資安防禦計畫，包括資安意識教育、資安解決方案的導入、資訊系統設定的調整，並區分輕重緩急，分配預算。\n威脅情資可分為三個層次，每個層次都對企業的資安計畫帶來效益：\n戰略型威脅情資（Strategic Threat Intelligence）：無技術細節，由高階主管使用，用於辨別攻擊者的動機和目的。 實戰型威脅情資（Operational Threat Intelligence）：需要技術背景，由安全運營中心（SOC）主管和分析研究員使用，用於理解攻擊者的戰術、技術和流程。 戰術型威脅情資（Tactical Threat Intelligence）：需要技術背景，通常由SOC人員使用，以入侵指標（IoC）監控特定攻擊事件。",
+    "description": "網路威脅情資 威脅情資 (Cyber Threat Intelligence, CTI)，也稱為網路威脅情資或資安情資，是指與網路攻擊相關的資訊，經由專業團隊收集、轉換、分析、解釋等處理過程，提供資安決策所需的基礎。在現今的網路戰爭中，威脅情資對企業的資安防禦布局至關重要。透過威脅情資，企業能夠有效規劃資安防禦計畫，包括資安意識教育、資安解決方案的導入、資訊系統設定的調整，並區分輕重緩急，分配預算。\n威脅情資可分為三個層次，每個層次都對企業的資安計畫帶來效益：\n戰略型威脅情資（Strategic Threat Intelligence）：無技術細節，由高階主管使用，用於辨別攻擊者的動機和目的。 實戰型威脅情資（Operational Threat Intelligence）：需要技術背景，由安全運營中心（SOC）主管和分析研究員使用，用於理解攻擊者的戰術、技術和流程。 戰術型威脅情資（Tactical Threat Intelligence）：需要技術背景，通常由SOC人員使用，以入侵指標（IoC）監控特定攻擊事件。",
+    "tags": [],
+    "title": "Cyber Threat Intelligence (網路威脅情資)",
+    "uri": "/cs/cti/index.html"
+  },
+  {
+    "breadcrumb": "",
+    "content": "資安工程分享.",
+    "description": "資安工程分享.",
+    "tags": [],
+    "title": "資安工程",
+    "uri": "/cs/index.html"
+  },
+  {
+    "breadcrumb": "",
+    "content": "軟體工程.",
+    "description": "軟體工程.",
+    "tags": [],
+    "title": "軟體工程",
+    "uri": "/sw/index.html"
+  },
+  {
     "breadcrumb": "軟體工程",
     "content": "人工智慧（Artificial Intelligence, AI）可以定義為模仿人類與人類思維相關的認知功能的機器或計算機，如學習和解決問題。它是計算機科學的一個分支，能夠感知其環境並採取行動，最大限度地提高其成功機會。此外，人工智慧能夠從過去的經驗中學習，做出合理的決策，並快速回應。因此，人工智慧研究人員的科學目標是通過構建具有象徵意義的推理或推理的計算機程式來理解智慧。\n以下是一些與人工智慧相關的關鍵詞：\n機器學習（Machine Learning, ML）：機器學習是 AI 交響樂中的一個工具，它是從先前的數據學習進行運算以預測行為的能力。機器學習最主流的方法是向算法顯示情境的數據集，並透過訓練模型告訴它什麼是正確的決定。 深度學習（Deep Learning, DL）：深度學習是機器學習的一個分支，其中人工神經網絡通過組合多層人造神經元來找到原始數據中的模式。它在 Google DeepMind 的 AlphaGo AI 中得到了廣泛應用。 自然語言處理（Natural Language Processing, NLU）：NLU 是人工智能研究中的一個非常重要的優先事項和挑戰。它使 AI 能夠理解和回應人類的自然語言。 語義感知（Context Awareness）：AI 需要理解情境與上下文的關係，以更好地回應人類需求。",
     "description": "人工智慧（Artificial Intelligence, AI）可以定義為模仿人類與人類思維相關的認知功能的機器或計算機，如學習和解決問題。它是計算機科學的一個分支，能夠感知其環境並採取行動，最大限度地提高其成功機會。此外，人工智慧能夠從過去的經驗中學習，做出合理的決策，並快速回應。因此，人工智慧研究人員的科學目標是通過構建具有象徵意義的推理或推理的計算機程式來理解智慧。\n以下是一些與人工智慧相關的關鍵詞：\n機器學習（Machine Learning, ML）：機器學習是 AI 交響樂中的一個工具，它是從先前的數據學習進行運算以預測行為的能力。機器學習最主流的方法是向算法顯示情境的數據集，並透過訓練模型告訴它什麼是正確的決定。 深度學習（Deep Learning, DL）：深度學習是機器學習的一個分支，其中人工神經網絡通過組合多層人造神經元來找到原始數據中的模式。它在 Google DeepMind 的 AlphaGo AI 中得到了廣泛應用。 自然語言處理（Natural Language Processing, NLU）：NLU 是人工智能研究中的一個非常重要的優先事項和挑戰。它使 AI 能夠理解和回應人類的自然語言。 語義感知（Context Awareness）：AI 需要理解情境與上下文的關係，以更好地回應人類需求。",
@@ -14,14 +38,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Tools",
     "uri": "/sw/ai/tools/index.html"
-  },
-  {
-    "breadcrumb": "",
-    "content": "軟體工程.",
-    "description": "軟體工程.",
-    "tags": [],
-    "title": "軟體工程",
-    "uri": "/sw/index.html"
   },
   {
     "breadcrumb": "軟體工程",
@@ -46,14 +62,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Computer Telephony Integration (電腦電話整合)",
     "uri": "/sw/cti/index.html"
-  },
-  {
-    "breadcrumb": "資安工程",
-    "content": "網路威脅情資 威脅情資 (Cyber Threat Intelligence, CTI)，也稱為網路威脅情資或資安情資，是指與網路攻擊相關的資訊，經由專業團隊收集、轉換、分析、解釋等處理過程，提供資安決策所需的基礎。在現今的網路戰爭中，威脅情資對企業的資安防禦布局至關重要。透過威脅情資，企業能夠有效規劃資安防禦計畫，包括資安意識教育、資安解決方案的導入、資訊系統設定的調整，並區分輕重緩急，分配預算。\n威脅情資可分為三個層次，每個層次都對企業的資安計畫帶來效益：\n戰略型威脅情資（Strategic Threat Intelligence）：無技術細節，由高階主管使用，用於辨別攻擊者的動機和目的。 實戰型威脅情資（Operational Threat Intelligence）：需要技術背景，由安全運營中心（SOC）主管和分析研究員使用，用於理解攻擊者的戰術、技術和流程。 戰術型威脅情資（Tactical Threat Intelligence）：需要技術背景，通常由SOC人員使用，以入侵指標（IoC）監控特定攻擊事件。",
-    "description": "網路威脅情資 威脅情資 (Cyber Threat Intelligence, CTI)，也稱為網路威脅情資或資安情資，是指與網路攻擊相關的資訊，經由專業團隊收集、轉換、分析、解釋等處理過程，提供資安決策所需的基礎。在現今的網路戰爭中，威脅情資對企業的資安防禦布局至關重要。透過威脅情資，企業能夠有效規劃資安防禦計畫，包括資安意識教育、資安解決方案的導入、資訊系統設定的調整，並區分輕重緩急，分配預算。\n威脅情資可分為三個層次，每個層次都對企業的資安計畫帶來效益：\n戰略型威脅情資（Strategic Threat Intelligence）：無技術細節，由高階主管使用，用於辨別攻擊者的動機和目的。 實戰型威脅情資（Operational Threat Intelligence）：需要技術背景，由安全運營中心（SOC）主管和分析研究員使用，用於理解攻擊者的戰術、技術和流程。 戰術型威脅情資（Tactical Threat Intelligence）：需要技術背景，通常由SOC人員使用，以入侵指標（IoC）監控特定攻擊事件。",
-    "tags": [],
-    "title": "Cyber Threat Intelligence (網路威脅情資)",
-    "uri": "/cs/cti/index.html"
   },
   {
     "breadcrumb": "資安工程",
@@ -88,20 +96,12 @@ var relearn_searchindex = [
     "uri": "/ms/cmmi/index.html"
   },
   {
-    "breadcrumb": "",
-    "content": "資安工程分享.",
-    "description": "資安工程分享.",
+    "breadcrumb": "資安工程 / \rCyber Threat Intelligence (網路威脅情資)",
+    "content": "安裝 Dependency-Check 下載執行檔 https://owasp.org/www-project-dependency-check/ 下載後，解壓縮\ntar -xvf dependency-check-12.1.0-release.zip\r如：解壓縮到 c:\\tools\\dependency-check\n備註：也可透過如Maven Plugin，透過 Maven 下載\n參數說明 Windows\ndependency-check.bat --project \"My App Name\" --scan \"c:\\java\\application\\lib\"\r*nix\ndependency-check.sh --project \"My App Name\" --scan \"/java/application/lib\"\rTo view the command line arguments, see the arguments page\n執行 透過命令列執行：\nc:\\tools\\dependency-check\\bin\\dependency-check --scan . --format HTML --project \"ecp-8504\" --out /report --nvdApiKey \"8f946e88-28cb-40c8-90e7-31f3239b67cb\"\r短參數 參數名稱 參數格式 說明 是否必要 –project project \u003cname\u003e 專案名稱，會顯示在掃描報告中。 選填 -s / –scan scan \u003cpath\u003e 掃描路徑，可多次指定。支援 Ant 格式路徑（如 'directory/**/*.jar'），建議使用單引號以避免 shell 替換（參考 issue #1812）。 通常必填 -f / –format format \u003cformat\u003e 輸出格式，可指定多個格式（HTML、XML、CSV、JSON、JUNIT、SARIF、JENKINS、GITLAB、ALL），預設為 HTML。 選填 -o / –out out \u003cpath\u003e 輸出報告的資料夾路徑，預設為目前目錄。若格式非 ALL，可指定檔案名稱。 選填 –nvdApiKey nvdApiKey \u003capiKey\u003e 用於存取 NVD API 的金鑰，可由 https://nvd.nist.gov/developers/request-an-api-key 申請。 選填 NVD API 金鑰 NVD API 的金鑰，可由 https://nvd.nist.gov/developers/request-an-api-key 申請 在執行時，如使用 API KEY，下載速度，會快於沒使用 API KEY 在執行時，NVD的資料庫，也會有更新，並會存放於dependency-check的data資料夾中\n執行範例 sample report",
+    "description": "安裝 Dependency-Check 下載執行檔 https://owasp.org/www-project-dependency-check/ 下載後，解壓縮\ntar -xvf dependency-check-12.1.0-release.zip\r如：解壓縮到 c:\\tools\\dependency-check\n備註：也可透過如Maven Plugin，透過 Maven 下載\n參數說明 Windows\ndependency-check.bat --project \"My App Name\" --scan \"c:\\java\\application\\lib\"\r*nix\ndependency-check.sh --project \"My App Name\" --scan \"/java/application/lib\"\rTo view the command line arguments, see the arguments page\n執行 透過命令列執行：\nc:\\tools\\dependency-check\\bin\\dependency-check --scan . --format HTML --project \"ecp-8504\" --out /report --nvdApiKey \"8f946e88-28cb-40c8-90e7-31f3239b67cb\"\r短參數 參數名稱 參數格式 說明 是否必要 –project project \u003cname\u003e 專案名稱，會顯示在掃描報告中。 選填 -s / –scan scan \u003cpath\u003e 掃描路徑，可多次指定。支援 Ant 格式路徑（如 'directory/**/*.jar'），建議使用單引號以避免 shell 替換（參考 issue #1812）。 通常必填 -f / –format format \u003cformat\u003e 輸出格式，可指定多個格式（HTML、XML、CSV、JSON、JUNIT、SARIF、JENKINS、GITLAB、ALL），預設為 HTML。 選填 -o / –out out \u003cpath\u003e 輸出報告的資料夾路徑，預設為目前目錄。若格式非 ALL，可指定檔案名稱。 選填 –nvdApiKey nvdApiKey \u003capiKey\u003e 用於存取 NVD API 的金鑰，可由 https://nvd.nist.gov/developers/request-an-api-key 申請。 選填 NVD API 金鑰 NVD API 的金鑰，可由 https://nvd.nist.gov/developers/request-an-api-key 申請 在執行時，如使用 API KEY，下載速度，會快於沒使用 API KEY 在執行時，NVD的資料庫，也會有更新，並會存放於dependency-check的data資料夾中",
     "tags": [],
-    "title": "資安工程",
-    "uri": "/cs/index.html"
-  },
-  {
-    "breadcrumb": "軟體工程 / \rArtificial Intelligence (人工智慧) / \rTools",
-    "content": "\u003c!DOCTYPE html\u003e\r企業員工使用 LLM 安全指南 V2.1\r企業員工使用 LLM 安全指南\r如何在享受 AI 便利的同時，保護公司機敏資訊\n核心原則：抽象化與樣板化\r在使用任何公開的 LLM 時，請務必將所有機敏資訊替換為通用的、不具識別性的佔位符。您提供給 LLM 的是「問題的結構」，而不是「問題的內容」。LLM 將根據結構提供一個通用的「解決方案樣板」，您再於本機端將真實資訊填入。\r使用提示 (Prompt) 的三大重點\r參數集中修改： 先在 Prompt 最上方的參數區填寫您的具體資訊，然後再將整個 Prompt 貼給 LLM。\r上下文要清晰： 即使使用佔位符，也要確保 LLM 能理解您想要什麼。例如，用 [新款智慧型防火牆產品] 比單純用 [產品A] 能讓 LLM 產出更貼切的內容。\r保持結構，替換內容： 我們提供的範本已將機敏資訊參數化，您只需專注修改參數區即可。\r案例 1\r行銷部門\r撰寫產品促銷郵件\r安全 Prompt 範本:\r複製 Prompt\r---\r# 請在這裡修改參數\r舊款產品: \"DataSafe Pro\" # (機敏說明：產品名稱組合可透露公司技術演進路線)\r新產品名稱: \"CyberGuard X\" # (機敏說明：未上市的產品名稱是商業機密)\r目標客群描述: \"過去曾購買過我們舊款資料備份軟體的客戶\" # (機敏說明：客戶輪廓與購買行為是公司的核心資產)\r優點1: \"AI 驅動的威脅偵測\" # (機敏說明：新產品的具體功能點是競爭優勢)\r折扣碼: \"CYBERX15OFF\" # (機敏說明：未公開的優惠活動可能擾亂市場定價)\r截止日期: \"2025年7月31日\" # (機敏說明：行銷活動的時程是內部策略)\r產品頁面連結: \"https://example.com/cyberguard-x\" # (機敏說明：未公開的網址會洩漏即將上線的活動)\r---\r請根據上方提供的參數，幫我草擬一封專業且具吸引力的 B2B 行銷電子郵件。\r郵件目標：向我們的現有客戶推廣一款新的資安解決方案。\r目標客群：[目標客群描述]。\r新產品名稱：[新產品名稱]。\r需要強調的優點：\r1. [優點1]。\r2. 與現有雲端架構無縫整合。\r3. 自動化的安全報告。\r行動呼籲：提供一個 [折扣碼]，鼓勵他們在 [截止日期] 前回覆以獲取早鳥優惠，並附上產品介紹頁面的連結 [產品頁面連結]。\rLLM 產出結果 (安全樣板):\rLLM 會產出一封結構完整的郵件樣板，您只需在本機端將 [客戶名稱] 等真實資訊填入。例如：\n主旨： 專為 [目標客群描述] 設計：隆重介紹 [新產品名稱]！\n**親愛的 [客戶名稱] 您好，**\n...作為我們的尊貴客戶，只要在 [截止日期] 前回覆，即可享有專屬的 **[折扣碼]** 優惠...\r案例 2\r人資部門\r撰寫機密專案職位描述\r安全 Prompt 範本:\r複製 Prompt\r---\r# 請在這裡修改參數\r職位名稱: \"資深數據科學家\" # (機敏說明：特定新興職位可能暗示公司策略方向)\r機密專案性質: \"預測性市場分析\" # (機敏說明：直接揭露公司正在投入的機密研發領域)\r所需年資: 5 # (機敏說明：對人才的資歷要求，間接反映專案的重要性和預算)\r關鍵技術1: \"Python、R\" # (機敏說明：具體的技術棧要求，會讓對手了解我方的技術選型)\r關鍵技術2: \"GCP 或 AWS 上的數據服務\" # (同上)\r相關產業經驗: \"電子商務或金融科技\" # (機敏說明：透露公司可能跨足的新市場或業務方向)\r---\r請幫我撰寫一份「[職位名稱]」的職位描述。\r這個職位隸屬於一個新成立的、專注於 [機密專案性質] 的內部新創團隊。我們正在尋找一位對數據充滿熱情、能夠將複雜數據轉化為商業洞察的專家。\r職責：\r- 開發與實施機器學習模型。\r- 處理與分析大規模結構化與非結構化數據。\r- 與產品和工程團隊合作，推動數據驅動的決策。\r需求條件：\r- 擁有 [所需年資] 年以上的相關工作經驗。\r- 精通 [關鍵技術1] 語言以及相關數據科學函式庫。\r- 熟悉 [關鍵技術2]。\r- 具備 [相關產業經驗] 領域的經驗者優先。\rLLM 產出結果 (安全樣板):\rLLM 會產出一份專業、吸引人，但完全不包含公司內部專案代號（如「鳳凰計畫」）的職位描述。它會專注於職位本身所需的技能與職責，適合直接發布於招聘網站。\r案例 3\r銷售部門\r撰寫會議後追蹤郵件\r安全 Prompt 範本:\r複製 Prompt\r---\r# 請在這裡修改參數\r我方公司業務: \"SaaS 軟體供應商\" # (機敏說明：雖然不機密，但提供上下文有助於生成)\r潛在客戶公司: \"創新科技公司\" # (機敏說明：客戶名單是最高級別的商業機密)\r客戶聯絡人: \"李經理\" # (機敏說明：客戶的聯絡人資訊屬於個資與商業機密)\r客戶痛點A: \"舊系統資料整合不易\" # (機敏說明：客戶的具體痛點是銷售談判的關鍵資訊)\r客戶痛點B: \"人工報表耗時且易出錯\" # (同上)\r預估合約金額: \"200 萬台幣\" # (機敏說明：交易金額是極度敏感的財務與銷售資訊)\r下一步驟: \"安排一次產品技術展示\" # (機敏說明：銷售進程與策略是內部資訊)\r---\r請幫我草擬一封會議後的專業感謝與追蹤郵件範本。\r背景：我方是一家 [我方公司業務]。\r對象：[潛在客戶公司] 的 [客戶聯絡人]。\r會議摘要：\r1. 感謝對方撥冗參與會議。\r2. 重申我們討論到貴司面臨的 [客戶痛點A] 與 [客戶痛點B]。\r3. 強調我們的解決方案如何解決這些痛點。\r4. 提及我們初步討論的合作方案，預算約為 [預估合約金額]。\r下一步：提議 [下一步驟] 給他們的團隊。\rLLM 產出結果 (安全樣板):\rLLM 會產出一封語氣專業的郵件範本。銷售人員只需在本機端，將 [潛在客戶公司] 替換為「創新科技公司」、[客戶聯絡人] 替換為「李經理」、[預估合約金額] 替換為「200 萬台幣」等，即可快速發送。\r案例 4\r法務部門\r分析合約條款風險\r安全 Prompt 範本:\r複製 Prompt\r---\r# 請在這裡抽象化條款結構 (絕對不要貼上原文)\r協議類型: \"雙方保密協議 (NDA)\" # (機敏說明：合約類型本身就定義了互動的機密等級)\r違約方: \"甲方 (我方)\" # (機敏說明：定義我方在合約中的角色)\r違約行為: \"違反保密義務\" # (機敏說明：具體的合約義務是談判核心)\r損失範圍: \"所有直接與間接損失\" # (機敏說明：損失範圍的定義是法務風險的關鍵)\r賠償上限: \"無上限\" # (機敏說明：賠償金額的約定是核心財務風險)\r適用法律: \"台灣法律\" # (機敏說明：管轄權是重要的法律資訊)\r---\r請從 [適用法律] 的角度，分析以下在一份 [協議類型] 中的條款概念：\r\"若 [違約方] 發生 [違約行為]，導致另一方遭受損失，需對其 [損失範圍] 進行全額賠償，且賠償金額為 [賠償上限]。\"\r請分析：\r1. 在法律實務上，「間接損失」的範圍通常如何界定？\r2. 「賠償無上限」這樣的約定，在法院審理時，其效力與風險為何？\r3. 如果要修改此條款以降低我方風險，有哪些常見的修改建議？\rLLM 產出結果 (法律原則分析):\rLLM 會提供關於「間接損失」、「賠償無上限」等概念的通用法律原則、風險分析和談判策略。法務人員可以用這些知識去審視真正的合約條款，而無需洩漏合約本身。\r案例 5\r工程部門\r解釋程式碼邏輯\r安全 Prompt 範本:\r複製 Prompt\r# 請幫我解釋以下這段 Python 程式碼的邏輯，並建議是否有更安全的寫法。\r# 我已將所有機敏資訊替換為 DUMMY (虛構) 字樣。\r\\`\\`\\`python\rimport requests\rimport os\rdef get_user_profile(user_id):\r# DUMMY_API_ENDPOINT_URL (機敏說明：內部系統的 API 端點是駭客攻擊的潛在目標)\rAPI_ENDPOINT = os.environ.get(\"DUMMY_API_ENDPOINT_URL\") # DUMMY_API_KEY (機敏說明：API 金鑰是系統存取憑證，絕對不可外洩)\rAPI_KEY = os.environ.get(\"DUMMY_API_KEY\")\rheaders = {\r\"Authorization\": f\"Bearer {API_KEY}\",\r\"Content-Type\": \"application/json\"\r}\rtry:\rresponse = requests.get(f\"{API_ENDPOINT}/{user_id}\", headers=headers, timeout=5)\rresponse.raise_for_status() # 如果 status code 不是 2xx，則會拋出例外\rreturn response.json()\rexcept requests.exceptions.RequestException as e:\rprint(f\"API 請求失敗: {e}\")\rreturn None\r\\`\\`\\`\rLLM 產出結果 (程式碼分析):\rLLM 會解釋這段程式碼的功能，並可能建議：1. 增加更完善的日誌紀錄。 2. 強調從環境變數讀取金鑰是比寫死在程式碼中更安全的做法。 3. 解釋 `try-except` 和 `raise_for_status()` 的作用。\r案例 6\r財務部門\r製作財務摘要報告\r安全 Prompt 範本:\r複製 Prompt\r---\r# 請在這裡修改參數 (使用代號，而非真實數字)\r總營收季增率: \"X%\" # (機敏說明：營收成長率是公司表現的核心指標)\r總營收年增率: \"Y%\" # (同上)\r本季毛利率: \"A%\" # (機敏說明：毛利率反映公司的獲利能力與成本結構)\r上季毛利率: \"B%\" # (同上)\r成本優化原因: \"供應鏈成本優化\" # (機敏說明：具體的成本控制策略是商業機密)\r營業利潤數字: \"Z 百萬\" # (機敏說明：精確的利潤數字是極度敏感的財務資訊)\r超出預期百分比: \"C%\" # (機敏說明：與財測的比較，會影響市場信心)\r主要成長產品線: \"某雲端服務產品線\" # (機敏說明：揭露哪個產品是金牛，是重要策略資訊)\r---\r請幫我撰寫一段第三季度財務表現的摘要文字，用於公司內部報告。請使用專業、客觀的語氣。\r數據重點如下：\r- 總營收：與上一季相比，成長了 [總營收季增率]。與去年同期相比，成長了 [總營收年增率]。\r- 毛利率：為 [本季毛利率]，較上一季的 [上季毛利率] 略有提升，主要原因是 [成本優化原因]。\r- 營業利潤：達到 [營業利潤數字]，超出預期目標 [超出預期百分比]。\r- 主要成長動能：來自 [主要成長產品線] 的強勁表現。\rLLM 產出結果 (財務摘要樣板):\rLLM 會產出一段流暢的財務分析文字，將 [X%]、[Y%]、[A%] 等佔位符串接起來。財務人員只需在最終報告中，將這些代號替換為真實數字即可。\r案例 7\r客服部門\r擬定客服標準回覆\r安全 Prompt 範本:\r複製 Prompt\r---\r# 請在這裡修改參數\r軟體名稱: \"SuperOffice Suite\" # (機敏說明：具體產品名稱)\r版本號: \"v3.5.2\" # (機敏說明：版本號可讓外界知道產品的開發進度與潛在漏洞)\r問題功能名稱: \"匯出 PDF 報告\" # (機敏說明：具體的功能問題，可能被競爭對手用來攻擊)\r臨時解決方法: \"建議先匯出為 CSV 格式，再手動轉成 PDF\" # (機敏說明：產品的替代方案或缺陷是內部資訊)\r---\r請幫我為客服團隊撰寫一個標準回覆範本。\r問題情境：客戶反映我們的 [軟體名稱] 在更新至 [版本號] 後，[問題功能名稱] 的反應速度變慢。\r回覆需包含以下要點：\r1. 對客戶遇到的不便表示歉意。\r2. 確認我們已經意識到這個問題，並將其列為高優先級。\r3. 告知我們的工程團隊正在積極調查問題根源。\r4. 暫時性的解決建議（如果有的話）：[臨時解決方法]。\r5. 承諾一旦有解決方案或更新，會立即通知客戶。\r6. 提供一個問題追蹤編號的佔位符 [案件編號]。\rLLM 產出結果 (客服回覆樣板):\rLLM 會產出一封有同理心且專業的客服回覆信件。客服人員可直接複製使用，只需填入客戶姓名和系統生成的 [案件編號] 即可。\r案例 8\r產品管理部門\r撰寫用戶故事\r安全 Prompt 範本:\r複製 Prompt\r---\r# 請在這裡修改參數\r新功能概述: \"讓使用者可以自訂儀表板 (Dashboard)\" # (機敏說明：未發表的新功能是產品路線圖的核心機密)\r人物誌1: \"資料分析師\" # (機敏說明：目標用戶輪廓，暗示產品的市場定位)\r人物誌2: \"專案經理\" # (同上)\r人物誌3: \"C級高階主管\" # (同上)\r---\r請幫我依照標準的用戶故事格式 (As a [type of user], I want [an action], so that [a benefit])，為一個關於「[新功能概述]」的新軟體功能，撰寫三個用戶故事。\r請分別為 [人物誌1], [人物誌2], [人物誌3] 這三種不同的使用者角色，撰寫他們的需求。\rLLM 產出結果 (用戶故事):\r1. **身為一名[人物誌1]，我想要** 能夠在儀表板上自由添加、移除和重新排列各種數據圖表，**以便** 我可以快速組合出我需要的分析視圖。\n2. **身為一名[人物誌2]，我想要** ...\r案例 9\r營運部門\r優化供應鏈路線\r安全 Prompt 範本:\r複製 Prompt\r---\r# 請在這裡修改參數\r起始地: \"越南的某個工業區\" # (機敏說明：具體的工廠地點會暴露供應商資訊)\r目的地: \"台灣高雄的倉庫\" # (機敏說明：倉庫地點是物流網絡的節點)\r供應商代號: \"供應商 V-Alpha\" # (機敏說明：供應商名單是極為重要的商業機密)\r目前運輸總耗時: \"12 天\" # (機敏說明：運輸效率是成本和競爭力的關鍵指標)\r---\r請提供一個物流路線優化的分析框架。\r情境：我們需要將貨物從 [起始地] 的 [供應商代號] 工廠，運輸到位於 [目的地] 的公司倉庫。目前的總耗時約為 [目前運輸總耗時]。\r請提供幾種可能的替代方案（例如：空運、海空聯運、更換港口等），並分析其優缺點，考量因素應包含：\r- 運輸成本\r- 運輸時間\r- 清關複雜度\r- 貨物損壞風險\rLLM 產出結果 (分析框架):\rLLM 會提供一個方法論，比較不同運輸模式的利弊。它會產出一個分析框架，讓營運人員可以根據這個框架，去套入真實的成本與時間數據，做出決策，而無需暴露具體的供應商與地點。\r案例 10\r高階主管\r草擬組織重組公告\r安全 Prompt 範本:\r複製 Prompt\r---\r# 請在這裡修改參數\r外部市場趨勢: \"AI 時代的挑戰與機遇\" # (機敏說明：公司對市場的判斷是其戰略的基礎)\r公司核心戰略: \"加速數位轉型與AI賦能\" # (機敏說明：公司的核心戰略方向是最高機密)\r調整目標: \"提高跨部門協作效率與創新速度\" # (機敏說明：內部管理的具體目標)\r溝通時間範圍: \"接下來的幾週內\" # (機敏說明：重大內部變革的時程表)\r---\r請幫我草擬一封給全體員工的內部公告信。\r主題：關於公司未來發展的組織結構優化。\r信件主旨：為了更好地應對 [外部市場趨勢]，並加速我們的 [公司核心戰略]，公司將進行一次組織結構的調整。\r需要傳達的重點：\r1. 這次變革的目標是為了 [調整目標]。\r2. 我們將更專注於幾個關鍵業務領域，以求更靈活地應對市場。\r3. 這是一個持續的過程，我們會在 [溝通時間範圍] 與各團隊進行更詳細的溝通。\r4. 強調公司對所有員工的承諾，並將提供必要的支持。\r請使用穩定軍心、具前瞻性且透明的語氣。\rLLM 產出結果 (公告樣板):\rLLM 會產出一封穩定、有遠見的公告，傳達了變革的正面意圖，同時避免了在細節未定前引發不必要的焦慮和猜測。高階主管可以在此基礎上進行微調，加入個人風格。\r© 2025 企業資安部門. 僅供內部教學使用.",
-    "description": "\u003c!DOCTYPE html\u003e\r企業員工使用 LLM 安全指南 V2.1\r企業員工使用 LLM 安全指南\r如何在享受 AI 便利的同時，保護公司機敏資訊",
-    "tags": [],
-    "title": "企業員工使用 LLM 安全指南",
-    "uri": "/sw/ai/tools/security-llm-20250625/index.html"
+    "title": "Dependency Check",
+    "uri": "/cs/cti/dependency-check-20250708/index.html"
   },
   {
     "breadcrumb": "",
@@ -110,6 +110,22 @@ var relearn_searchindex = [
     "tags": [],
     "title": "首頁",
     "uri": "/index.html"
+  },
+  {
+    "breadcrumb": "軟體工程",
+    "content": "Gemini cli - vscode",
+    "description": "Gemini cli - vscode",
+    "tags": [],
+    "title": "Gemini Cli 20250628",
+    "uri": "/sw/gemini-cli-20250628/index.html"
+  },
+  {
+    "breadcrumb": "軟體工程 / \rArtificial Intelligence (人工智慧) / \rTools",
+    "content": "\u003c!DOCTYPE html\u003e\r企業員工使用 LLM 安全指南 v2.6 (完整互動版)\r企業員工使用 LLM 安全指南\r如何在享受 AI 便利的同時，保護公司機敏資訊\n核心原則：抽象化與樣板化\r在使用任何公開的 LLM 時，請務必將所有機敏資訊替換為通用的、不具識別性的佔位符。您提供給 LLM 的是「問題的結構」，而不是「問題的內容」。LLM 將根據結構提供一個通用的「解決方案樣板」，您再於本機端將真實資訊填入。\r案例 1\r行銷部門\r撰寫產品促銷郵件\r1. 動態調整參數\r+ 新增參數\r2. 複製此安全 Prompt 至 LLM\r複製\r3. 在此貼上 LLM 生成的樣板\r↯ 4. 更新預覽\r最終結果 (可直接編輯)\r案例 2\r人資部門\r撰寫機密專案職位描述\r1. 動態調整參數\r+ 新增參數\r2. 複製此安全 Prompt 至 LLM\r複製\r3. 在此貼上 LLM 生成的樣板\r↯ 4. 更新預覽\r最終結果 (可直接編輯)\r案例 3\r銷售部門\r撰寫會議後追蹤郵件\r1. 動態調整參數\r+ 新增參數\r2. 複製此安全 Prompt 至 LLM\r複製\r3. 在此貼上 LLM 生成的樣板\r↯ 4. 更新預覽\r最終結果 (可直接編輯)\r案例 4\r法務部門\r分析合約條款風險\r1. 動態調整參數\r+ 新增參數\r2. 複製此安全 Prompt 至 LLM\r複製\r3. 在此貼上 LLM 生成的樣板\r↯ 4. 更新預覽\r最終結果 (可直接編輯)\r案例 5\r工程部門\r解釋程式碼邏輯\r1. 動態調整參數\r+ 新增參數\r2. 複製此安全 Prompt 至 LLM\r複製\r3. 在此貼上 LLM 生成的樣板\r↯ 4. 更新預覽\r最終結果 (可直接編輯)\r案例 6\r財務部門\r製作財務摘要報告\r1. 動態調整參數\r+ 新增參數\r2. 複製此安全 Prompt 至 LLM\r複製\r3. 在此貼上 LLM 生成的樣板\r↯ 4. 更新預覽\r最終結果 (可直接編輯)\r案例 7\r客服部門\r擬定客服標準回覆\r1. 動態調整參數\r+ 新增參數\r2. 複製此安全 Prompt 至 LLM\r複製\r3. 在此貼上 LLM 生成的樣板\r↯ 4. 更新預覽\r最終結果 (可直接編輯)\r案例 8\r產品管理部門\r撰寫用戶故事\r1. 動態調整參數\r+ 新增參數\r2. 複製此安全 Prompt 至 LLM\r複製\r3. 在此貼上 LLM 生成的樣板\r↯ 4. 更新預覽\r最終結果 (可直接編輯)\r案例 9\r營運部門\r優化供應鏈路線\r1. 動態調整參數\r+ 新增參數\r2. 複製此安全 Prompt 至 LLM\r複製\r3. 在此貼上 LLM 生成的樣板\r↯ 4. 更新預覽\r最終結果 (可直接編輯)\r案例 10\r高階主管\r草擬組織重組公告\r1. 動態調整參數\r+ 新增參數\r2. 複製此安全 Prompt 至 LLM\r複製\r3. 在此貼上 LLM 生成的樣板\r↯ 4. 更新預覽\r最終結果 (可直接編輯)\r© 2025 企業資安部門. 僅供內部教學使用.",
+    "description": "\u003c!DOCTYPE html\u003e\r企業員工使用 LLM 安全指南 v2.6 (完整互動版)\r企業員工使用 LLM 安全指南\r如何在享受 AI 便利的同時，保護公司機敏資訊",
+    "tags": [],
+    "title": "企業員工使用 LLM 安全指南",
+    "uri": "/sw/ai/tools/security-llm-20250625/index.html"
   },
   {
     "breadcrumb": "一般工具",

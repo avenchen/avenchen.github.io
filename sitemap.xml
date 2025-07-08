@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/cs/cti/index.html</loc>
+    <lastmod>2025-07-08T16:41:25+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/cs/index.html</loc>
+    <lastmod>2025-07-08T16:41:25+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/sw/index.html</loc>
+    <lastmod>2025-06-28T10:52:22+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://localhost:1313/sw/ai/index.html</loc>
     <lastmod>2025-06-25T11:24:26+08:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/sw/ai/tools/index.html</loc>
-    <lastmod>2025-06-25T11:24:26+08:00</lastmod>
-  </url>
-  <url>
-    <loc>http://localhost:1313/sw/index.html</loc>
     <lastmod>2025-06-25T11:24:26+08:00</lastmod>
   </url>
   <url>
@@ -24,9 +32,6 @@
     <loc>http://localhost:1313/sw/cti/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/cs/cti/index.html</loc>
-  </url>
-  <url>
     <loc>http://localhost:1313/cs/iso_nist/index.html</loc>
   </url>
   <url>
@@ -39,14 +44,19 @@
     <loc>http://localhost:1313/ms/cmmi/index.html</loc>
   </url>
   <url>
-    <loc>http://localhost:1313/cs/index.html</loc>
-  </url>
-  <url>
-    <loc>http://localhost:1313/sw/ai/tools/security-llm-20250625/index.html</loc>
-    <lastmod>2025-06-25T11:24:26+08:00</lastmod>
+    <loc>http://localhost:1313/cs/cti/dependency-check-20250708/index.html</loc>
+    <lastmod>2025-07-08T16:41:25+08:00</lastmod>
   </url>
   <url>
     <loc>http://localhost:1313/index.html</loc>
+    <lastmod>2025-07-08T16:41:25+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/sw/gemini-cli-20250628/index.html</loc>
+    <lastmod>2025-06-28T10:52:22+08:00</lastmod>
+  </url>
+  <url>
+    <loc>http://localhost:1313/sw/ai/tools/security-llm-20250625/index.html</loc>
     <lastmod>2025-06-25T11:24:26+08:00</lastmod>
   </url>
   <url>
