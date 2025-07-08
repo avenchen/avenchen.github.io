@@ -29,19 +29,19 @@
     <meta itemprop="dateModified" content="2025-05-30T09:39:53+08:00">
     <meta itemprop="wordCount" content="203">
     <title>搭建 n8n LineBot RAG | 資訊分享平台</title>
-    <link href="/images/favicon.png?1751967831" rel="icon" type="image/png">
-    <link href="/images/favicon.ico?1751967831" rel="icon" type="image/x-icon" sizes="any">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751967831" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751967831" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751967831" rel="stylesheet">
-    <link href="/css/theme.css?1751967831" rel="stylesheet">
-    <link href="/css/format-html.css?1751967831" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1751967831" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751967831" defer></script>
-    <script src="/js/lunr/lunr.min.js?1751967831" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751967831" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751967831" defer></script>
-    <script src="/js/lunr/lunr.zh.min.js?1751967831" defer></script>
-    <script src="/js/search.js?1751967831" defer></script>
+    <link href="/images/favicon.png?1751970987" rel="icon" type="image/png">
+    <link href="/images/favicon.ico?1751970987" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751970987" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751970987" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751970987" rel="stylesheet">
+    <link href="/css/theme.css?1751970987" rel="stylesheet">
+    <link href="/css/format-html.css?1751970987" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1751970987" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751970987" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751970987" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751970987" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751970987" defer></script>
+    <script src="/js/lunr/lunr.zh.min.js?1751970987" defer></script>
+    <script src="/js/search.js?1751970987" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -51,7 +51,7 @@
       window.relearn.relBaseUri='..\/..\/..\/..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['zh'];
-      window.relearn.index_js_url="/searchindex.en.js?1751967831";
+      window.relearn.index_js_url="/searchindex.en.js?1751970987";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -228,25 +228,25 @@
 </ol>
 <h3 id="步驟-2在-n8n-中新增-line-節點">步驟 2：在 n8n 中新增 LINE 節點</h3>
 <p>N8N設定的畫面</p>
-<p><a href="#R-image-af5383eebe6425549d79a3e744742d9a" class="lightbox-link"><img alt="Image 15" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-6-1-1.webp?resize=374%2C612&ssl=1" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-af5383eebe6425549d79a3e744742d9a"><img alt="Image 15" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-6-1-1.webp?resize=374%2C612&ssl=1"></a><a href="#R-image-454d44fbad3c657212893222e141d2c0" class="lightbox-link"><img alt="Image 16" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-8-1.webp?resize=380%2C433&ssl=1" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-454d44fbad3c657212893222e141d2c0"><img alt="Image 16" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-8-1.webp?resize=380%2C433&ssl=1"></a>
+<p><a href="#R-image-cbe3ce99ede51483f5948d446812c4a3" class="lightbox-link"><img alt="Image 15" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-6-1-1.webp?resize=374%2C612&ssl=1" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cbe3ce99ede51483f5948d446812c4a3"><img alt="Image 15" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-6-1-1.webp?resize=374%2C612&ssl=1"></a><a href="#R-image-493bfb87947a514c8bb1470c143f156c" class="lightbox-link"><img alt="Image 16" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-8-1.webp?resize=380%2C433&ssl=1" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-493bfb87947a514c8bb1470c143f156c"><img alt="Image 16" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-8-1.webp?resize=380%2C433&ssl=1"></a>
 LINE Bot的設定畫面</p>
-<p><a href="#R-image-88fe84f0a3b8b91679ed5bd280b400b7" class="lightbox-link"><img alt="Image 17" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-7-1.webp?resize=644%2C172&ssl=1" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-88fe84f0a3b8b91679ed5bd280b400b7"><img alt="Image 17" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-7-1.webp?resize=644%2C172&ssl=1"></a></p>
+<p><a href="#R-image-32d75851ea4e66f4778e3f83a1a78fbf" class="lightbox-link"><img alt="Image 17" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-7-1.webp?resize=644%2C172&ssl=1" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-32d75851ea4e66f4778e3f83a1a78fbf"><img alt="Image 17" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-7-1.webp?resize=644%2C172&ssl=1"></a></p>
 <h3 id="步驟-3在openai建立好的客製化機器人">步驟 3：在OpenAI建立好的客製化機器人</h3>
 <p>網址: <a href="https://platform.openai.com/playground/assistants" rel="external" target="_blank">https://platform.openai.com/playground/assistants</a></p>
 <p>以下是了解我的書的內容的機器人，這個是Open AI的Agent功能，可以在這邊上傳檔案，讓這個機器人有RAG的資料庫可以回答專屬於自己的知識</p>
-<p><a href="#R-image-5c23d99819cb70164401aa8f906ddc4d" class="lightbox-link"><img alt="Image 18" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-9-1.webp?resize=980%2C725&ssl=1" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-5c23d99819cb70164401aa8f906ddc4d"><img alt="Image 18" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-9-1.webp?resize=980%2C725&ssl=1"></a></p>
+<p><a href="#R-image-7a8132112901a4e1bae879ce209e3ff7" class="lightbox-link"><img alt="Image 18" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-9-1.webp?resize=980%2C725&ssl=1" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-7a8132112901a4e1bae879ce209e3ff7"><img alt="Image 18" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-9-1.webp?resize=980%2C725&ssl=1"></a></p>
 <h3 id="步驟4在n8n呼叫已經建立好的機器人">步驟4：在n8n呼叫已經建立好的機器人</h3>
 <p>可以選擇下面這個節點來和已經建立好的機器人聊天</p>
-<p><a href="#R-image-8df734e28593a84b4f96fb6b2113ef85" class="lightbox-link"><img alt="Image 19" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-10-1.webp?resize=307%2C416&ssl=1" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-8df734e28593a84b4f96fb6b2113ef85"><img alt="Image 19" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-10-1.webp?resize=307%2C416&ssl=1"></a>
+<p><a href="#R-image-b04bce2532f14dff706b8286edfed72a" class="lightbox-link"><img alt="Image 19" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-10-1.webp?resize=307%2C416&ssl=1" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-b04bce2532f14dff706b8286edfed72a"><img alt="Image 19" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-10-1.webp?resize=307%2C416&ssl=1"></a>
 要注意的是，這個節點輸入的文字要是前一個節點的”chatInput”變數。所以要在前面新增一個Edit Fields的節點，來改變前一個節點的值的結構</p>
 <p>選擇剛剛建立好的機器人</p>
-<p><a href="#R-image-679eb3e1af1282f49d9048c78841fb90" class="lightbox-link"><img alt="Image 20" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-12-1.webp?resize=347%2C692&ssl=1" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-679eb3e1af1282f49d9048c78841fb90"><img alt="Image 20" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-12-1.webp?resize=347%2C692&ssl=1"></a></p>
+<p><a href="#R-image-fa34e5c05ea08d392b375f4e8a864dac" class="lightbox-link"><img alt="Image 20" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-12-1.webp?resize=347%2C692&ssl=1" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-fa34e5c05ea08d392b375f4e8a864dac"><img alt="Image 20" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-12-1.webp?resize=347%2C692&ssl=1"></a></p>
 <h3 id="步驟5回覆line訊息">步驟5：回覆LINE訊息</h3>
 <p>因為原本n8n只有notify的元件，而這個元件即將要廢棄</p>
 <p>因此我自己參考這邊的API格式來呼叫send line message</p>
@@ -267,18 +267,18 @@ LINE Bot的設定畫面</p>
 }
 ]
 }&rsquo;</p>
-<p><a href="#R-image-cc7c09444ff995a7ae666c7d581a11f2" class="lightbox-link"><img alt="Image 21" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-13-1.webp?resize=355%2C884&ssl=1" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-cc7c09444ff995a7ae666c7d581a11f2"><img alt="Image 21" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-13-1.webp?resize=355%2C884&ssl=1"></a><a href="#R-image-3ac3e7035c2031cb349a9098d8c1c0b7" class="lightbox-link"><img alt="Image 22" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-14-1.webp?resize=302%2C540&ssl=1" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-3ac3e7035c2031cb349a9098d8c1c0b7"><img alt="Image 22" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-14-1.webp?resize=302%2C540&ssl=1"></a>
+<p><a href="#R-image-30bc6abb7f48a0ddf2b19af8b668e9a4" class="lightbox-link"><img alt="Image 21" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-13-1.webp?resize=355%2C884&ssl=1" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-30bc6abb7f48a0ddf2b19af8b668e9a4"><img alt="Image 21" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-13-1.webp?resize=355%2C884&ssl=1"></a><a href="#R-image-9c76d4ce498e6a5aef93e8dd90f28236" class="lightbox-link"><img alt="Image 22" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-14-1.webp?resize=302%2C540&ssl=1" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-9c76d4ce498e6a5aef93e8dd90f28236"><img alt="Image 22" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-14-1.webp?resize=302%2C540&ssl=1"></a>
 這邊因為要避免OPENAI回傳一些會打亂JSON格式的特殊字元，因此要用JSON.stringify(…)把回傳的字串包起來</p>
 <p>{
 &ldquo;replyToken&rdquo;:&quot;{{ $(&lsquo;If&rsquo;).item.json.body.events[0].replyToken }}&quot;,
 &ldquo;messages&rdquo;:[{&ldquo;type&rdquo;:&ldquo;text&rdquo;,&ldquo;text&rdquo;:{{ JSON.stringify($json.output) }}}]
 }</p>
 <h2 id="完整的工作流">完整的工作流</h2>
-<p><a href="#R-image-1a302326616e090780e3507862a3bb4f" class="lightbox-link"><img alt="Image 23" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-15-1.webp?resize=980%2C353&ssl=1" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-1a302326616e090780e3507862a3bb4f"><img alt="Image 23" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-15-1.webp?resize=980%2C353&ssl=1"></a><a href="#R-image-a96ddbd7b648718640a1867fe124b701" class="lightbox-link"><img alt="Image 24" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-16-1.webp?resize=538%2C588&ssl=1" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a96ddbd7b648718640a1867fe124b701"><img alt="Image 24" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-16-1.webp?resize=538%2C588&ssl=1"></a></p>
+<p><a href="#R-image-afa71ef0be0a3003ac4ff251d63813f1" class="lightbox-link"><img alt="Image 23" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-15-1.webp?resize=980%2C353&ssl=1" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-afa71ef0be0a3003ac4ff251d63813f1"><img alt="Image 23" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-15-1.webp?resize=980%2C353&ssl=1"></a><a href="#R-image-06cd1c6bdb4efb46d3f76737210e55a2" class="lightbox-link"><img alt="Image 24" class="lazy lightbox figure-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-16-1.webp?resize=538%2C588&ssl=1" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-06cd1c6bdb4efb46d3f76737210e55a2"><img alt="Image 24" class="lazy lightbox lightbox-image" loading="lazy" src="https://i0.wp.com/claire-chang.com/wp-content/uploads/2025/02/image-16-1.webp?resize=538%2C588&ssl=1"></a></p>
 
   <footer class="footline">
               <i class='fa-fw fas fa-calendar'></i> May 30, 2025
@@ -369,22 +369,22 @@ LINE Bot的設定畫面</p>
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1751967831" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751967831" defer></script>
-    <script src="/js/js-yaml/js-yaml.min.js?1751967831" defer></script>
-    <script src="/js/d3/d3-color.min.js?1751967831" defer></script>
-    <script src="/js/d3/d3-dispatch.min.js?1751967831" defer></script>
-    <script src="/js/d3/d3-drag.min.js?1751967831" defer></script>
-    <script src="/js/d3/d3-ease.min.js?1751967831" defer></script>
-    <script src="/js/d3/d3-interpolate.min.js?1751967831" defer></script>
-    <script src="/js/d3/d3-selection.min.js?1751967831" defer></script>
-    <script src="/js/d3/d3-timer.min.js?1751967831" defer></script>
-    <script src="/js/d3/d3-transition.min.js?1751967831" defer></script>
-    <script src="/js/d3/d3-zoom.min.js?1751967831" defer></script>
-    <script src="/js/mermaid/mermaid.min.js?1751967831" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1751970987" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751970987" defer></script>
+    <script src="/js/js-yaml/js-yaml.min.js?1751970987" defer></script>
+    <script src="/js/d3/d3-color.min.js?1751970987" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1751970987" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1751970987" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1751970987" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1751970987" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1751970987" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1751970987" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1751970987" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1751970987" defer></script>
+    <script src="/js/mermaid/mermaid.min.js?1751970987" defer></script>
     <script>
       window.relearn.themeUseMermaid = JSON.parse("{}");
     </script>
-    <script src="/js/theme.js?1751967831" defer></script>
+    <script src="/js/theme.js?1751970987" defer></script>
   </body>
 </html>

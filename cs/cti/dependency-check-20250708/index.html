@@ -51,21 +51,21 @@ dependency-check.sh --project &#34;My App Name&#34; --scan &#34;/java/applicatio
 c:\tools\dependency-check\bin\dependency-check --scan . --format HTML --project &#34;ecp-8504&#34; --out /report --nvdApiKey &#34;8f946e88-28cb-40c8-90e7-31f3239b67cb&#34;短參數 參數名稱 參數格式 說明 是否必要 –project project &lt;name&gt; 專案名稱，會顯示在掃描報告中。 選填 -s / –scan scan &lt;path&gt; 掃描路徑，可多次指定。支援 Ant 格式路徑（如 &#39;directory/**/*.jar&#39;），建議使用單引號以避免 shell 替換（參考 issue #1812）。 通常必填 -f / –format format &lt;format&gt; 輸出格式，可指定多個格式（HTML、XML、CSV、JSON、JUNIT、SARIF、JENKINS、GITLAB、ALL），預設為 HTML。 選填 -o / –out out &lt;path&gt; 輸出報告的資料夾路徑，預設為目前目錄。若格式非 ALL，可指定檔案名稱。 選填 –nvdApiKey nvdApiKey &lt;apiKey&gt; 用於存取 NVD API 的金鑰，可由 https://nvd.nist.gov/developers/request-an-api-key 申請。 選填 NVD API 金鑰 NVD API 的金鑰，可由 https://nvd.nist.gov/developers/request-an-api-key 申請 在執行時，如使用 API KEY，下載速度，會快於沒使用 API KEY 在執行時，NVD的資料庫，也會有更新，並會存放於dependency-check的data資料夾中">
     <meta itemprop="datePublished" content="2025-07-08T16:41:25+08:00">
     <meta itemprop="dateModified" content="2025-07-08T16:41:25+08:00">
-    <meta itemprop="wordCount" content="121">
+    <meta itemprop="wordCount" content="270">
     <title>Dependency Check | 資訊分享平台</title>
-    <link href="/images/favicon.png?1751967831" rel="icon" type="image/png">
-    <link href="/images/favicon.ico?1751967831" rel="icon" type="image/x-icon" sizes="any">
-    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751967831" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751967831" rel="stylesheet"></noscript>
-    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751967831" rel="stylesheet">
-    <link href="/css/theme.css?1751967831" rel="stylesheet">
-    <link href="/css/format-html.css?1751967831" rel="stylesheet" id="R-format-style">
-    <link href="/css/auto-complete/auto-complete.min.css?1751967831" rel="stylesheet">
-    <script src="/js/auto-complete/auto-complete.min.js?1751967831" defer></script>
-    <script src="/js/lunr/lunr.min.js?1751967831" defer></script>
-    <script src="/js/lunr/lunr.stemmer.support.min.js?1751967831" defer></script>
-    <script src="/js/lunr/lunr.multi.min.js?1751967831" defer></script>
-    <script src="/js/lunr/lunr.zh.min.js?1751967831" defer></script>
-    <script src="/js/search.js?1751967831" defer></script>
+    <link href="/images/favicon.png?1751970987" rel="icon" type="image/png">
+    <link href="/images/favicon.ico?1751970987" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751970987" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1751970987" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1751970987" rel="stylesheet">
+    <link href="/css/theme.css?1751970987" rel="stylesheet">
+    <link href="/css/format-html.css?1751970987" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1751970987" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1751970987" defer></script>
+    <script src="/js/lunr/lunr.min.js?1751970987" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1751970987" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1751970987" defer></script>
+    <script src="/js/lunr/lunr.zh.min.js?1751970987" defer></script>
+    <script src="/js/search.js?1751970987" defer></script>
     <script>
       window.relearn = window.relearn || {};
       // configuration
@@ -75,7 +75,7 @@ c:\tools\dependency-check\bin\dependency-check --scan . --format HTML --project 
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='http:\/\/localhost:1313';
       window.relearn.contentLangs=['zh'];
-      window.relearn.index_js_url="/searchindex.en.js?1751967831";
+      window.relearn.index_js_url="/searchindex.en.js?1751970987";
       window.relearn.disableAnchorCopy=false;
       window.relearn.disableAnchorScrolling=false;
       window.relearn.disableInlineCopyToClipboard=false;
@@ -147,6 +147,12 @@ c:\tools\dependency-check\bin\dependency-check --scan . --format HTML --project 
         <li><a href="#nvd-api-金鑰">NVD API 金鑰</a></li>
         <li><a href="#執行範例">執行範例</a></li>
         <li><a href="#sample-report">sample report</a></li>
+        <li><a href="#bootstrapjar">bootstrap.jar</a></li>
+        <li><a href="#report">report</a></li>
+        <li><a href="#漏洞">漏洞</a></li>
+        <li><a href="#查詢-maven">查詢 Maven</a></li>
+        <li><a href="#tomcat-catalina-9098-版本">Tomcat Catalina 9.0.98 版本</a></li>
+        <li><a href="#不過如是由-apache-tomcat-包裝的元件可以tomcat-最新版本為主">不過如是由 Apache Tomcat 包裝的元件，可以Tomcat 最新版本為主</a></li>
       </ul>
     </li>
   </ul>
@@ -189,8 +195,8 @@ c:\tools\dependency-check\bin\dependency-check --scan . --format HTML --project 
 <h2 id="安裝-dependency-check">安裝 Dependency-Check</h2>
 <h3 id="下載執行檔">下載執行檔</h3>
 <p><a href="https://owasp.org/www-project-dependency-check/" rel="external" target="_blank">https://owasp.org/www-project-dependency-check/</a>
-<a href="#R-image-4999d0319314729bd04a96b9d96a236a" class="lightbox-link"><img alt="download" class="lazy lightbox figure-image" loading="lazy" src="/assets/Dependency-Check-20250708-download.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-4999d0319314729bd04a96b9d96a236a"><img alt="download" class="lazy lightbox lightbox-image" loading="lazy" src="/assets/Dependency-Check-20250708-download.png"></a></p>
+<a href="#R-image-177ba8bc27e729c3c179fdf08e261348" class="lightbox-link"><img alt="download" class="lazy lightbox figure-image" loading="lazy" src="/assets/Dependency-Check-20250708-download.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-177ba8bc27e729c3c179fdf08e261348"><img alt="download" class="lazy lightbox lightbox-image" loading="lazy" src="/assets/Dependency-Check-20250708-download.png"></a></p>
 <p>下載後，解壓縮</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>tar -xvf dependency-check-12.1.0-release.zip</code></pre></div>
 <p>如：解壓縮到 c:\tools\dependency-check</p>
@@ -257,11 +263,54 @@ c:\tools\dependency-check\bin\dependency-check --scan . --format HTML --project 
 在執行時，如使用 API KEY，下載速度，會快於沒使用 API KEY
 在執行時，NVD的資料庫，也會有更新，並會存放於dependency-check的data資料夾中</p>
 <h3 id="執行範例">執行範例</h3>
-<p><a href="#R-image-b0639e31103aeb49986912244a2ad22d" class="lightbox-link"><img alt="output" class="lazy lightbox figure-image" loading="lazy" src="/assets/Dependency-Check-20250708-output.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-b0639e31103aeb49986912244a2ad22d"><img alt="output" class="lazy lightbox lightbox-image" loading="lazy" src="/assets/Dependency-Check-20250708-output.png"></a></p>
+<p><a href="#R-image-c5bb9945cc6a93a96faf8f700a30f833" class="lightbox-link"><img alt="output" class="lazy lightbox figure-image" loading="lazy" src="/assets/Dependency-Check-20250708-output.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-c5bb9945cc6a93a96faf8f700a30f833"><img alt="output" class="lazy lightbox lightbox-image" loading="lazy" src="/assets/Dependency-Check-20250708-output.png"></a></p>
 <h3 id="sample-report">sample report</h3>
-<p><a href="#R-image-64c9393772ea030bbed57c49cbcf522f" class="lightbox-link"><img alt="report" class="lazy lightbox figure-image" loading="lazy" src="/assets/Dependency-Check-20250708-report.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-64c9393772ea030bbed57c49cbcf522f"><img alt="report" class="lazy lightbox lightbox-image" loading="lazy" src="/assets/Dependency-Check-20250708-report.png"></a></p>
+<p><a href="#R-image-afb1c721ddef6bef1f463ec7a557c3e1" class="lightbox-link"><img alt="report" class="lazy lightbox figure-image" loading="lazy" src="/assets/Dependency-Check-20250708-report.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-afb1c721ddef6bef1f463ec7a557c3e1"><img alt="report" class="lazy lightbox lightbox-image" loading="lazy" src="/assets/Dependency-Check-20250708-report.png"></a></p>
+<h3 id="bootstrapjar">bootstrap.jar</h3>
+<p><a href="#R-image-8cc29e889cbfac5ef0cf77db9d9f114b" class="lightbox-link"><img alt="bootstrap" class="lazy lightbox figure-image" loading="lazy" src="/assets/Dependency-Check-20250708-bootstrap.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-8cc29e889cbfac5ef0cf77db9d9f114b"><img alt="bootstrap" class="lazy lightbox lightbox-image" loading="lazy" src="/assets/Dependency-Check-20250708-bootstrap.png"></a></p>
+<p>至檔案目錄下，可檢查 bootstrap.jar 的 Manifest 資訊
+其為 org.apache.catalina.startup.Bootstrap
+版本為 9.0.98</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code>Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.15
+Created-By: 17.0.13+11 (Eclipse Adoptium)
+Main-Class: org.apache.catalina.startup.Bootstrap
+Specification-Title: Apache Tomcat Bootstrap
+Specification-Version: 9.0
+Specification-Vendor: Apache Software Foundation
+Implementation-Title: Apache Tomcat Bootstrap
+Implementation-Version: 9.0.98
+Implementation-Vendor: Apache Software Foundation
+X-Compile-Source-JDK: 8
+X-Compile-Target-JDK: 8
+Class-Path: commons-daemon.jar</code></pre></div>
+<h3 id="report">report</h3>
+<p>在 report 中，可以看到其版本有高信心值的風險
+Identifiers
+cpe:2.3:a:apache:tomcat:9.0.98:<em>:</em>:<em>:</em>:<em>:</em>:*  (Confidence:Highest)</p>
+<h3 id="漏洞">漏洞</h3>
+<p>並在report中，看到多個漏洞的狀況</p>
+<p>Published Vulnerabilities
+CVE-2025-24813  suppress</p>
+<p>CISA Known Exploited Vulnerability:
+Product: Apache Tomcat
+Name: Apache Tomcat Path Equivalence Vulnerability
+Date Added: 2025-04-01
+Description: Apache Tomcat contains a path equivalence vulnerability that allows a remote attacker to execute code, disclose information, or inject malicious content via a partial PUT request.
+Required Action: Apply mitigations per vendor instructions, follow applicable BOD 22-01 guidance for cloud services, or discontinue use of the product if mitigations are unavailable.
+Due Date: 2025-04-22</p>
+<h3 id="查詢-maven">查詢 Maven</h3>
+<p>以Class name查詢 Maven
+<a href="https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina" rel="external" target="_blank">https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina</a></p>
+<h3 id="tomcat-catalina-9098-版本">Tomcat Catalina 9.0.98 版本</h3>
+<p>有多個漏洞
+<a href="#R-image-1481c04a9f11a3ddc1e65a76bf62e94b" class="lightbox-link"><img alt="9098" class="lazy lightbox figure-image" loading="lazy" src="/assets/Dependency-Check-20250708-9098.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-1481c04a9f11a3ddc1e65a76bf62e94b"><img alt="9098" class="lazy lightbox lightbox-image" loading="lazy" src="/assets/Dependency-Check-20250708-9098.png"></a></p>
+<p>應下載最新的元件</p>
+<h3 id="不過如是由-apache-tomcat-包裝的元件可以tomcat-最新版本為主">不過如是由 Apache Tomcat 包裝的元件，可以Tomcat 最新版本為主</h3>
 
   <footer class="footline">
               <i class='fa-fw fas fa-calendar'></i> Jul 8, 2025
@@ -352,8 +401,8 @@ c:\tools\dependency-check\bin\dependency-check --scan . --format HTML --project 
 <div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
       </div>
     </aside>
-    <script src="/js/clipboard/clipboard.min.js?1751967831" defer></script>
-    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751967831" defer></script>
-    <script src="/js/theme.js?1751967831" defer></script>
+    <script src="/js/clipboard/clipboard.min.js?1751970987" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1751970987" defer></script>
+    <script src="/js/theme.js?1751970987" defer></script>
   </body>
 </html>
