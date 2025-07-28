@@ -6,21 +6,21 @@
     <description>資安工程分享.</description>
     <generator>Hugo</generator>
     <language>zh-TW</language>
-    <lastBuildDate>Tue, 08 Jul 2025 16:41:25 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 14 Jul 2025 22:49:19 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/cs/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Cyber Threat Intelligence (網路威脅情資)</title>
-      <link>http://localhost:1313/cs/cti/index.html</link>
-      <pubDate>Tue, 08 Jul 2025 16:41:25 +0800</pubDate>
-      <guid>http://localhost:1313/cs/cti/index.html</guid>
-      <description>網路威脅情資 威脅情資 (Cyber Threat Intelligence, CTI)，也稱為網路威脅情資或資安情資，是指與網路攻擊相關的資訊，經由專業團隊收集、轉換、分析、解釋等處理過程，提供資安決策所需的基礎。在現今的網路戰爭中，威脅情資對企業的資安防禦布局至關重要。透過威脅情資，企業能夠有效規劃資安防禦計畫，包括資安意識教育、資安解決方案的導入、資訊系統設定的調整，並區分輕重緩急，分配預算。&#xA;威脅情資可分為三個層次，每個層次都對企業的資安計畫帶來效益：&#xA;戰略型威脅情資（Strategic Threat Intelligence）：無技術細節，由高階主管使用，用於辨別攻擊者的動機和目的。 實戰型威脅情資（Operational Threat Intelligence）：需要技術背景，由安全運營中心（SOC）主管和分析研究員使用，用於理解攻擊者的戰術、技術和流程。 戰術型威脅情資（Tactical Threat Intelligence）：需要技術背景，通常由SOC人員使用，以入侵指標（IoC）監控特定攻擊事件。</description>
-    </item>
     <item>
       <title>ISO＆NIST</title>
       <link>http://localhost:1313/cs/iso_nist/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 14 Jul 2025 22:49:19 +0800</pubDate>
       <guid>http://localhost:1313/cs/iso_nist/index.html</guid>
       <description>ISO 與 NIST</description>
+    </item>
+    <item>
+      <title>Cyber Threat Intelligence (網路威脅情資)</title>
+      <link>http://localhost:1313/cs/cti/index.html</link>
+      <pubDate>Thu, 10 Jul 2025 14:43:59 +0800</pubDate>
+      <guid>http://localhost:1313/cs/cti/index.html</guid>
+      <description>網路威脅情資 威脅情資 (Cyber Threat Intelligence, CTI)，也稱為網路威脅情資或資安情資，是指與網路攻擊相關的資訊，經由專業團隊收集、轉換、分析、解釋等處理過程，提供資安決策所需的基礎。在現今的網路戰爭中，威脅情資對企業的資安防禦布局至關重要。透過威脅情資，企業能夠有效規劃資安防禦計畫，包括資安意識教育、資安解決方案的導入、資訊系統設定的調整，並區分輕重緩急，分配預算。&#xA;威脅情資可分為三個層次，每個層次都對企業的資安計畫帶來效益：&#xA;戰略型威脅情資（Strategic Threat Intelligence）：無技術細節，由高階主管使用，用於辨別攻擊者的動機和目的。 實戰型威脅情資（Operational Threat Intelligence）：需要技術背景，由安全運營中心（SOC）主管和分析研究員使用，用於理解攻擊者的戰術、技術和流程。 戰術型威脅情資（Tactical Threat Intelligence）：需要技術背景，通常由SOC人員使用，以入侵指標（IoC）監控特定攻擊事件。</description>
     </item>
   </channel>
 </rss>
