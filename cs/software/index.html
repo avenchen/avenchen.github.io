@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-TW" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.5">
+    <meta name="generator" content="Relearn 7.6.1+0b83617ee9da5253aafcf11807b256da7d88d709">
+    <meta name="description" content="JA4 Session Shield 技術架構與 Tomcat 實現指南 本文檔旨在詳細說明 “JA4 Session Shield” 專案中所演示的客戶端指紋綁定 Session 的安全機制。內容涵蓋了當前前端的實現細節、後端應有的處理邏輯，並提供了在 Java/Tomcat 環境中實現此機制的具體指導。
+1. 核心目標 防止 Session 劫持 (Session Hijacking)。傳統上，攻擊者如果竊取到使用者的 sessionId (例如從 Cookie 中)，就可以冒充該使用者向伺服器發送請求。我們的目標是將每個 Session 與其建立時的客戶端指紋（JA4 指紋）進行強綁定。即使 sessionId 被盜，由於攻擊者的客戶端指紋與合法使用者的不同，伺服器也能識別並拒絕該非法請求。
+2. 前端處理流程 (以當前 React App 為例) 前端的主要職責是生成一個能高度代表當前客戶端環境的唯一指紋，並在登入時將其發送給後端。
+在目前的實作中，這個指紋是模擬的，但其組合的參數旨在達到與真實 JA4 相似的獨特性。
+指紋的組成 指紋生成的核心邏輯位於 services/authService.ts 中的 getJa4Fingerprint 函數。它收集了以下幾類資訊：
+標準瀏覽器屬性:
+userAgent: 瀏覽器及作業系統資訊。 language: 瀏覽器語言。 platform: 作業系統平台 (例如 Win32, MacIntel)。 resolution: 螢幕解析度。 colorDepth: 螢幕顏色深度。 timezoneOffset: 時區偏移量。 持久化客戶端 ID (persistentId):
+為了區分設定完全相同的兩台機器，我們在 localStorage 中儲存一個 crypto.randomUUID()。這確保了同一個瀏覽器在多次訪問時具有穩定的標識符，但不同瀏覽器實例（即使在同一台機器上）會有不同的 ID。 動態畫布指紋 (canvasId):">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Software | 資訊分享平台">
+    <meta name="twitter:description" content="JA4 Session Shield 技術架構與 Tomcat 實現指南 本文檔旨在詳細說明 “JA4 Session Shield” 專案中所演示的客戶端指紋綁定 Session 的安全機制。內容涵蓋了當前前端的實現細節、後端應有的處理邏輯，並提供了在 Java/Tomcat 環境中實現此機制的具體指導。
+1. 核心目標 防止 Session 劫持 (Session Hijacking)。傳統上，攻擊者如果竊取到使用者的 sessionId (例如從 Cookie 中)，就可以冒充該使用者向伺服器發送請求。我們的目標是將每個 Session 與其建立時的客戶端指紋（JA4 指紋）進行強綁定。即使 sessionId 被盜，由於攻擊者的客戶端指紋與合法使用者的不同，伺服器也能識別並拒絕該非法請求。
+2. 前端處理流程 (以當前 React App 為例) 前端的主要職責是生成一個能高度代表當前客戶端環境的唯一指紋，並在登入時將其發送給後端。
+在目前的實作中，這個指紋是模擬的，但其組合的參數旨在達到與真實 JA4 相似的獨特性。
+指紋的組成 指紋生成的核心邏輯位於 services/authService.ts 中的 getJa4Fingerprint 函數。它收集了以下幾類資訊：
+標準瀏覽器屬性:
+userAgent: 瀏覽器及作業系統資訊。 language: 瀏覽器語言。 platform: 作業系統平台 (例如 Win32, MacIntel)。 resolution: 螢幕解析度。 colorDepth: 螢幕顏色深度。 timezoneOffset: 時區偏移量。 持久化客戶端 ID (persistentId):
+為了區分設定完全相同的兩台機器，我們在 localStorage 中儲存一個 crypto.randomUUID()。這確保了同一個瀏覽器在多次訪問時具有穩定的標識符，但不同瀏覽器實例（即使在同一台機器上）會有不同的 ID。 動態畫布指紋 (canvasId):">
+    <meta property="og:url" content="http://localhost:1313/cs/software/index.html">
+    <meta property="og:site_name" content="資訊分享平台">
+    <meta property="og:title" content="Software | 資訊分享平台">
+    <meta property="og:description" content="JA4 Session Shield 技術架構與 Tomcat 實現指南 本文檔旨在詳細說明 “JA4 Session Shield” 專案中所演示的客戶端指紋綁定 Session 的安全機制。內容涵蓋了當前前端的實現細節、後端應有的處理邏輯，並提供了在 Java/Tomcat 環境中實現此機制的具體指導。
+1. 核心目標 防止 Session 劫持 (Session Hijacking)。傳統上，攻擊者如果竊取到使用者的 sessionId (例如從 Cookie 中)，就可以冒充該使用者向伺服器發送請求。我們的目標是將每個 Session 與其建立時的客戶端指紋（JA4 指紋）進行強綁定。即使 sessionId 被盜，由於攻擊者的客戶端指紋與合法使用者的不同，伺服器也能識別並拒絕該非法請求。
+2. 前端處理流程 (以當前 React App 為例) 前端的主要職責是生成一個能高度代表當前客戶端環境的唯一指紋，並在登入時將其發送給後端。
+在目前的實作中，這個指紋是模擬的，但其組合的參數旨在達到與真實 JA4 相似的獨特性。
+指紋的組成 指紋生成的核心邏輯位於 services/authService.ts 中的 getJa4Fingerprint 函數。它收集了以下幾類資訊：
+標準瀏覽器屬性:
+userAgent: 瀏覽器及作業系統資訊。 language: 瀏覽器語言。 platform: 作業系統平台 (例如 Win32, MacIntel)。 resolution: 螢幕解析度。 colorDepth: 螢幕顏色深度。 timezoneOffset: 時區偏移量。 持久化客戶端 ID (persistentId):
+為了區分設定完全相同的兩台機器，我們在 localStorage 中儲存一個 crypto.randomUUID()。這確保了同一個瀏覽器在多次訪問時具有穩定的標識符，但不同瀏覽器實例（即使在同一台機器上）會有不同的 ID。 動態畫布指紋 (canvasId):">
+    <meta property="og:locale" content="zh_TW">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Software | 資訊分享平台">
+    <meta itemprop="description" content="JA4 Session Shield 技術架構與 Tomcat 實現指南 本文檔旨在詳細說明 “JA4 Session Shield” 專案中所演示的客戶端指紋綁定 Session 的安全機制。內容涵蓋了當前前端的實現細節、後端應有的處理邏輯，並提供了在 Java/Tomcat 環境中實現此機制的具體指導。
+1. 核心目標 防止 Session 劫持 (Session Hijacking)。傳統上，攻擊者如果竊取到使用者的 sessionId (例如從 Cookie 中)，就可以冒充該使用者向伺服器發送請求。我們的目標是將每個 Session 與其建立時的客戶端指紋（JA4 指紋）進行強綁定。即使 sessionId 被盜，由於攻擊者的客戶端指紋與合法使用者的不同，伺服器也能識別並拒絕該非法請求。
+2. 前端處理流程 (以當前 React App 為例) 前端的主要職責是生成一個能高度代表當前客戶端環境的唯一指紋，並在登入時將其發送給後端。
+在目前的實作中，這個指紋是模擬的，但其組合的參數旨在達到與真實 JA4 相似的獨特性。
+指紋的組成 指紋生成的核心邏輯位於 services/authService.ts 中的 getJa4Fingerprint 函數。它收集了以下幾類資訊：
+標準瀏覽器屬性:
+userAgent: 瀏覽器及作業系統資訊。 language: 瀏覽器語言。 platform: 作業系統平台 (例如 Win32, MacIntel)。 resolution: 螢幕解析度。 colorDepth: 螢幕顏色深度。 timezoneOffset: 時區偏移量。 持久化客戶端 ID (persistentId):
+為了區分設定完全相同的兩台機器，我們在 localStorage 中儲存一個 crypto.randomUUID()。這確保了同一個瀏覽器在多次訪問時具有穩定的標識符，但不同瀏覽器實例（即使在同一台機器上）會有不同的 ID。 動態畫布指紋 (canvasId):">
+    <meta itemprop="datePublished" content="2025-09-18T15:02:25+08:00">
+    <meta itemprop="dateModified" content="2025-09-18T15:02:25+08:00">
+    <meta itemprop="wordCount" content="825">
+    <title>Software | 資訊分享平台</title>
+    <link href="/cs/software/index.xml" rel="alternate" type="application/rss+xml" title="Software | 資訊分享平台">
+    <link href="/images/favicon.png?1758179366" rel="icon" type="image/png">
+    <link href="/images/favicon.ico?1758179366" rel="icon" type="image/x-icon" sizes="any">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css?1758179366" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css?1758179366" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css?1758179366" rel="stylesheet">
+    <link href="/css/theme.css?1758179366" rel="stylesheet">
+    <link href="/css/format-html.css?1758179366" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css?1758179366" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js?1758179366" defer></script>
+    <script src="/js/lunr/lunr.min.js?1758179366" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js?1758179366" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js?1758179366" defer></script>
+    <script src="/js/lunr/lunr.zh.min.js?1758179366" defer></script>
+    <script src="/js/search.js?1758179366" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/cs\/software\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='http:\/\/localhost:1313';
+      window.relearn.contentLangs=['zh'];
+      window.relearn.index_js_url="/searchindex.en.js?1758179366";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'auto' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/cs/software/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#1-核心目標">1. 核心目標</a></li>
+    <li><a href="#2-前端處理流程-以當前-react-app-為例">2. 前端處理流程 (以當前 React App 為例)</a>
+      <ul>
+        <li><a href="#指紋的組成">指紋的組成</a></li>
+        <li><a href="#指紋的生成與發送">指紋的生成與發送</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-後端處理流程-概念與設計">3. 後端處理流程 (概念與設計)</a>
+      <ul>
+        <li><a href="#登入階段">登入階段</a></li>
+        <li><a href="#後續請求驗證階段">後續請求驗證階段</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-流程圖與時序圖">4. 流程圖與時序圖</a>
+      <ul>
+        <li><a href="#流程圖-flowchart">流程圖 (Flowchart)</a></li>
+        <li><a href="#時序圖-sequence-diagram">時序圖 (Sequence Diagram)</a></li>
+      </ul>
+    </li>
+    <li><a href="#5-在-tomcat-環境中的實現對應">5. 在 Tomcat 環境中的實現對應</a>
+      <ul>
+        <li><a href="#前端部分">前端部分</a></li>
+        <li><a href="#後端部分-java-servletfilter">後端部分 (Java Servlet/Filter)</a></li>
+        <li><a href="#總結-tomcat-實現的要點">總結 Tomcat 實現的要點</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class="a11y-only"><a itemprop="item" href="/index.html"><span itemprop="name">首頁</span></a><meta itemprop="position" content="1">&nbsp;/&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/cs/index.html"><span itemprop="name">資安工程</span></a><meta itemprop="position" content="2">&nbsp;/&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Software</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/cs/cti/dependency-check-20250708/index.html" title="Dependency Check (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/sw/index.html" title="軟體工程 (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable cs" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="software">Software</h1>
+
+<h1 id="ja4-session-shield-技術架構與-tomcat-實現指南">JA4 Session Shield 技術架構與 Tomcat 實現指南</h1>
+<p>本文檔旨在詳細說明 &ldquo;JA4 Session Shield&rdquo; 專案中所演示的客戶端指紋綁定 Session 的安全機制。內容涵蓋了當前前端的實現細節、後端應有的處理邏輯，並提供了在 Java/Tomcat 環境中實現此機制的具體指導。</p>
+<h2 id="1-核心目標">1. 核心目標</h2>
+<p>防止 <strong>Session 劫持 (Session Hijacking)</strong>。傳統上，攻擊者如果竊取到使用者的 <code>sessionId</code> (例如從 Cookie 中)，就可以冒充該使用者向伺服器發送請求。我們的目標是將每個 Session 與其建立時的客戶端指紋（JA4 指紋）進行強綁定。即使 <code>sessionId</code> 被盜，由於攻擊者的客戶端指紋與合法使用者的不同，伺服器也能識別並拒絕該非法請求。</p>
+<h2 id="2-前端處理流程-以當前-react-app-為例">2. 前端處理流程 (以當前 React App 為例)</h2>
+<p>前端的主要職責是<strong>生成一個能高度代表當前客戶端環境的唯一指紋</strong>，並在登入時將其發送給後端。</p>
+<p>在目前的實作中，這個指紋是<strong>模擬</strong>的，但其組合的參數旨在達到與真實 JA4 相似的獨特性。</p>
+<h3 id="指紋的組成">指紋的組成</h3>
+<p>指紋生成的核心邏輯位於 <code>services/authService.ts</code> 中的 <code>getJa4Fingerprint</code> 函數。它收集了以下幾類資訊：</p>
+<ol>
+<li>
+<p><strong>標準瀏覽器屬性</strong>:</p>
+<ul>
+<li><code>userAgent</code>: 瀏覽器及作業系統資訊。</li>
+<li><code>language</code>: 瀏覽器語言。</li>
+<li><code>platform</code>: 作業系統平台 (例如 <code>Win32</code>, <code>MacIntel</code>)。</li>
+<li><code>resolution</code>: 螢幕解析度。</li>
+<li><code>colorDepth</code>: 螢幕顏色深度。</li>
+<li><code>timezoneOffset</code>: 時區偏移量。</li>
+</ul>
+</li>
+<li>
+<p><strong>持久化客戶端 ID (<code>persistentId</code>)</strong>:</p>
+<ul>
+<li>為了區分設定完全相同的兩台機器，我們在 <code>localStorage</code> 中儲存一個 <code>crypto.randomUUID()</code>。這確保了同一個瀏覽器在多次訪問時具有穩定的標識符，但不同瀏覽器實例（即使在同一台機器上）會有不同的 ID。</li>
+</ul>
+</li>
+<li>
+<p><strong>動態畫布指紋 (<code>canvasId</code>)</strong>:</p>
+<ul>
+<li>這是<strong>防止指紋被輕易複製和轉移的關鍵安全層</strong>。通過 <code>getCanvasFingerprint</code> 函數，我們在一個不可見的 <code>&lt;canvas&gt;</code> 元素上繪製圖形和文字。</li>
+<li>由於不同設備的 GPU、驅動程式、字體渲染引擎存在微小差異，生成的圖像數據會有不同，從而產生一個與硬體和軟體堆疊強相關的哈希值。</li>
+<li>即使攻擊者複製了 <code>localStorage</code> 中的 <code>persistentId</code>，他們也無法在自己的機器上生成相同的 <code>canvasId</code>。</li>
+</ul>
+</li>
+</ol>
+<h3 id="指紋的生成與發送">指紋的生成與發送</h3>
+<p>整個流程如下：</p>
+<ul>
+<li><strong><code>App.tsx</code></strong> 在組件掛載時調用 <code>fetchFingerprint</code>，後者執行 <code>getJa4Fingerprint()</code>。</li>
+<li><strong><code>getJa4Fingerprint()</code></strong> 收集上述所有參數，將它們合併成一個字串。</li>
+<li>使用 <code>createBrowserHash()</code> 函數對該字串進行哈希運算，模擬出一個看起來像 JA4 的 <code>dynamicJa4</code> 指紋。</li>
+<li>當使用者在 <strong><code>LoginPage.tsx</code></strong> 點擊登入時，<code>handleLogin</code> 函數會將使用者名稱、密碼以及這個生成好的指紋一起透過 <code>login()</code> 服務發送出去。</li>
+</ul>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// App.tsx -&gt; handleLogin
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleLogin</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> (<span style="color:#a6e22e">username</span>, <span style="color:#a6e22e">password</span>) =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// fingerprintData.fingerprint 就是我們在前端生成的指紋
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">loggedInUser</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">login</span>(<span style="color:#a6e22e">username</span>, <span style="color:#a6e22e">password</span>, <span style="color:#a6e22e">fingerprintData</span>.<span style="color:#a6e22e">fingerprint</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>};</span></span></code></pre></div>
+<hr>
+<h2 id="3-後端處理流程-概念與設計">3. 後端處理流程 (概念與設計)</h2>
+<p>後端是安全機制的核心執行者。它負責<strong>驗證</strong>、<strong>儲存</strong>和<strong>比對</strong>指紋。</p>
+<h3 id="登入階段">登入階段</h3>
+<ol>
+<li><strong>接收請求</strong>: 後端 API (例如 <code>/api/login</code>) 接收來自前端的 POST 請求，其中包含 <code>username</code>, <code>password</code> 和前端生成的 <code>fingerprint</code>。</li>
+<li><strong>使用者認證</strong>: 驗證使用者名稱和密碼是否正確。</li>
+<li><strong>建立 Session</strong>: 認證成功後，為該使用者建立一個新的 Session，並產生 <code>sessionId</code>。</li>
+<li><strong>綁定指紋</strong>: <strong>將前端發送過來的 <code>fingerprint</code> 儲存為該 Session 的一個屬性</strong>。例如，在 Redis 或資料庫中，Session 物件可能看起來像這樣：
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;sessionId&#34;</span>: <span style="color:#e6db74">&#34;sess_abc-123&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;userId&#34;</span>: <span style="color:#e6db74">&#34;admin&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;expiresAt&#34;</span>: <span style="color:#e6db74">&#34;...&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;boundFingerprint&#34;</span>: <span style="color:#e6db74">&#34;t13d1516h2_a9b8c7d6e5f4_1a2b3c4d5e6f&#34;</span> 
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+</li>
+<li><strong>返回結果</strong>: 將 <code>sessionId</code> 透過 <code>Set-Cookie</code> header 返回給客戶端。</li>
+</ol>
+<h3 id="後續請求驗證階段">後續請求驗證階段</h3>
+<p>對於每一個需要驗證 Session 的後續請求 (例如 <code>/api/dashboard</code>):</p>
+<ol>
+<li><strong>接收請求</strong>: 客戶端在請求的 Cookie 中會自動帶上 <code>sessionId</code>。</li>
+<li><strong>獲取 Session</strong>: 後端根據 <code>sessionId</code> 查找對應的 Session 資料。如果找不到，則拒絕請求。</li>
+<li><strong>重新生成指紋</strong>: <strong>後端需要根據當前請求的特徵，重新計算一次客戶端指紋。</strong></li>
+<li><strong>比對指紋</strong>: 將<strong>重新計算出的指紋</strong>與 Session 中<strong>儲存的 <code>boundFingerprint</code></strong> 進行比較。</li>
+<li><strong>決策</strong>:
+<ul>
+<li>如果兩個指紋<strong>匹配</strong>，則證明請求來自合法的客戶端，處理該請求。</li>
+<li>如果兩個指紋<strong>不匹配</strong>，則判定為 Session 劫持攻擊，應立即<strong>銷毀該 Session</strong> 並返回 401/403 錯誤。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="4-流程圖與時序圖">4. 流程圖與時序圖</h2>
+<h3 id="流程圖-flowchart">流程圖 (Flowchart)</h3>
+<pre class="mermaid align-center ">graph TD
+    subgraph &#34;Login Phase&#34;
+        A[Client: 載入 App] --&gt; B{Frontend: getJa4Fingerprint};
+        B --&gt; C[Frontend: 收集瀏覽器/Canvas/LocalStorage 參數];
+        C --&gt; D[Frontend: 生成模擬 JA4 指紋];
+        E[Client: 輸入帳號密碼並提交] --&gt; F{Frontend: 發送登入請求 含指紋};
+        F --&gt; G[Backend: 接收請求];
+        G --&gt; H{Backend: 驗證帳密};
+        H -- 成功 --&gt; I[Backend: 建立 Session];
+        I --&gt; J[Backend: 將前端指紋綁定到 Session];
+        J --&gt; K[Backend: 返回 Session Cookie];
+        H -- 失敗 --&gt; L[Backend: 返回錯誤];
+    end
+
+    subgraph &#34;Subsequent Request Phase&#34;
+        M[Client: 發起 API 請求 攜帶 Session Cookie] --&gt; N[Backend: 接收請求];
+        N --&gt; O{Backend: 根據 Cookie 找到 Session};
+        O -- 找不到 --&gt; P[Backend: 拒絕請求 401];
+        O -- 找到 --&gt; Q[Backend: 從 Session 取出綁定的指紋];
+        Q --&gt; R[Backend: 根據當前請求重新計算指紋];
+        R --&gt; S{Backend: 比對兩個指紋};
+        S -- 不匹配 --&gt; T[Backend: 判定為劫持, 銷毀 Session, 拒絕請求 403];
+        S -- 匹配 --&gt; U[Backend: 處理請求, 返回數據];
+    end</pre>
+<h3 id="時序圖-sequence-diagram">時序圖 (Sequence Diagram)</h3>
+<pre class="mermaid align-center ">sequenceDiagram
+    participant Browser
+    participant ReactApp
+    participant TomcatServer
+    participant Database/SessionStore
+
+    %% Login Sequence
+    Browser-&gt;&gt;ReactApp: 載入頁面
+    activate ReactApp
+    ReactApp-&gt;&gt;ReactApp: 執行 getJa4Fingerprint()
+    ReactApp--&gt;&gt;Browser: 顯示登入頁面與指紋
+    deactivate ReactApp
+
+    Browser-&gt;&gt;ReactApp: 使用者提交登入表單
+    activate ReactApp
+    ReactApp-&gt;&gt;TomcatServer: POST /api/login (帳密, 指紋)
+    activate TomcatServer
+    TomcatServer-&gt;&gt;Database/SessionStore: 驗證使用者
+    Database/SessionStore--&gt;&gt;TomcatServer: 驗證成功
+    TomcatServer-&gt;&gt;TomcatServer: 建立 HttpSession
+    TomcatServer-&gt;&gt;Database/SessionStore: 儲存 Session 並綁定指紋
+    TomcatServer--&gt;&gt;ReactApp: 登入成功 (Set-Cookie: JSESSIONID)
+    deactivate TomcatServer
+    ReactApp--&gt;&gt;Browser: 渲染儀表板頁面
+    deactivate ReactApp
+
+    %% Subsequent Request Sequence
+    Browser-&gt;&gt;ReactApp: 使用者操作, 觸發 API 請求
+    activate ReactApp
+    ReactApp-&gt;&gt;TomcatServer: GET /api/data (Cookie: JSESSIONID)
+    activate TomcatServer
+    TomcatServer-&gt;&gt;Database/SessionStore: 根據 JSESSIONID 獲取 Session
+    Database/SessionStore--&gt;&gt;TomcatServer: 返回 Session 資料 (含綁定指紋)
+    TomcatServer-&gt;&gt;TomcatServer: 根據當前請求重新計算指紋
+    TomcatServer-&gt;&gt;TomcatServer: 比對新舊指紋
+    Note right of TomcatServer: if (newFingerprint != storedFingerprint) -&gt; reject()
+    TomcatServer--&gt;&gt;ReactApp: 返回 API 資料
+    deactivate TomcatServer
+    ReactApp--&gt;&gt;Browser: 更新 UI
+    deactivate ReactApp</pre>
+<hr>
+<h2 id="5-在-tomcat-環境中的實現對應">5. 在 Tomcat 環境中的實現對應</h2>
+<p>將此機制移植到 Tomcat/Java 環境，前端的邏輯基本不變，核心工作在於後端的實現。</p>
+<h3 id="前端部分">前端部分</h3>
+<ul>
+<li><strong>部署</strong>: React 應用程式 (執行 <code>npm run build</code> 後的 <code>dist</code> 目錄) 可以作為靜態資源部署在 Tomcat 的 <code>webapp</code> 目錄下，或由 Nginx/Apache 等 Web Server 提供服務。</li>
+<li><strong>API 端點</strong>: <code>services/authService.ts</code> 中的 <code>fetch</code> 請求需要將 URL 從模擬的 Promise 指向真實的 Tomcat 後端 API 端點，例如 <code>fetch('/api/login', ...)</code>。</li>
+</ul>
+<h3 id="後端部分-java-servletfilter">後端部分 (Java Servlet/Filter)</h3>
+<p>後端的實現可以分為兩個核心組件：一個處理登入的 <code>Servlet</code> 和一個驗證後續請求的 <code>Filter</code>。</p>
+<h4 id="1-登入-servlet-loginservletjava">1. 登入 Servlet (<code>LoginServlet.java</code>)</h4>
+<p>這個 Servlet 負責處理 <code>/api/login</code> 請求。</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@WebServlet</span>(<span style="color:#e6db74">&#34;/api/login&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginServlet</span> <span style="color:#66d9ef">extends</span> HttpServlet {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doPost</span>(HttpServletRequest request, HttpServletResponse response) <span style="color:#66d9ef">throws</span> ServletException, IOException {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 1. 解析請求 Body, 獲取 username, password, 和 clientFingerprint</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//    (需要使用像 GSON 或 Jackson 這樣的庫來解析 JSON)</span>
+</span></span><span style="display:flex;"><span>        LoginRequest loginReq <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Gson().<span style="color:#a6e22e">fromJson</span>(request.<span style="color:#a6e22e">getReader</span>(), LoginRequest.<span style="color:#a6e22e">class</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 2. 驗證使用者 (連接資料庫等)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">boolean</span> isAuthenticated <span style="color:#f92672">=</span> YourAuthService.<span style="color:#a6e22e">authenticate</span>(loginReq.<span style="color:#a6e22e">getUsername</span>(), loginReq.<span style="color:#a6e22e">getPassword</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (isAuthenticated) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 3. 建立 Session</span>
+</span></span><span style="display:flex;"><span>            HttpSession session <span style="color:#f92672">=</span> request.<span style="color:#a6e22e">getSession</span>(<span style="color:#66d9ef">true</span>); <span style="color:#75715e">// true 表示如果不存在就建立一個新的</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 4. 將前端傳來的指紋綁定到 Session</span>
+</span></span><span style="display:flex;"><span>            session.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;boundFingerprint&#34;</span>, loginReq.<span style="color:#a6e22e">getClientFingerprint</span>());
+</span></span><span style="display:flex;"><span>            session.<span style="color:#a6e22e">setAttribute</span>(<span style="color:#e6db74">&#34;user&#34;</span>, loginReq.<span style="color:#a6e22e">getUsername</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 5. 返回成功響應</span>
+</span></span><span style="display:flex;"><span>            response.<span style="color:#a6e22e">setStatus</span>(HttpServletResponse.<span style="color:#a6e22e">SC_OK</span>);
+</span></span><span style="display:flex;"><span>            response.<span style="color:#a6e22e">getWriter</span>().<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;{\&#34;status\&#34;: \&#34;success\&#34;}&#34;</span>);
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 認證失敗</span>
+</span></span><span style="display:flex;"><span>            response.<span style="color:#a6e22e">setStatus</span>(HttpServletResponse.<span style="color:#a6e22e">SC_UNAUTHORIZED</span>);
+</span></span><span style="display:flex;"><span>            response.<span style="color:#a6e22e">getWriter</span>().<span style="color:#a6e22e">write</span>(<span style="color:#e6db74">&#34;{\&#34;error\&#34;: \&#34;Invalid credentials\&#34;}&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 需要一個輔助類來映射 JSON</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LoginRequest</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String username;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String password;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> String clientFingerprint;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Getters...</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h4 id="2-指紋驗證-filter-fingerprintvalidationfilterjava">2. 指紋驗證 Filter (<code>FingerprintValidationFilter.java</code>)</h4>
+<p>這是安全機制的核心。這個 Filter 會攔截所有需要保護的資源請求（例如 <code>/api/*</code>，但不包含 <code>/api/login</code>）。</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#a6e22e">@WebFilter</span>(<span style="color:#e6db74">&#34;/api/*&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FingerprintValidationFilter</span> <span style="color:#66d9ef">implements</span> Filter {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doFilter</span>(ServletRequest req, ServletResponse res, FilterChain chain) <span style="color:#66d9ef">throws</span> IOException, ServletException {
+</span></span><span style="display:flex;"><span>        HttpServletRequest request <span style="color:#f92672">=</span> (HttpServletRequest) req;
+</span></span><span style="display:flex;"><span>        HttpServletResponse response <span style="color:#f92672">=</span> (HttpServletResponse) res;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 不過濾登入請求自身</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#e6db74">&#34;/api/login&#34;</span>.<span style="color:#a6e22e">equals</span>(request.<span style="color:#a6e22e">getRequestURI</span>())) {
+</span></span><span style="display:flex;"><span>            chain.<span style="color:#a6e22e">doFilter</span>(request, response);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        HttpSession session <span style="color:#f92672">=</span> request.<span style="color:#a6e22e">getSession</span>(<span style="color:#66d9ef">false</span>); <span style="color:#75715e">// false 表示不自動建立新 Session</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (session <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 沒有 Session, 直接拒絕</span>
+</span></span><span style="display:flex;"><span>            response.<span style="color:#a6e22e">sendError</span>(HttpServletResponse.<span style="color:#a6e22e">SC_UNAUTHORIZED</span>, <span style="color:#e6db74">&#34;No active session.&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 從 Session 中獲取之前綁定的指紋</span>
+</span></span><span style="display:flex;"><span>        String storedFingerprint <span style="color:#f92672">=</span> (String) session.<span style="color:#a6e22e">getAttribute</span>(<span style="color:#e6db74">&#34;boundFingerprint&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 重新計算當前請求的指紋 (這是關鍵且複雜的一步)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 您需要一個服務來從 request 中提取 User-Agent 等 header, </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 但 Canvas 指紋和 LocalStorage ID 無法在後端直接獲取。</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 這意味著後端驗證的指紋必須是基於請求本身可用的資訊。</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// *** 最佳實踐：真實 JA4 指紋 ***</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 在生產環境中，我們不再使用前端模擬的指紋進行比對。</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 而是由伺服器前端的負載均衡器或反向代理 (如 Nginx, HAProxy, F5) </span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 從 TLS Handshake 中計算出真實的 JA4 指紋，並透過一個 HTTP Header (例如 X-JA4-Fingerprint) 傳遞給 Tomcat。</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 這樣後端只需讀取 header 即可。</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        String currentRequestFingerprint <span style="color:#f92672">=</span> request.<span style="color:#a6e22e">getHeader</span>(<span style="color:#e6db74">&#34;X-JA4-Fingerprint&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (currentRequestFingerprint <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> currentRequestFingerprint.<span style="color:#a6e22e">equals</span>(storedFingerprint)) {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 指紋匹配，放行請求</span>
+</span></span><span style="display:flex;"><span>            chain.<span style="color:#a6e22e">doFilter</span>(request, response);
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 指紋不匹配，銷毀 Session 並拒絕請求</span>
+</span></span><span style="display:flex;"><span>            session.<span style="color:#a6e22e">invalidate</span>();
+</span></span><span style="display:flex;"><span>            response.<span style="color:#a6e22e">sendError</span>(HttpServletResponse.<span style="color:#a6e22e">SC_FORBIDDEN</span>, <span style="color:#e6db74">&#34;Fingerprint mismatch. Session terminated.&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// init() and destroy() methods...</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h3 id="總結-tomcat-實現的要點">總結 Tomcat 實現的要點</h3>
+<ol>
+<li><strong>前端保持不變</strong>: 只需修改 API URL。</li>
+<li><strong>後端實現</strong>: 使用一個 <code>Servlet</code> 處理登入和指紋綁定，使用一個 <code>Filter</code> 攔截和驗證後續請求。</li>
+<li><strong>指紋的來源是關鍵</strong>:
+<ul>
+<li><strong>登入時</strong>: 應該信任一個由<strong>反向代理</strong>計算並傳入 Header 的<strong>真實 JA4 指紋</strong>，而不是前端模擬的指紋。前端的複雜指紋生成更多是作為一個輔助性的、加強客戶端識別的信號。一個更強大的策略是後端在登入時同時儲存代理傳來的 JA4 指紋和前端傳來的 Canvas 指紋，後續驗證時進行雙重檢查。</li>
+<li><strong>驗證時</strong>: 同樣依賴反向代理為每個請求計算的 JA4 指紋 Header。</li>
+</ul>
+</li>
+<li><strong>依賴</strong>: 需要一個能夠計算 JA4 指紋並將其注入 HTTP Header 的網路基礎設施組件（Nginx/HAProxy 等）。這是將此方案投入生產的<strong>硬性要求</strong>。</li>
+</ol>
+
+  <footer class="footline">
+              <i class='fa-fw fas fa-calendar'></i> Sep 18, 2025
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">資訊分享平台</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-headercontrols">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-main">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/cs/index.html"><input type="checkbox" id="R-section-7caae75ca51ba76834b82083f4ccfab8" aria-controls="R-subsections-7caae75ca51ba76834b82083f4ccfab8" checked><label for="R-section-7caae75ca51ba76834b82083f4ccfab8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 資安工程</span></label><a class="padding" href="/cs/index.html">資安工程</a><ul id="R-subsections-7caae75ca51ba76834b82083f4ccfab8" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/cs/iso_nist/index.html"><input type="checkbox" id="R-section-11ce5d727a3a252513b1fc2ce6e5e80b" aria-controls="R-subsections-11ce5d727a3a252513b1fc2ce6e5e80b" checked><label for="R-section-11ce5d727a3a252513b1fc2ce6e5e80b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu ISO＆NIST</span></label><a class="padding" href="/cs/iso_nist/index.html">ISO＆NIST</a><ul id="R-subsections-11ce5d727a3a252513b1fc2ce6e5e80b" class="collapsible-menu">
+            <li class="" data-nav-id="/cs/iso_nist/iso27001-42001-20250714/index.html"><a class="padding" href="/cs/iso_nist/iso27001-42001-20250714/index.html">AI治理指南：整合ISO 27001與42001，打造無法撼動的AI安全開發生命週期 (AI SSDLC)</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/cs/cti/index.html"><input type="checkbox" id="R-section-b11c8d54cfffc0757313905f0c92430b" aria-controls="R-subsections-b11c8d54cfffc0757313905f0c92430b" checked><label for="R-section-b11c8d54cfffc0757313905f0c92430b"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Cyber Threat Intelligence (網路威脅情資)</span></label><a class="padding" href="/cs/cti/index.html">Cyber Threat Intelligence (網路威脅情資)</a><ul id="R-subsections-b11c8d54cfffc0757313905f0c92430b" class="collapsible-menu">
+            <li class="" data-nav-id="/cs/cti/dependency-track-20250710/index.html"><a class="padding" href="/cs/cti/dependency-track-20250710/index.html">Dependency Track 20250710</a></li>
+            <li class="" data-nav-id="/cs/cti/dependency-check-20250708/index.html"><a class="padding" href="/cs/cti/dependency-check-20250708/index.html">Dependency Check</a></li></ul></li>
+            <li class="active " data-nav-id="/cs/software/index.html"><a class="padding" href="/cs/software/index.html">Software</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/sw/index.html"><input type="checkbox" id="R-section-3de8459f0aeb640a5553250679589de1" aria-controls="R-subsections-3de8459f0aeb640a5553250679589de1" checked><label for="R-section-3de8459f0aeb640a5553250679589de1"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 軟體工程</span></label><a class="padding" href="/sw/index.html">軟體工程</a><ul id="R-subsections-3de8459f0aeb640a5553250679589de1" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/sw/ai/index.html"><input type="checkbox" id="R-section-3ebf6839c081466a6bee6561c9c63cd8" aria-controls="R-subsections-3ebf6839c081466a6bee6561c9c63cd8" checked><label for="R-section-3ebf6839c081466a6bee6561c9c63cd8"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Artificial Intelligence (人工智慧)</span></label><a class="padding" href="/sw/ai/index.html">Artificial Intelligence (人工智慧)</a><ul id="R-subsections-3ebf6839c081466a6bee6561c9c63cd8" class="collapsible-menu">
+            <li class="alwaysopen " data-nav-id="/sw/ai/tools/index.html"><input type="checkbox" id="R-section-d3b285dfbd8542858e7b6be3de1823e4" aria-controls="R-subsections-d3b285dfbd8542858e7b6be3de1823e4" checked><label for="R-section-d3b285dfbd8542858e7b6be3de1823e4"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Tools</span></label><a class="padding" href="/sw/ai/tools/index.html">Tools</a><ul id="R-subsections-d3b285dfbd8542858e7b6be3de1823e4" class="collapsible-menu">
+            <li class="" data-nav-id="/sw/ai/tools/security-llm-20250625/index.html"><a class="padding" href="/sw/ai/tools/security-llm-20250625/index.html">企業員工使用 LLM 安全指南</a></li></ul></li>
+            <li class="" data-nav-id="/sw/ai/n8n/2025/05/n8nlinerag/index.html"><a class="padding" href="/sw/ai/n8n/2025/05/n8nlinerag/index.html">搭建 n8n LineBot RAG</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/sw/vibecoding/index.html"><input type="checkbox" id="R-section-84aebbfaea6a847d18ea2d7ec6d35577" aria-controls="R-subsections-84aebbfaea6a847d18ea2d7ec6d35577" checked><label for="R-section-84aebbfaea6a847d18ea2d7ec6d35577"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu Vibe Coding (氛圍編程)</span></label><a class="padding" href="/sw/vibecoding/index.html">Vibe Coding (氛圍編程)</a><ul id="R-subsections-84aebbfaea6a847d18ea2d7ec6d35577" class="collapsible-menu">
+            <li class="" data-nav-id="/sw/vibecoding/aiuitools-20250606/index.html"><a class="padding" href="/sw/vibecoding/aiuitools-20250606/index.html">互動式AI UI開發工具報告</a></li>
+            <li class="" data-nav-id="/sw/vibecoding/ai-ui-tools_20250606/index.html"><a class="padding" href="/sw/vibecoding/ai-ui-tools_20250606/index.html">Ai Ui Tools_20250606</a></li>
+            <li class="" data-nav-id="/sw/vibecoding/google_jules_20250527/index.html"><a class="padding" href="/sw/vibecoding/google_jules_20250527/index.html">Google Jules 開發利器：您的非同步 AI 程式設計夥伴，引領 Vibe 開發生產力革命</a></li></ul></li>
+            <li class="" data-nav-id="/sw/cti/index.html"><a class="padding" href="/sw/cti/index.html">Computer Telephony Integration (電腦電話整合)</a></li>
+            <li class="" data-nav-id="/sw/gemini-cli-20250628/index.html"><a class="padding" href="/sw/gemini-cli-20250628/index.html">Gemini Cli 20250628</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/me/index.html"><input type="checkbox" id="R-section-7e26c7463b1e75e9707d621cbf6da651" aria-controls="R-subsections-7e26c7463b1e75e9707d621cbf6da651" checked><label for="R-section-7e26c7463b1e75e9707d621cbf6da651"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 關於我</span></label><a class="padding" href="/me/index.html">關於我</a><ul id="R-subsections-7e26c7463b1e75e9707d621cbf6da651" class="collapsible-menu">
+            <li class="" data-nav-id="/me/moreme/index.html"><a class="padding" href="/me/moreme/index.html">更多自我介紹</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/ms/index.html"><input type="checkbox" id="R-section-479528d2c81de091efbe9fa96aef1a8d" aria-controls="R-subsections-479528d2c81de091efbe9fa96aef1a8d" checked><label for="R-section-479528d2c81de091efbe9fa96aef1a8d"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 管理工程</span></label><a class="padding" href="/ms/index.html">管理工程</a><ul id="R-subsections-479528d2c81de091efbe9fa96aef1a8d" class="collapsible-menu">
+            <li class="" data-nav-id="/ms/pmp/index.html"><a class="padding" href="/ms/pmp/index.html">專案管理</a></li>
+            <li class="" data-nav-id="/ms/cmmi/index.html"><a class="padding" href="/ms/cmmi/index.html">能力成熟度模型整合</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/tools/index.html"><input type="checkbox" id="R-section-bf1399820dde3dd110e03ace4147ff86" aria-controls="R-subsections-bf1399820dde3dd110e03ace4147ff86" checked><label for="R-section-bf1399820dde3dd110e03ace4147ff86"><i class="fa-fw fas fa-chevron-right"></i><span class="a11y-only">Submenu 一般工具</span></label><a class="padding" href="/tools/index.html">一般工具</a><ul id="R-subsections-bf1399820dde3dd110e03ace4147ff86" class="collapsible-menu">
+            <li class="" data-nav-id="/tools/google-gemini-website/index.html"><a class="padding" href="/tools/google-gemini-website/index.html">Google Gemini with Canvas</a></li>
+            <li class="" data-nav-id="/tools/ai-flow-draw/index.html"><a class="padding" href="/tools/ai-flow-draw/index.html">AI生成可編寫的流程圖與架構圖</a></li>
+            <li class="" data-nav-id="/tools/tools/index.html"><a class="padding" href="/tools/tools/index.html">Tools</a></li>
+            <li class="" data-nav-id="/tools/texstudio/index.html"><a class="padding" href="/tools/texstudio/index.html">論文寫作工具：TeXstudio 安裝及使用指南</a></li></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-footercontrols">
+          <ul class="">
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js?1758179366" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js?1758179366" defer></script>
+    <script src="/js/js-yaml/js-yaml.min.js?1758179366" defer></script>
+    <script src="/js/d3/d3-color.min.js?1758179366" defer></script>
+    <script src="/js/d3/d3-dispatch.min.js?1758179366" defer></script>
+    <script src="/js/d3/d3-drag.min.js?1758179366" defer></script>
+    <script src="/js/d3/d3-ease.min.js?1758179366" defer></script>
+    <script src="/js/d3/d3-interpolate.min.js?1758179366" defer></script>
+    <script src="/js/d3/d3-selection.min.js?1758179366" defer></script>
+    <script src="/js/d3/d3-timer.min.js?1758179366" defer></script>
+    <script src="/js/d3/d3-transition.min.js?1758179366" defer></script>
+    <script src="/js/d3/d3-zoom.min.js?1758179366" defer></script>
+    <script src="/js/mermaid/mermaid.min.js?1758179366" defer></script>
+    <script>
+      window.relearn.themeUseMermaid = JSON.parse("{}");
+    </script>
+    <script src="/js/theme.js?1758179366" defer></script>
+  </body>
+</html>

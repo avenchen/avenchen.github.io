@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software | 資訊分享平台</title>
+    <link>http://localhost:1313/cs/software/index.html</link>
+    <description>JA4 Session Shield 技術架構與 Tomcat 實現指南 本文檔旨在詳細說明 “JA4 Session Shield” 專案中所演示的客戶端指紋綁定 Session 的安全機制。內容涵蓋了當前前端的實現細節、後端應有的處理邏輯，並提供了在 Java/Tomcat 環境中實現此機制的具體指導。&#xA;1. 核心目標 防止 Session 劫持 (Session Hijacking)。傳統上，攻擊者如果竊取到使用者的 sessionId (例如從 Cookie 中)，就可以冒充該使用者向伺服器發送請求。我們的目標是將每個 Session 與其建立時的客戶端指紋（JA4 指紋）進行強綁定。即使 sessionId 被盜，由於攻擊者的客戶端指紋與合法使用者的不同，伺服器也能識別並拒絕該非法請求。&#xA;2. 前端處理流程 (以當前 React App 為例) 前端的主要職責是生成一個能高度代表當前客戶端環境的唯一指紋，並在登入時將其發送給後端。&#xA;在目前的實作中，這個指紋是模擬的，但其組合的參數旨在達到與真實 JA4 相似的獨特性。&#xA;指紋的組成 指紋生成的核心邏輯位於 services/authService.ts 中的 getJa4Fingerprint 函數。它收集了以下幾類資訊：&#xA;標準瀏覽器屬性:&#xA;userAgent: 瀏覽器及作業系統資訊。 language: 瀏覽器語言。 platform: 作業系統平台 (例如 Win32, MacIntel)。 resolution: 螢幕解析度。 colorDepth: 螢幕顏色深度。 timezoneOffset: 時區偏移量。 持久化客戶端 ID (persistentId):&#xA;為了區分設定完全相同的兩台機器，我們在 localStorage 中儲存一個 crypto.randomUUID()。這確保了同一個瀏覽器在多次訪問時具有穩定的標識符，但不同瀏覽器實例（即使在同一台機器上）會有不同的 ID。 動態畫布指紋 (canvasId):</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/cs/software/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

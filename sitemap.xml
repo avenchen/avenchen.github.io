@@ -36,6 +36,9 @@
     <loc>http://localhost:1313/sw/cti/index.html</loc>
   </url>
   <url>
+    <loc>http://localhost:1313/cs/software/index.html</loc>
+  </url>
+  <url>
     <loc>http://localhost:1313/ms/pmp/index.html</loc>
   </url>
   <url>
